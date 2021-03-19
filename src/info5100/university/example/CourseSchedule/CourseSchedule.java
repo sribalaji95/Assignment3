@@ -56,13 +56,13 @@ public class CourseSchedule {
         return sum;
     }
 
-      public int calculateTotalLoss() {
-        int sum = 0;
-        for (CourseOffer co : schedule) {
-
-            sum = sum + co.getTotalCourseLoss();
-
-        }
-        return sum;
-    }
+//      public int calculateTotalLoss() {
+//        int sum = 0;
+//        for (CourseOffer co : schedule) {
+//
+//            //sum = sum + co.getTotalCourseLoss();
+//
+//        }
+//        return sum;
+//    }
 }

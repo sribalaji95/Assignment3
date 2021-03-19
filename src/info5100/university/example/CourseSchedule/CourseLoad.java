@@ -20,7 +20,9 @@ public class CourseLoad {
         return seatassignments;
     }
 
-    
+    public void setSeatassignments(ArrayList<SeatAssignment> seatassignments) {
+        this.seatassignments = seatassignments;
+    }
      
     public String getSemester() {
         return semester;
@@ -43,6 +45,42 @@ public class CourseLoad {
         
         sa.assignSeatToStudent(this);
         seatassignments.add(sa);
+    }
+	
+//	public Iterable<SeatAssignment> getSeatassignments() {
+//       
+//        return seatassignments; //To change body of generated methods, choose Tools | Templates.
+//    }
+
+    public double iterateSeatAssignments(){
+        String grade= "";
+        double gpa = 0.0;
+        for(SeatAssignment value1:seatassignments){
+            System.out.println("The Course Name is: "+value1.getSeat().getCourseoffer().getCourse().getName());
+            grade=value1.getGrade();
+            switch(grade){
+                case "A": 
+                    gpa+=4.0;
+                    break;
+                case "A-": 
+                    gpa+= 3.7;
+                    break;
+                case "B+": 
+                    gpa+= 3.5;
+                    break;
+                case "B": 
+                    gpa+= 3.3;
+                    break;
+                case "B-": 
+                    gpa+= 3.0;
+                    break;
+                
+                default: gpa = 0.0;
+                
+            }
+            System.out.println("The Grade Received is: "+grade);
+        }
+        return gpa/seatassignments.size();
     }
     
 }

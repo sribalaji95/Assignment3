@@ -42,4 +42,18 @@ public class Transcript {
         return courseloadlist.get(semester);
         
     }
+	
+	public double calculateGpa(){
+            double gpa=0.0;
+            for(CourseLoad value: courseloadlist.values()){
+                System.out.println("The semester is "+ value.getSemester());
+                gpa += value.iterateSeatAssignments();
+//                if(grade.equals("M")){
+//                    gpa=10;
+//                }else{
+//                    gpa=15;
+//                }
+            }
+            return gpa;
+        }
 }

@@ -61,4 +61,13 @@ public class StudentProfile {
         
         return transcript.newCourseLoad(s);
     }
+	
+	public double studentPerformanceMetric(){
+        
+        double gpa = transcript.calculateGpa();
+        
+        double calcGPGA = (gpa * 2 ) + 2;
+        System.out.println("Inside SPM:"+calcGPGA);
+        return calcGPGA;
+    }
 }
