@@ -32,6 +32,10 @@ public class StudentProfile {
         return person;
     }
     
+    
+    public double getGpa(){
+        return transcript.calculateGpa();
+    }
 
     public StudentProfile(Person p) {
 
@@ -45,6 +49,9 @@ public class StudentProfile {
             return true;
         }
         return false;
+    }
+    public CourseLoad getallTranscript(){
+        return transcript.getAllcourses();
     }
 
     public CourseLoad getCourseLoadBySemester(String semester) {

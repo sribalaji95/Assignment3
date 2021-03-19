@@ -37,6 +37,8 @@ public class CourseLoad {
         Seat seat = co.getEmptySeat(); // seat linked to courseoffer
         if (seat==null) return null;
         SeatAssignment sa = seat.newSeatAssignment();
+        sa.setSeat(seat);
+        
         seatassignments.add(sa);  //add to students course 
         return sa;
     }

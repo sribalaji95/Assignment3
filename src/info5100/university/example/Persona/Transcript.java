@@ -6,6 +6,7 @@
 package info5100.university.example.Persona;
 
 import info5100.university.example.CourseSchedule.CourseLoad;
+import info5100.university.example.CourseSchedule.SeatAssignment;
 import java.util.HashMap;
 
 /**
@@ -24,7 +25,9 @@ public class Transcript {
         courseloadlist = new HashMap<String, CourseLoad>();
         
     }
-    
+    public CourseLoad getAllcourses(){
+        return currentcourseload;
+    }
     public CourseLoad newCourseLoad(String sem){
         
         currentcourseload = new CourseLoad(sem);

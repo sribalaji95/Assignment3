@@ -16,6 +16,13 @@ public class CourseCatalog {
     Department department;
     String lastupdated;
     ArrayList<Course> courselist; 
+
+    public void setCourselist(ArrayList<Course> courselist) {
+        this.courselist = courselist;
+    }
+    
+    
+    
     public CourseCatalog(Department d){
         courselist = new ArrayList();
         department = d;

@@ -27,6 +27,12 @@ public class CourseOffer {
         course = c;
         seatlist = new ArrayList();
     }
+
+   
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
     public void AssignAsTeacher(FacultyProfile fp) {
 
         facultyassignment = new FacultyAssignment(fp, this);

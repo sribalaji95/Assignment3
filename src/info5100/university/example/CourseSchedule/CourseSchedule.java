@@ -20,6 +20,14 @@ public class CourseSchedule {
     ArrayList<CourseOffer> schedule;
     String semester;
 
+        public CourseSchedule(){
+        
+    }
+        
+    public ArrayList<CourseOffer> getSchedule() {
+        return schedule;
+    }
+
     public CourseSchedule(String s, CourseCatalog cc) {
         semester = s;
         coursecatalog = cc;
@@ -60,18 +68,18 @@ public class CourseSchedule {
 //        int sum = 0;
 //        for (CourseOffer co : schedule) {
 //
-<<<<<<< HEAD
+
 //            //sum = sum + co.getTotalCourseLoss();
 //
 //        }
 //        return sum;
 //    }
 }
-=======
+
 //            sum = sum + co.getTotalCourseLoss();
 //
 //        }
 //        return sum;
-    }
+   // }
 
->>>>>>> 79d11033972d06b07a2440afa2392cf056b16191
+
