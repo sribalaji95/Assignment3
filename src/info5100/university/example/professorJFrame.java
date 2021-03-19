@@ -11,6 +11,7 @@ import info5100.university.example.CourseSchedule.CourseLoad;
 import info5100.university.example.CourseSchedule.CourseOffer;
 import info5100.university.example.CourseSchedule.CourseSchedule;
 import info5100.university.example.CourseCatalog.CourseCatalog;
+import info5100.university.example.CourseSchedule.Seat;
 import info5100.university.example.CourseSchedule.SeatAssignment;
 import info5100.university.example.Department.Department;
 import info5100.university.example.Persona.Faculty.FacultyDirectory;
@@ -81,13 +82,15 @@ public class professorJFrame extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        
+        System.out.println("Mouse Clicked");
+        getProfessorList("");
         for(String s : al2)
         {
             System.out.println(s);
         }
         getStudentTakenByProf(al2.get(0), sd);
-        
+        //setGrade("info 5100", sd, "A","");
+        //getGrade("info 5100", sd, "A","");
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**
@@ -96,8 +99,8 @@ public class professorJFrame extends javax.swing.JFrame {
     
     public static void prepareData()
     {
-          Department department = new Department("Information Systems");
-         PersonDirectory pd = department.getPersonDirectory();
+        Department department = new Department("Information Systems");
+        PersonDirectory pd = department.getPersonDirectory();
          FacultyDirectory fd = department.getFacultyDirectory();
         Person person1 = pd.newPerson("123456");
         FacultyProfile fp = fd.newStudentProfile(person1);
@@ -119,9 +122,10 @@ public class professorJFrame extends javax.swing.JFrame {
         
         courseoffer.AssignAsTeacher(fp);
         courseoffer.generatSeats(10);
+   
         
         
-//        FacultyProfile facultyProfile = new FacultyProfile(person1);
+        FacultyProfile facultyProfile = new FacultyProfile(person1);
 //        facultyProfile.AssignAsTeacher(courseoffer);
 //        facultyProfile.getCourseOffer("info 5100");
        //  CourseOffer courseoffer1 = courseschedule.newCourseOffer("info 6100");
@@ -138,6 +142,8 @@ public class professorJFrame extends javax.swing.JFrame {
         CourseLoad courseload = student.newCourseLoad("Fall2020"); 
 //        
         courseload.newSeatAssignment(courseoffer);
+      
+        
       //  courseload.newSeatAssignment(courseoffer1);//register student in class
        
 //      Iterable<SeatAssignment> ass = courseload.getSeatassignments();
@@ -147,14 +153,7 @@ public class professorJFrame extends javax.swing.JFrame {
       //  System.out.println("Total: " +fp.getCourseOffer("info 5100"));
         System.out.println("Total: " + cc.getCourseByNumber("info 5100"));
        // CourseSchedule courseschedule1 = new CourseSchedule();
-        ArrayList<CourseOffer> al1 = courseschedule.getSchedule();
-        System.out.println(al1.size());
-                 for(int i=0 ; i < al1.size(); i++){
-            //System.out.println(al1.get(i).getFacultyProfile());
-            if(al1.get(i).getFacultyProfile().getPerson().getPersonId().equals("123456")){
-                al2.add(al1.get(i).getCourse().getCOurseNumber());
-            }
-        }
+        
         
         
        
@@ -181,6 +180,60 @@ public class professorJFrame extends javax.swing.JFrame {
         }
      
         
+    }
+    
+    public static void setGrade(String courseID, StudentDirectory sd , String grade , String studentId){
+        
+        ArrayList<StudentProfile> as = new ArrayList();
+        List<StudentProfile> list = sd.getStudentlist();
+        for(StudentProfile sp : list)
+        {
+            List<SeatAssignment> list1 = sp.getCourseLoadBySemester("Fall2020").getSeatassignments();
+            for(SeatAssignment seatAssignment : list1)
+            {
+                if(seatAssignment.getSeat().getCourseoffer().getCourse().getCOurseNumber().equals(courseID) && sp.getPerson().getPersonId().equals(studentId))
+                {
+                  //  System.out.println(sp.getPerson().getPersonId());
+                    seatAssignment.setGrade(grade);
+                }
+            }
+        }
+     
+        
+    }
+    
+    public static void getGrade(String courseID, StudentDirectory sd , String grade , String studentId){
+        
+        ArrayList<StudentProfile> as = new ArrayList();
+        List<StudentProfile> list = sd.getStudentlist();
+        for(StudentProfile sp : list)
+        {
+            List<SeatAssignment> list1 = sp.getCourseLoadBySemester("Fall2020").getSeatassignments();
+            for(SeatAssignment seatAssignment : list1)
+            {
+                if(seatAssignment.getSeat().getCourseoffer().getCourse().getCOurseNumber().equals(courseID) && sp.getPerson().getPersonId().equals(studentId))
+                {
+                  //  System.out.println(sp.getPerson().getPersonId());
+                    System.out.println(seatAssignment.getGrade());
+                }
+            }
+        }
+     
+        
+    }
+    
+    public void getProfessorList(String semester)
+    {
+        Department department = sd.getDepartment();
+        CourseSchedule courseSchedule = department.getCourseSchedule("Fall2020");
+       ArrayList<CourseOffer> al1 = courseSchedule.getSchedule();
+        System.out.println(al1.size());
+                 for(int i=0 ; i < al1.size(); i++){
+            //System.out.println(al1.get(i).getFacultyProfile());
+            if(al1.get(i).getFacultyProfile().getPerson().getPersonId().equals("123456")){
+                al2.add(al1.get(i).getCourse().getCOurseNumber());
+            }
+        }
     }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

@@ -35,6 +35,11 @@ public class Transcript {
         return currentcourseload;
     }
     
+    public CourseLoad getCourseLoad(String sem)
+    {
+        return courseloadlist.get(sem);
+    }
+    
     public CourseLoad getCurrentCourseLoad(){
         
         return currentcourseload;

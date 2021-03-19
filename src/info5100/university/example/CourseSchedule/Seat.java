@@ -14,6 +14,10 @@ public class Seat {
     Boolean occupied; 
     int number;
     SeatAssignment seatassignment;
+
+    public SeatAssignment getSeatassignment() {
+        return seatassignment;
+    }
     CourseOffer courseoffer;
 	
 	public CourseOffer getCourseoffer() {

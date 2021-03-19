@@ -22,6 +22,7 @@ import info5100.university.example.Persona.Person;
 import info5100.university.example.Persona.PersonDirectory;
 import info5100.university.example.Persona.StudentDirectory;
 import info5100.university.example.Persona.StudentProfile;
+import info5100.university.example.Persona.Transcript;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -36,6 +37,7 @@ public class Info5001UniversityExample {
     /**
      * @param args the command line arguments
      */
+    static StudentDirectory sd ;
     public static void main(String[] args) {
         // TODO code application logic here
         Department department = new Department("Information Systems");
@@ -64,7 +66,7 @@ public class Info5001UniversityExample {
         
         
         Person person = pd.newPerson("0112303");
-        StudentDirectory sd = department.getStudentDirectory();
+         sd = department.getStudentDirectory();
         StudentProfile student = sd.newStudentProfile(person);
         CourseLoad courseload = student.newCourseLoad("Fall2020"); 
 //        
@@ -157,8 +159,7 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         CourseLoad courseload1 = student1.newCourseLoad("Fall2021");
 //        
         courseload.newSeatAssignment(courseoffer); //register student in class
-        SeatAssignment sa = new SeatAssignment();
-        sa.assignGradeToStudent("A");
+         
         
         EmployeeDirectory ed = new EmployeeDirectory();
         ArrayList<Employers> emp = new ArrayList<>();
@@ -196,5 +197,8 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         
         
     }
+    
+    
+    
 
 }

@@ -17,6 +17,10 @@ public class StudentProfile {
 
     Person person;
     Transcript transcript;
+
+    public Transcript getTranscript() {
+        return transcript;
+    }
     EmploymentHistroy employmenthistory;
     Alumni al;
 

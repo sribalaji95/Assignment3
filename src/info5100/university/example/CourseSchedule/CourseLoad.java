@@ -85,4 +85,16 @@ public class CourseLoad {
         return gpa/seatassignments.size();
     }
     
+    public ArrayList getCourseInformation(){
+        ArrayList courseGradeList = new ArrayList();
+        for(SeatAssignment value1:seatassignments){
+            courseGradeList.add(value1.getSeat().getCourseoffer().getCourse().getName());
+            courseGradeList.add(value1.getGrade());
+        }
+        System.out.println("Arraykist: "+courseGradeList.get(0));
+        return courseGradeList;
+        
+        
+    }
+    
 }

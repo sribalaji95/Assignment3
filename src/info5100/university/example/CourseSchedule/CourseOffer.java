@@ -18,6 +18,10 @@ public class CourseOffer {
 
     Course course;
     ArrayList<Seat> seatlist;
+
+    public ArrayList<Seat> getSeatlist() {
+        return seatlist;
+    }
     FacultyAssignment facultyassignment;
 	
 	public Course getCourse() {
