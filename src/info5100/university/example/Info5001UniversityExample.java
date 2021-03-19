@@ -27,6 +27,7 @@ import java.util.HashMap;
  */
 public class Info5001UniversityExample {
 
+
     /**
      * @param args the command line arguments
      */
@@ -86,6 +87,7 @@ public class Info5001UniversityExample {
         
     }
     public void test1(){
+        System.out.println("TEST 1");
         Department department = new Department("Information Systems");
 
         Course course = department.newCourse("app eng", "info 5100", 4);
@@ -97,10 +99,13 @@ public class Info5001UniversityExample {
         courseoffer.generatSeats(10);
         
         PersonDirectory pd = department.getPersonDirectory();
-        Person person = pd.newPerson("0112303");
+        Person person = pd.newPerson("01");
+        Person person1 = pd.newPerson("07");
         StudentDirectory sd = department.getStudentDirectory();
         StudentProfile student = sd.newStudentProfile(person);
-        CourseLoad courseload = student.newCourseLoad("Fall2020"); 
+        StudentProfile student1 = sd.newStudentProfile(person1);        
+        CourseLoad courseload = student.newCourseLoad("Fall2020");
+        CourseLoad courseload1 = student1.newCourseLoad("Fall2021");
 //        
         courseload.newSeatAssignment(courseoffer); //register student in class
         SeatAssignment sa = new SeatAssignment();
@@ -113,16 +118,31 @@ public class Info5001UniversityExample {
         emp.add(em);
         ed.setEmployers(emp);
        
-        StudentProfile sp = sd.findStudent("0112303");
+        StudentProfile sp = sd.findStudent("01");
        // System.out.println("");
         Alumni al = new Alumni();
         al.setStudentProfile(sp);
         al.setGradutationYear(2020);
         al.setEmp(em);
         al.setPosition("SDE");
+        al.setSalaryRange(25000);
+        al.setPromotions(2);
         HashMap<String, Alumni> map = new HashMap<>();
-        map.put("0112303", al);
+        map.put("01", al);
         al.setAlumniDir(map);
+        StudentProfile sp1 = sd.findStudent("07");
+       // System.out.println("");
+        //Alumni al = new Alumni();
+        Alumni al1 = new Alumni();
+        al1.setStudentProfile(sp1);
+        al1.setGradutationYear(2021);
+        al1.setEmp(em);
+        al1.setPosition("SDE2");
+        al1.setSalaryRange(15000);
+        al1.setPromotions(5);
+        map.put("07", al1);
+        al1.setAlumniDir(map);
+        
         
         
         
