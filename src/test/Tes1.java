@@ -60,6 +60,7 @@ public class Tes1 {
         //SeatAssignment sa1 = cd.getSeatassignments().get(0);
       //  System.out.println("SA "+cd.getSeatassignments().get(0).getGrade());
             System.out.println("SA ");
+            
         
     }
     

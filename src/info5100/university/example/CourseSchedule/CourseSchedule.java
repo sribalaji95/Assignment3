@@ -60,9 +60,18 @@ public class CourseSchedule {
 //        int sum = 0;
 //        for (CourseOffer co : schedule) {
 //
+<<<<<<< HEAD
 //            //sum = sum + co.getTotalCourseLoss();
 //
 //        }
 //        return sum;
 //    }
 }
+=======
+//            sum = sum + co.getTotalCourseLoss();
+//
+//        }
+//        return sum;
+    }
+
+>>>>>>> 79d11033972d06b07a2440afa2392cf056b16191
