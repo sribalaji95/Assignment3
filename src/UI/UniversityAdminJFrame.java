@@ -14,6 +14,7 @@ import info5100.university.example.Department.DepartmentDirectory;
 import info5100.university.example.Info5001UniversityExample;
 import info5100.university.example.Persona.Person;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -26,13 +27,20 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
     /**
      * Creates new form UniversityAdminJFrame
      */
+    
+    HashMap<String, Department> map = new HashMap();
     Info5001UniversityExample uni = new Info5001UniversityExample();
             TestData testData = TestData.getInstance();
+            DepartmentDirectory department = testData.getDd();
+            ArrayList<Department> departmentlist = department.getDd();
 
     public UniversityAdminJFrame() {
         initComponents();
         testData.test2();
-        SelDeptPnl.setVisible(false);
+        ShwCrPnlOld.setVisible(false);
+        ShStdPnlOld.setVisible(false);
+        UnvTbPane.setVisible(false);
+        //StdLstPnl.setVisible(false);
     }
 
     /**
@@ -44,14 +52,20 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        SelDeptPnl = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        StdDeptLbl = new javax.swing.JLabel();
-        DeptComboBox = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
-        CrPnl = new javax.swing.JPanel();
-        CrNameScrPnl = new javax.swing.JScrollPane();
-        CrNameTable = new javax.swing.JTable();
+        ShStdPnlOld = new javax.swing.JPanel();
+        StdDeptLbl1Old = new javax.swing.JLabel();
+        StdDptComboBoxOld = new javax.swing.JComboBox<>();
+        StdLstPnlOld = new javax.swing.JPanel();
+        StdNameScrPnlOld = new javax.swing.JScrollPane();
+        StdNameTableOld = new javax.swing.JTable();
+        jToggleButton2Old = new javax.swing.JToggleButton();
+        ShwCrPnlOld = new javax.swing.JPanel();
+        StdDeptLblOld = new javax.swing.JLabel();
+        CrDptComboBoxOld = new javax.swing.JComboBox<>();
+        CrLstPnlOld = new javax.swing.JPanel();
+        CrNameScrPnlOld = new javax.swing.JScrollPane();
+        CrNameTableOld = new javax.swing.JTable();
+        jToggleButton1Old = new javax.swing.JToggleButton();
         UnvLgnPnl = new javax.swing.JPanel();
         UnvLoginlbl = new javax.swing.JLabel();
         jUnamelbl = new javax.swing.JLabel();
@@ -59,28 +73,132 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
         jPasswordlbl = new javax.swing.JLabel();
         jPwdTxtfld = new javax.swing.JPasswordField();
         Unvlgnbtn = new javax.swing.JButton();
+        UnvTbPane = new javax.swing.JPanel();
+        InUnvTabPane = new javax.swing.JTabbedPane();
+        ShwCrPnl = new javax.swing.JPanel();
+        CrLstDeptLbl = new javax.swing.JLabel();
+        CrDptComboBox = new javax.swing.JComboBox<>();
+        CrLstPnl = new javax.swing.JPanel();
+        CrNameScrPnl = new javax.swing.JScrollPane();
+        CrNameTable = new javax.swing.JTable();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        ShStdPnl = new javax.swing.JPanel();
+        StdLstDeptLbl = new javax.swing.JLabel();
+        StdDptComboBox = new javax.swing.JComboBox<>();
+        jToggleButton4 = new javax.swing.JToggleButton();
+        StdLstPnl = new javax.swing.JPanel();
+        StdNameScrPnl = new javax.swing.JScrollPane();
+        StdNameTable = new javax.swing.JTable();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Get Department List");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        StdDeptLbl1Old.setText("Select Department");
+
+        StdDptComboBoxOld.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Option" }));
+        StdDptComboBoxOld.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                StdDptComboBoxOldActionPerformed(evt);
             }
         });
 
-        StdDeptLbl.setText("Select Department");
+        StdNameTableOld.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Student Name"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
 
-        DeptComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Option" }));
-        DeptComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        StdNameScrPnlOld.setViewportView(StdNameTableOld);
+
+        javax.swing.GroupLayout StdLstPnlOldLayout = new javax.swing.GroupLayout(StdLstPnlOld);
+        StdLstPnlOld.setLayout(StdLstPnlOldLayout);
+        StdLstPnlOldLayout.setHorizontalGroup(
+            StdLstPnlOldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+            .addGroup(StdLstPnlOldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(StdLstPnlOldLayout.createSequentialGroup()
+                    .addGap(5, 5, 5)
+                    .addComponent(StdNameScrPnlOld, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        StdLstPnlOldLayout.setVerticalGroup(
+            StdLstPnlOldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 122, Short.MAX_VALUE)
+            .addGroup(StdLstPnlOldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(StdLstPnlOldLayout.createSequentialGroup()
+                    .addGap(7, 7, 7)
+                    .addComponent(StdNameScrPnlOld, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(7, Short.MAX_VALUE)))
+        );
+
+        jToggleButton2Old.setText("jToggleButton1");
+        jToggleButton2Old.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeptComboBoxActionPerformed(evt);
+                jToggleButton2OldActionPerformed(evt);
             }
         });
 
-        jTextField1.setText("jTextField1");
+        javax.swing.GroupLayout ShStdPnlOldLayout = new javax.swing.GroupLayout(ShStdPnlOld);
+        ShStdPnlOld.setLayout(ShStdPnlOldLayout);
+        ShStdPnlOldLayout.setHorizontalGroup(
+            ShStdPnlOldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ShStdPnlOldLayout.createSequentialGroup()
+                .addGap(238, 238, 238)
+                .addComponent(jToggleButton2Old)
+                .addContainerGap(286, Short.MAX_VALUE))
+            .addGroup(ShStdPnlOldLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(StdDeptLbl1Old, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(ShStdPnlOldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(StdDptComboBoxOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(StdLstPnlOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        ShStdPnlOldLayout.setVerticalGroup(
+            ShStdPnlOldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ShStdPnlOldLayout.createSequentialGroup()
+                .addGroup(ShStdPnlOldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ShStdPnlOldLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(StdDeptLbl1Old, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ShStdPnlOldLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(StdDptComboBoxOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addComponent(StdLstPnlOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jToggleButton2Old)
+                .addContainerGap(139, Short.MAX_VALUE))
+        );
 
-        CrNameTable.setModel(new javax.swing.table.DefaultTableModel(
+        StdDeptLblOld.setText("Select Department");
+
+        CrDptComboBoxOld.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Option" }));
+        CrDptComboBoxOld.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CrDptComboBoxOldActionPerformed(evt);
+            }
+        });
+
+        CrNameTableOld.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
                 {null},
@@ -99,70 +217,67 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        CrNameScrPnl.setViewportView(CrNameTable);
+        CrNameScrPnlOld.setViewportView(CrNameTableOld);
 
-        javax.swing.GroupLayout CrPnlLayout = new javax.swing.GroupLayout(CrPnl);
-        CrPnl.setLayout(CrPnlLayout);
-        CrPnlLayout.setHorizontalGroup(
-            CrPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout CrLstPnlOldLayout = new javax.swing.GroupLayout(CrLstPnlOld);
+        CrLstPnlOld.setLayout(CrLstPnlOldLayout);
+        CrLstPnlOldLayout.setHorizontalGroup(
+            CrLstPnlOldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 226, Short.MAX_VALUE)
-            .addGroup(CrPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(CrPnlLayout.createSequentialGroup()
+            .addGroup(CrLstPnlOldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(CrLstPnlOldLayout.createSequentialGroup()
                     .addGap(5, 5, 5)
-                    .addComponent(CrNameScrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CrNameScrPnlOld, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-        CrPnlLayout.setVerticalGroup(
-            CrPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        CrLstPnlOldLayout.setVerticalGroup(
+            CrLstPnlOldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 122, Short.MAX_VALUE)
-            .addGroup(CrPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(CrPnlLayout.createSequentialGroup()
+            .addGroup(CrLstPnlOldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(CrLstPnlOldLayout.createSequentialGroup()
                     .addGap(7, 7, 7)
-                    .addComponent(CrNameScrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CrNameScrPnlOld, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(7, Short.MAX_VALUE)))
         );
 
-        javax.swing.GroupLayout SelDeptPnlLayout = new javax.swing.GroupLayout(SelDeptPnl);
-        SelDeptPnl.setLayout(SelDeptPnlLayout);
-        SelDeptPnlLayout.setHorizontalGroup(
-            SelDeptPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SelDeptPnlLayout.createSequentialGroup()
-                .addGroup(SelDeptPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SelDeptPnlLayout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(StdDeptLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(DeptComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(SelDeptPnlLayout.createSequentialGroup()
-                        .addGap(322, 322, 322)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(238, Short.MAX_VALUE))
-            .addGroup(SelDeptPnlLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SelDeptPnlLayout.createSequentialGroup()
+        jToggleButton1Old.setText("jToggleButton1");
+        jToggleButton1Old.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1OldActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ShwCrPnlOldLayout = new javax.swing.GroupLayout(ShwCrPnlOld);
+        ShwCrPnlOld.setLayout(ShwCrPnlOldLayout);
+        ShwCrPnlOldLayout.setHorizontalGroup(
+            ShwCrPnlOldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ShwCrPnlOldLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(StdDeptLblOld, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(CrDptComboBoxOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(304, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ShwCrPnlOldLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(CrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CrLstPnlOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(ShwCrPnlOldLayout.createSequentialGroup()
+                .addGap(238, 238, 238)
+                .addComponent(jToggleButton1Old)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        SelDeptPnlLayout.setVerticalGroup(
-            SelDeptPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SelDeptPnlLayout.createSequentialGroup()
-                .addGroup(SelDeptPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SelDeptPnlLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(SelDeptPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(StdDeptLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DeptComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(SelDeptPnlLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        ShwCrPnlOldLayout.setVerticalGroup(
+            ShwCrPnlOldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ShwCrPnlOldLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(ShwCrPnlOldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(StdDeptLblOld, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CrDptComboBoxOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
-                .addComponent(CrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(154, 154, 154))
+                .addComponent(CrLstPnlOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jToggleButton1Old)
+                .addContainerGap(151, Short.MAX_VALUE))
         );
 
         UnvLoginlbl.setText("University Login");
@@ -235,7 +350,244 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
                     .addComponent(jPwdTxtfld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(Unvlgnbtn)
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap(272, Short.MAX_VALUE))
+        );
+
+        CrLstDeptLbl.setText("Select Department");
+
+        CrDptComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Option" }));
+        CrDptComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CrDptComboBoxActionPerformed(evt);
+            }
+        });
+
+        CrNameTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Course Name"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        CrNameScrPnl.setViewportView(CrNameTable);
+
+        javax.swing.GroupLayout CrLstPnlLayout = new javax.swing.GroupLayout(CrLstPnl);
+        CrLstPnl.setLayout(CrLstPnlLayout);
+        CrLstPnlLayout.setHorizontalGroup(
+            CrLstPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrLstPnlLayout.createSequentialGroup()
+                .addComponent(CrNameScrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
+        );
+        CrLstPnlLayout.setVerticalGroup(
+            CrLstPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrLstPnlLayout.createSequentialGroup()
+                .addComponent(CrNameScrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 14, Short.MAX_VALUE))
+        );
+
+        jToggleButton1.setText("jToggleButton1");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ShwCrPnlLayout = new javax.swing.GroupLayout(ShwCrPnl);
+        ShwCrPnl.setLayout(ShwCrPnlLayout);
+        ShwCrPnlLayout.setHorizontalGroup(
+            ShwCrPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ShwCrPnlLayout.createSequentialGroup()
+                .addGroup(ShwCrPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ShwCrPnlLayout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(CrLstDeptLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CrDptComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ShwCrPnlLayout.createSequentialGroup()
+                        .addGap(238, 238, 238)
+                        .addComponent(jToggleButton1))
+                    .addGroup(ShwCrPnlLayout.createSequentialGroup()
+                        .addGap(191, 191, 191)
+                        .addComponent(CrLstPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+        ShwCrPnlLayout.setVerticalGroup(
+            ShwCrPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ShwCrPnlLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(ShwCrPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CrLstDeptLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CrDptComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(CrLstPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(jToggleButton1)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        InUnvTabPane.addTab("Course List", ShwCrPnl);
+
+        StdLstDeptLbl.setText("Select Department");
+
+        StdDptComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Option" }));
+        StdDptComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StdDptComboBoxActionPerformed(evt);
+            }
+        });
+
+        jToggleButton4.setText("jToggleButton1");
+        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton4ActionPerformed(evt);
+            }
+        });
+
+        StdNameTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Student Name"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        StdNameScrPnl.setViewportView(StdNameTable);
+
+        javax.swing.GroupLayout StdLstPnlLayout = new javax.swing.GroupLayout(StdLstPnl);
+        StdLstPnl.setLayout(StdLstPnlLayout);
+        StdLstPnlLayout.setHorizontalGroup(
+            StdLstPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StdLstPnlLayout.createSequentialGroup()
+                .addGap(0, 6, Short.MAX_VALUE)
+                .addComponent(StdNameScrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        StdLstPnlLayout.setVerticalGroup(
+            StdLstPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StdLstPnlLayout.createSequentialGroup()
+                .addComponent(StdNameScrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout ShStdPnlLayout = new javax.swing.GroupLayout(ShStdPnl);
+        ShStdPnl.setLayout(ShStdPnlLayout);
+        ShStdPnlLayout.setHorizontalGroup(
+            ShStdPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ShStdPnlLayout.createSequentialGroup()
+                .addGroup(ShStdPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ShStdPnlLayout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(StdLstDeptLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(StdDptComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ShStdPnlLayout.createSequentialGroup()
+                        .addGap(238, 238, 238)
+                        .addComponent(jToggleButton4))
+                    .addGroup(ShStdPnlLayout.createSequentialGroup()
+                        .addGap(184, 184, 184)
+                        .addComponent(StdLstPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(99, Short.MAX_VALUE))
+        );
+        ShStdPnlLayout.setVerticalGroup(
+            ShStdPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ShStdPnlLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(ShStdPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(StdLstDeptLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(StdDptComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(StdLstPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
+                .addComponent(jToggleButton4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        InUnvTabPane.addTab("Student List", ShStdPnl);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 504, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 303, Short.MAX_VALUE)
+        );
+
+        InUnvTabPane.addTab("tab3", jPanel3);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 504, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 303, Short.MAX_VALUE)
+        );
+
+        InUnvTabPane.addTab("tab4", jPanel4);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 504, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 303, Short.MAX_VALUE)
+        );
+
+        InUnvTabPane.addTab("tab5", jPanel5);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 504, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 303, Short.MAX_VALUE)
+        );
+
+        InUnvTabPane.addTab("tab6", jPanel6);
+
+        javax.swing.GroupLayout UnvTbPaneLayout = new javax.swing.GroupLayout(UnvTbPane);
+        UnvTbPane.setLayout(UnvTbPaneLayout);
+        UnvTbPaneLayout.setHorizontalGroup(
+            UnvTbPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(InUnvTabPane)
+        );
+        UnvTbPaneLayout.setVerticalGroup(
+            UnvTbPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(InUnvTabPane, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -244,12 +596,22 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(UnvLgnPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 206, Short.MAX_VALUE))
+                .addGap(0, 380, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(109, 109, 109)
-                    .addComponent(SelDeptPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(109, Short.MAX_VALUE)))
+                    .addComponent(ShwCrPnlOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(133, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(109, 109, 109)
+                    .addComponent(ShStdPnlOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(121, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(115, 115, 115)
+                    .addComponent(UnvTbPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(254, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,12 +621,97 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(121, 121, 121)
-                    .addComponent(SelDeptPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ShwCrPnlOld, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(121, 121, 121)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(127, 127, 127)
+                    .addComponent(ShStdPnlOld, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(127, 127, 127)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(133, 133, 133)
+                    .addComponent(UnvTbPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(133, 133, 133)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+       getDepartmentList();
+        
+     }
+//    DepartmentDirectory department = testData.getDd();
+//    ArrayList<Department> departmentlist = department.getDd();
+    public void getDepartmentList(){
+         
+//        ArrayList<Department> departmentlist = department.getDd();
+        for(Department d : departmentlist)
+        {
+            System.out.println(d.getName());
+//            Helper helper = new Helper();
+//            List<Course> course = helper.getCourseOffer(d, "Fall2020");
+//            for(Course c : course)
+//            {
+//                System.out.println(c.getName());
+//            }
+//            List<Person> list = helper.getStudent(d);
+//            for(Person p : list)
+//            {
+//                System.out.println(p.getPersonId());
+//            }
+            
+           
+           getCourseOfferedByDepartment(d); 
+    }
+    
+        
+        
+//        String d1 ="Information Systems";
+//        String course ="app eng";
+//       
+//        for(Department d : departmentlist)
+//        {
+//            //System.out.println(d.getName());
+//            Helper helper = new Helper();
+//            List<CourseOffer> course1 = helper.getCourseOfferList(d, "Fall2020");
+//            for(CourseOffer c : course1)
+//            {
+//                    if(c.getCourse().getName().equals(course))
+//                    {
+//                        helper.addStudent(d, "test", "1234", "Fall2020",c );
+//                        
+//                    }
+//            }
+//        }
+//        for(Department d : departmentlist)
+//        {
+//            System.out.println(d.getName());
+//            Helper helper = new Helper();
+//            List<Course> course2 = helper.getCourseOffer(d, "Fall2020");
+//            for(Course c : course2)
+//            {
+//                System.out.println(c.getName());
+//            }
+//            List<Person> list = helper.getStudent(d);
+//            for(Person p : list)
+//            {
+//                System.out.println(p.getPersonId());
+//            }
+//        }
+            
+            
+            
+        
+        
+      //  System.out.println("DD "+ uni.getDd().toString());
+//        ArrayList<DepartmentDirectory> d = uni.getDd();
+        
+    }                                        
+
 
     public List getStudentsByDepartmentName(Department dpt){
             Helper helper = new Helper();
@@ -282,6 +729,22 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
             return p;
     }
     
+    public List<CourseOffer> getCourseOfferedByDepartment(Department d){
+        return new Helper().getCourseOfferList(d, "Fall2020");
+    }
+    
+    public void addStudent(Department d, String sname, String sid, String sem, CourseOffer co){
+        
+        new Helper().addStudent(d, sname, sid, sem, co);
+        
+        
+    }
+   // System.out.println("Std"+new Helper().addStudent(d, "MM", "101", "2", co));
+    
+    public void addProf(Department d, String profName, String pid, String sem, CourseOffer co){
+        
+        new Helper().addProfessor(d, profName, pid, sem, co);
+    }
     
     private void jUserTxtfldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUserTxtfldActionPerformed
         // TODO add your handling code here:
@@ -290,71 +753,6 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
     private void jPwdTxtfldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPwdTxtfldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPwdTxtfldActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        getDepartmentList();
-
-        }
-DepartmentDirectory department = testData.getDd();
-        public void getDepartmentList(){
-            //DepartmentDirectory department = testData.getDd();
-            ArrayList<Department> departmentlist = department.getDd();
-            for(Department d : departmentlist)
-            {
-                System.out.println(d.getName());
-                //            Helper helper = new Helper();
-                //            List<Course> course = helper.getCourseOffer(d, "Fall2020");
-                //            for(Course c : course)
-                //            {
-                    //                System.out.println(c.getName());
-                    //            }
-                //            List<Person> list = helper.getStudent(d);
-                //            for(Person p : list)
-                //            {
-                    //                System.out.println(p.getPersonId());
-                    //            }
-
-                // getStudentsByDepartmentName(d);
-            }
-
-            //        String d1 ="Information Systems";
-            //        String course ="app eng";
-            //
-            //        for(Department d : departmentlist)
-            //        {
-                //            //System.out.println(d.getName());
-                //            Helper helper = new Helper();
-                //            List<CourseOffer> course1 = helper.getCourseOfferList(d, "Fall2020");
-                //            for(CourseOffer c : course1)
-                //            {
-                    //                    if(c.getCourse().getName().equals(course))
-                    //                    {
-                        //                        helper.addStudent(d, "test", "1234", "Fall2020",c );
-                        //
-                        //                    }
-                    //            }
-                //        }
-            //        for(Department d : departmentlist)
-            //        {
-                //            System.out.println(d.getName());
-                //            Helper helper = new Helper();
-                //            List<Course> course2 = helper.getCourseOffer(d, "Fall2020");
-                //            for(Course c : course2)
-                //            {
-                    //                System.out.println(c.getName());
-                    //            }
-                //            List<Person> list = helper.getStudent(d);
-                //            for(Person p : list)
-                //            {
-                    //                System.out.println(p.getPersonId());
-                    //            }
-                //        }
-
-            //  System.out.println("DD "+ uni.getDd().toString());
-            //        ArrayList<DepartmentDirectory> d = uni.getDd();
-
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void UnvlgnbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UnvlgnbtnActionPerformed
         // TODO add your handling code here:
@@ -365,17 +763,25 @@ DepartmentDirectory department = testData.getDd();
         
        
             UnvLgnPnl.setVisible(false);
-            SelDeptPnl.setVisible(true);
-            CrPnl.setVisible(false);
+            //ShwCrPnl.setVisible(true);
+            ShStdPnlOld.setVisible(false);
+            CrLstPnl.setVisible(false);
+            ShwCrPnlOld.setVisible(false);
+            StdLstPnl.setVisible(false);
+            UnvTbPane.setVisible(true);
+           
             ArrayList<Department> departmentlist = department.getDd();
             
-            for(int i =0;i<departmentlist.size();i++)
-            {
-                DeptComboBox.addItem(departmentlist.get(i).getName());
+            for(Department d : departmentlist){
+               
+                map.put(d.getName(), d);
             }
-            
 
-        
+            for (String name : map.keySet())  
+                   CrDptComboBox.addItem(name);
+            for (String name : map.keySet()) 
+                StdDptComboBox.addItem(name);
+
     }//GEN-LAST:event_UnvlgnbtnActionPerformed
 
     private void UnvlgnbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UnvlgnbtnMouseClicked
@@ -387,28 +793,212 @@ DepartmentDirectory department = testData.getDd();
 
 //    Information Systems
 //    Computer Science
-    private void DeptComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeptComboBoxActionPerformed
+    private void CrDptComboBoxOldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrDptComboBoxOldActionPerformed
         // TODO add your handling code here:
-//        if(evt.getSource()== DeptComboBox)
-//        {
-//            jTextField1.setText(evt.getActionCommand().equals());
-//            //jTextField1.setText(evt.getActionCommand().equals("Information Systems"));
-//        }
 
-            String selval = DeptComboBox.getSelectedItem().toString();
-            jTextField1.setText(selval);
-//            CrNameScrPnl.setVisible(true);
-//            CrNameTable.setVisible(true);
+//            String selval = CrDptComboBox.getSelectedItem().toString();
+//            //jTextField1.setText(selval);
+//
+//            if(selval.equals("Information Systems"))
+//            {
+//                CrLstPnl.setVisible(true);
+//                DefaultTableModel model = (DefaultTableModel) CrNameTable.getModel();
+//                model.setRowCount(0);
+//                
+//                System.out.println("Test "+ map.get("Information Systems"));
+//                //List<CourseOffer> co = getCourseOfferedByDepartment(map.get("Information Systems"));
+//                List<Person> p = getStudentsByDepartmentName(map.get("Information Systems"));
+//                for(int i=0;i<p.size();i++)
+//                //for(CourseOffer c: co)
+//                {
+//                    Object[] row= new Object[1];
+//                    //row[0]=co.get(i).getCourse().getName().toString();
+//                    row[0]=p.get(i).getPersonId();
+//                    model.addRow(row);
+//                    
+//                }
+//            }
+//             if(selval.equals("Computer Science"))
+//            {
+//                CrLstPnl.setVisible(true);
+//                DefaultTableModel model = (DefaultTableModel) CrNameTable.getModel();
+//                model.setRowCount(0);
+//                
+//                System.out.println("Test "+ map.get("Computer Science"));
+//                List<CourseOffer> co = getCourseOfferedByDepartment(map.get("Computer Science"));
+//                for(int i=0;i<co.size();i++)
+//                //for(CourseOffer c: co)
+//                {
+//                    Object[] row= new Object[1];
+//                    row[0]=co.get(i).getCourse().getName().toString();
+//                    model.addRow(row);
+//                    
+//                }
+//            }
+//            
+//        
+    }//GEN-LAST:event_CrDptComboBoxOldActionPerformed
+
+    private void jToggleButton1OldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1OldActionPerformed
+        // TODO add your handling code here:
+        
+        addStudent(map.get("Information Systems"), "TTTT", "SS", "ss", getCourseOfferedByDepartment(map.get("Information Systems")).get(0));
+        
+    }//GEN-LAST:event_jToggleButton1OldActionPerformed
+
+    private void jToggleButton2OldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2OldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton2OldActionPerformed
+
+    private void StdDptComboBoxOldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StdDptComboBoxOldActionPerformed
+        // TODO add your handling code here:
+
+        String selval = StdDptComboBoxOld.getSelectedItem().toString();
+        CrLstPnlOld.setVisible(false);
+
+
+        if(selval.equals("Information Systems"))
+        {
+            StdLstPnlOld.setVisible(true);
+            DefaultTableModel model = (DefaultTableModel) StdNameTableOld.getModel();
+            model.setRowCount(0);
+
+            //System.out.println("Test "+ map.get("Information Systems"));
+            //List<CourseOffer> co = getCourseOfferedByDepartment(map.get("Information Systems"));
+            List<Person> p = getStudentsByDepartmentName(map.get("Information Systems"));
+            for(int i=0;i<p.size();i++)
+            //for(CourseOffer c: co)
+            {
+                Object[] row= new Object[1];
+                //row[0]=co.get(i).getCourse().getName().toString();
+                row[0]=p.get(i).getPersonId();
+                model.addRow(row);
+            }
+        }
+        if(selval.equals("Computer Science"))
+        {
+            StdLstPnlOld.setVisible(true);
+            DefaultTableModel model = (DefaultTableModel) StdNameTableOld.getModel();
+            model.setRowCount(0);
+
+            System.out.println("Test "+ map.get("Computer Science"));
+            //List<CourseOffer> co = getCourseOfferedByDepartment(map.get("Computer Science"));
+            List<Person> p = getStudentsByDepartmentName(map.get("Computer Science"));
+            for(int i=0;i<p.size();i++)
+            //for(CourseOffer c: co)
+            {
+                Object[] row= new Object[1];
+                row[0]=p.get(i).getPersonId();
+                model.addRow(row);
+
+            }
+        }
+
+    }//GEN-LAST:event_StdDptComboBoxOldActionPerformed
+
+    private void CrDptComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrDptComboBoxActionPerformed
+        // TODO add your handling code here:
+
+        CrLstPnl.setVisible(false);
+        StdLstPnl.setVisible(false);
+        String selval = CrDptComboBox.getSelectedItem().toString();
+            //jTextField1.setText(selval);
+
             if(selval.equals("Information Systems"))
             {
-                CrPnl.setVisible(true);
+                CrLstPnl.setVisible(true);
                 DefaultTableModel model = (DefaultTableModel) CrNameTable.getModel();
                 model.setRowCount(0);
                 
+                System.out.println("Test "+ map.get("Information Systems"));
+                List<CourseOffer> co = getCourseOfferedByDepartment(map.get("Information Systems"));
                 
+                for(int i=0;i<co.size();i++)
+                
+                {
+                    Object[] row= new Object[1];
+                    row[0]=co.get(i).getCourse().getName();
+                    model.addRow(row);
+                    
+                }
             }
+             if(selval.equals("Computer Science"))
+            {
+                CrLstPnl.setVisible(true);
+                DefaultTableModel model = (DefaultTableModel) CrNameTable.getModel();
+                model.setRowCount(0);
+                
+                System.out.println("Test "+ map.get("Computer Science"));
+                List<CourseOffer> co = getCourseOfferedByDepartment(map.get("Computer Science"));
+                for(int i=0;i<co.size();i++)
+                //for(CourseOffer c: co)
+                {
+                    Object[] row= new Object[1];
+                    row[0]=co.get(i).getCourse().getName();
+                    model.addRow(row);
+                    
+                }
+            }
+            
         
-    }//GEN-LAST:event_DeptComboBoxActionPerformed
+    }//GEN-LAST:event_CrDptComboBoxActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void StdDptComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StdDptComboBoxActionPerformed
+        // TODO add your handling code here:
+        
+        StdLstPnl.setVisible(false);
+        
+        String selval = StdDptComboBox.getSelectedItem().toString();
+        //jTextField1.setText(selval);
+
+        if(selval.equals("Information Systems"))
+        {
+            StdLstPnl.setVisible(true);
+            DefaultTableModel model = (DefaultTableModel) StdNameTable.getModel();
+            model.setRowCount(0);
+
+            //System.out.println("Test "+ map.get("Information Systems"));
+            //List<CourseOffer> co = getCourseOfferedByDepartment(map.get("Information Systems"));
+            List<Person> p = getStudentsByDepartmentName(map.get("Information Systems"));
+            for(int i=0;i<p.size();i++)
+            //for(CourseOffer c: co)
+            {
+                Object[] row= new Object[1];
+                //row[0]=co.get(i).getCourse().getName().toString();
+                row[0]=p.get(i).getPersonId();
+                model.addRow(row);
+            }
+            
+        }
+        
+        if(selval.equals("Computer Science"))
+        {
+            StdLstPnl.setVisible(true);
+            DefaultTableModel model = (DefaultTableModel) StdNameTable.getModel();
+            model.setRowCount(0);
+
+            System.out.println("Test "+ map.get("Computer Science"));
+            //List<CourseOffer> co = getCourseOfferedByDepartment(map.get("Computer Science"));
+            List<Person> p = getStudentsByDepartmentName(map.get("Computer Science"));
+            for(int i=0;i<p.size();i++)
+            //for(CourseOffer c: co)
+            {
+                Object[] row= new Object[1];
+                row[0]=p.get(i).getPersonId();
+                model.addRow(row);
+
+            }
+        }
+
+    }//GEN-LAST:event_StdDptComboBoxActionPerformed
+
+    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -446,19 +1036,45 @@ DepartmentDirectory department = testData.getDd();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> CrDptComboBox;
+    private javax.swing.JComboBox<String> CrDptComboBoxOld;
+    private javax.swing.JLabel CrLstDeptLbl;
+    private javax.swing.JPanel CrLstPnl;
+    private javax.swing.JPanel CrLstPnlOld;
     private javax.swing.JScrollPane CrNameScrPnl;
+    private javax.swing.JScrollPane CrNameScrPnlOld;
     private javax.swing.JTable CrNameTable;
-    private javax.swing.JPanel CrPnl;
-    private javax.swing.JComboBox<String> DeptComboBox;
-    private javax.swing.JPanel SelDeptPnl;
-    private javax.swing.JLabel StdDeptLbl;
+    private javax.swing.JTable CrNameTableOld;
+    private javax.swing.JTabbedPane InUnvTabPane;
+    private javax.swing.JPanel ShStdPnl;
+    private javax.swing.JPanel ShStdPnlOld;
+    private javax.swing.JPanel ShwCrPnl;
+    private javax.swing.JPanel ShwCrPnlOld;
+    private javax.swing.JLabel StdDeptLbl1Old;
+    private javax.swing.JLabel StdDeptLblOld;
+    private javax.swing.JComboBox<String> StdDptComboBox;
+    private javax.swing.JComboBox<String> StdDptComboBoxOld;
+    private javax.swing.JLabel StdLstDeptLbl;
+    private javax.swing.JPanel StdLstPnl;
+    private javax.swing.JPanel StdLstPnlOld;
+    private javax.swing.JScrollPane StdNameScrPnl;
+    private javax.swing.JScrollPane StdNameScrPnlOld;
+    private javax.swing.JTable StdNameTable;
+    private javax.swing.JTable StdNameTableOld;
     private javax.swing.JPanel UnvLgnPnl;
     private javax.swing.JLabel UnvLoginlbl;
+    private javax.swing.JPanel UnvTbPane;
     private javax.swing.JButton Unvlgnbtn;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel jPasswordlbl;
     private javax.swing.JPasswordField jPwdTxtfld;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton1Old;
+    private javax.swing.JToggleButton jToggleButton2Old;
+    private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JLabel jUnamelbl;
     private javax.swing.JTextField jUserTxtfld;
     // End of variables declaration//GEN-END:variables
