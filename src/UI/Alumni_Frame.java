@@ -175,30 +175,29 @@ public class Alumni_Frame extends javax.swing.JFrame {
         AlumDetail.setLayout(AlumDetailLayout);
         AlumDetailLayout.setHorizontalGroup(
             AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AlumDetailLayout.createSequentialGroup()
-                .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(AlumDetailLayout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(AlumupdBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                        .addComponent(Alumbackbtn)
-                        .addGap(55, 55, 55))
-                    .addGroup(AlumDetailLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AlumEmplbl)
-                            .addComponent(AlumPromlbl)
-                            .addComponent(AlumSallbl))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(AlumSalTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                            .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Alumpromtxt, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                                .addComponent(AlumEmptxt)
-                                .addComponent(AlumIdtxt)
-                                .addComponent(AlumNametxt)
-                                .addComponent(AlumgradyearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(75, 75, 75))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AlumDetailLayout.createSequentialGroup()
+                    .addGap(47, 47, 47)
+                    .addComponent(AlumupdBtn)
+                    .addGap(91, 91, 91)
+                    .addComponent(Alumbackbtn)
+                    .addContainerGap(130, Short.MAX_VALUE))
+                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AlumDetailLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(AlumEmplbl)
+                        .addComponent(AlumPromlbl)
+                        .addComponent(AlumSallbl))
+                    .addGap(121, 121, 121)
+                    .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(AlumSalTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                        .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Alumpromtxt, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                            .addComponent(AlumEmptxt)
+                            .addComponent(AlumIdtxt)
+                            .addComponent(AlumNametxt)
+                            .addComponent(AlumgradyearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(0, 75, Short.MAX_VALUE)))
             .addGroup(AlumDetailLayout.createSequentialGroup()
                 .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AlumDetailLayout.createSequentialGroup()
@@ -305,6 +304,8 @@ public class Alumni_Frame extends javax.swing.JFrame {
         HashMap<String, Alumni> m = al.getAlumniDir();
         System.out.println("Map "+ m.size());
         Alumni al1 = m.get(id);
+        al1.calculateAMG();
+        al1.careerSuccessMetric();
         AlumIdtxt.setText(al1.getStudentProfile().getPerson().getPersonId());
         AlumgradyearTxt.setText(String.valueOf(al1.getGradutationYear()));
         AlumSalTxt.setText(String.valueOf(al1.getSalaryRange()));
@@ -313,6 +314,8 @@ public class Alumni_Frame extends javax.swing.JFrame {
 //        al.setId(Alumniusertext.getText());
 //        Alumni_Details Alumdet = new Alumni_Details();
  //       Alumdet.setVisible(true);
+        System.out.println("CSM "+ al1.getCareerSuccess());
+        al1.rateCourses();
         
     }//GEN-LAST:event_AlumniloginbtnActionPerformed
 
@@ -344,6 +347,7 @@ public class Alumni_Frame extends javax.swing.JFrame {
         Employers emp = al1.getEmp();
         emp.setEmployerName(AlumEmptxt.getText());
         al1.setPromotions(Integer.parseInt(Alumpromtxt.getText()));
+     
         
         
     }//GEN-LAST:event_AlumupdBtnActionPerformed

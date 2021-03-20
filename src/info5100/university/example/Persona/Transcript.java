@@ -19,6 +19,15 @@ public class Transcript {
     HashMap<String, CourseLoad> courseloadlist;
     
     CourseLoad currentcourseload;
+    Double gpa;
+
+    public Double getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(Double gpa) {
+        this.gpa = gpa;
+    }
     
     public Transcript(){
         
@@ -50,11 +59,12 @@ public class Transcript {
         return courseloadlist.get(semester);
         
     }
-	
+	//CourseLoad courseload;
 	public double calculateGpa(){
             double gpa=0.0;
             for(CourseLoad value: courseloadlist.values()){
                 System.out.println("The semester is "+ value.getSemester());
+                
                 gpa += value.iterateSeatAssignments();
 //                if(grade.equals("M")){
 //                    gpa=10;
@@ -62,6 +72,9 @@ public class Transcript {
 //                    gpa=15;
 //                }
             }
+            //System.out.println("Transcript Class: "+gpa);
+            
+            setGpa(gpa);
             return gpa;
         }
 }

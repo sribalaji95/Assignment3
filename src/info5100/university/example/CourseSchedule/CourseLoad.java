@@ -5,6 +5,8 @@
  */
 package info5100.university.example.CourseSchedule;
 
+import info5100.university.example.Persona.StudentProfile;
+import info5100.university.example.Persona.Transcript;
 import java.util.ArrayList;
 
 /**
@@ -81,10 +83,13 @@ public class CourseLoad {
                 
             }
             System.out.println("The Grade Received is: "+grade);
+           // System.out.println("The Seat Assignment Size: "+seatassignments.size());
         }
+        //check();
         return gpa/seatassignments.size();
     }
     
+    //To display the Course Name and Course Grade in a table in UI
     public ArrayList getCourseInformation(){
         ArrayList courseGradeList = new ArrayList();
         for(SeatAssignment value1:seatassignments){
@@ -97,4 +102,18 @@ public class CourseLoad {
         
     }
     
+    //Transcript transcript;
+    public void checkAlumniRequiements(StudentProfile sp){
+       //sp.getTranscript().getCourseLoadBySemester("Fall2020").getCourseInformation();
+       int creditsTotal = 0;
+       for(SeatAssignment value1:seatassignments){
+         creditsTotal += value1.getSeat().getCourseoffer().getCourse().getCoursePrice();
+       }
+        System.out.println("The Number of Credits is :"+creditsTotal);
+        if(creditsTotal >= 4){
+            //Call Function which Sribalaji which would add for Alumni
+            
+        }
+        
+    }
 }

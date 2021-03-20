@@ -72,13 +72,19 @@ public class StudentProfile {
         
         return transcript.newCourseLoad(s);
     }
-	
+	//CourseLoad courseload;
 	public double studentPerformanceMetric(){
         
         double gpa = transcript.calculateGpa();
         
         double calcGPGA = (gpa * 2 ) + 2;
-        System.out.println("Inside SPM:"+calcGPGA);
+        System.out.println("Inside SPM: "+calcGPGA);
+        //courseload.check();
         return calcGPGA;
-    }
+    }   
+        //call this function when Professor updates the grade
+//        public void checkStudentIsAlumni(){
+//            
+//        }
+
 }
