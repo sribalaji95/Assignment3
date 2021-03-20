@@ -122,7 +122,7 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
        getDepartmentList();
         
-        }
+     }
     
     public void getDepartmentList(){
          DepartmentDirectory department = testData.getDd();
@@ -143,7 +143,7 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
 //            }
             
            
-          // getStudentsByDepartmentName(d); 
+           getCourseOfferedByDepartment(d); 
     }
     
         
@@ -206,6 +206,19 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
             return p;
     }
     
+    public List getCourseOfferedByDepartment(Department d){
+        return new Helper().getCourseOfferList(d, "Fall2020");
+    }
+    
+    public void addStudent(Department d, String sname, String sid, String sem, CourseOffer co){
+        
+        new Helper().addStudent(d, sname, sid, sem, co);
+    }
+    
+    public void addProf(Department d, String profName, String pid, String sem, CourseOffer co){
+        
+        new Helper().addProfessor(d, profName, pid, sem, co);
+    }
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
