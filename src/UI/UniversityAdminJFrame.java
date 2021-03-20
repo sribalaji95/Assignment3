@@ -13,6 +13,7 @@ import info5100.university.example.Department.Department;
 import info5100.university.example.Department.DepartmentDirectory;
 import info5100.university.example.Info5001UniversityExample;
 import info5100.university.example.Persona.Person;
+import info5100.university.example.Persona.StudentProfile;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -190,9 +191,9 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    public List getStudentsByDepartmentName(Department dpt){
+    public List<StudentProfile> getStudentsByDepartmentName(Department dpt){
             Helper helper = new Helper();
-            List<Person> p = helper.getStudent(dpt);
+            List<StudentProfile> p = helper.getStudent(dpt);
 //            for(Course c : course)
 //            {
 //                System.out.println(c.getName());
@@ -202,7 +203,7 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
 //            {
 //                System.out.println(p.getPersonId());
 //            }
-            System.out.println("PP "+ p.get(0).getPersonId());
+          //  System.out.println("PP "+ p.get(0).getPersonId());
             return p;
     }
     
