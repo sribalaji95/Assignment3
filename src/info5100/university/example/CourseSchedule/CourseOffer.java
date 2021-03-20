@@ -19,7 +19,8 @@ public class CourseOffer {
     Course course;
     ArrayList<Seat> seatlist;
     FacultyAssignment facultyassignment;
-
+   
+    
     public CourseOffer(Course c) {
         course = c;
         seatlist = new ArrayList();

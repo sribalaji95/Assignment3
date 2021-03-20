@@ -5,17 +5,23 @@
  */
 package info5100.university.example.Persona.Faculty.Alumni.CompanyEmployers;
 
+import info5100.university.example.CourseCatalog.Course;
+import info5100.university.example.CourseCatalog.CourseCatalog;
 import info5100.university.example.CourseSchedule.CourseOffer;
+import info5100.university.example.Persona.Faculty.Alumni.Alumni;
+import info5100.university.example.Persona.Person;
 import java.util.ArrayList;
 
 /**
  *
  * @author psrib
  */
-public class Employers {
+public class Employers  {
     
     String employerName;
-    ArrayList<CourseOffer> relevantcourseoffers;
+    Person person;
+   // ArrayList<CourseOffer> relevantcourseoffers;
+    ArrayList<Course> relevantcourses;
 
     public String getEmployerName() {
         return employerName;
@@ -25,6 +31,14 @@ public class Employers {
         this.employerName = employerName;
     }
     
+    
+    public void test(){
+        
+         EmployeeDirectory ed = new info5100.university.example.Info5001UniversityExample().getED();
+         System.out.println("EDD "+ ed.getEmployers());
+         
+        
+    }
     
     
     

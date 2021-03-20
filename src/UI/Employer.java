@@ -7,21 +7,24 @@ package UI;
 
 import info5100.university.example.Info5001UniversityExample;
 import info5100.university.example.Persona.Faculty.Alumni.Alumni;
-import info5100.university.example.Persona.StudentDirectory;
-import info5100.university.example.Persona.StudentProfile;
-import java.util.HashMap;
+import info5100.university.example.Persona.Faculty.Alumni.AlumniDirectory;
+import info5100.university.example.Persona.Faculty.Alumni.CompanyEmployers.Employers;
+import java.util.ArrayList;
 
 /**
  *
  * @author psrib
  */
-public class NewJFrame extends javax.swing.JFrame {
+public class Employer extends javax.swing.JFrame {
 
     /**
-     * Creates new form NewJFrame
+     * Creates new form Employer
      */
-    public NewJFrame() {
+    Info5001UniversityExample info;
+    public Employer() {
         initComponents();
+        info = new info5100.university.example.Info5001UniversityExample();
+        info.test2();
     }
 
     /**
@@ -33,15 +36,12 @@ public class NewJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setText("jLabel1");
-
-        jLabel2.setText("jLabel2");
 
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -50,6 +50,12 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Employer");
+
+        jLabel2.setText("jLabel2");
+
+        jLabel3.setText("jLabel3");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -57,25 +63,29 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
+                        .addGap(328, 328, 328)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)))
+                            .addComponent(jButton1)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(337, 337, 337)
-                        .addComponent(jButton1)))
-                .addContainerGap(417, Short.MAX_VALUE))
+                        .addGap(231, 231, 231)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))))
+                .addContainerGap(372, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(115, 115, 115)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(71, 71, 71)
                 .addComponent(jLabel1)
-                .addGap(57, 57, 57)
+                .addGap(77, 77, 77)
                 .addComponent(jLabel2)
-                .addGap(90, 90, 90)
+                .addGap(64, 64, 64)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap(321, Short.MAX_VALUE))
+                .addGap(250, 250, 250))
         );
 
         pack();
@@ -84,18 +94,19 @@ public class NewJFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-//         if(username.getText().equals("alumni") && pass.getText().equals("alumni")){
+        System.out.println("JBB ");
+        
+        ArrayList<Employers> ale = info.getED().getEmployers();
+       
+//        for(Employers em: ale){
 //            
-//            
+//             em.test();
 //        }
-       new Info5001UniversityExample().test2();
-//       StudentDirectory sd = new StudentDirectory();
-//       StudentProfile sp = sd.findStudent("0112303");
-       Alumni al = new Alumni();
-       HashMap<String, Alumni> m = al.getAlumniDir();
-       System.out.println("Map "+ m.size());
-       Alumni al1 = m.get("0112303");
-       System.out.println(al1.getGradutationYear());
+        
+       // System.out.println(new info5100.university.example.Info5001UniversityExample().getAd().getAd().size());
+      //  System.out.println("IDS "+ emp.g);
+       // emp.getAlumniDir().size();
+                
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -115,20 +126,20 @@ public class NewJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Employer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Employer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Employer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Employer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrame().setVisible(true);
+                new Employer().setVisible(true);
             }
         });
     }
@@ -137,5 +148,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
