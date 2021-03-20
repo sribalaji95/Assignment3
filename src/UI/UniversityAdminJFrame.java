@@ -13,9 +13,11 @@ import info5100.university.example.Department.Department;
 import info5100.university.example.Department.DepartmentDirectory;
 import info5100.university.example.Info5001UniversityExample;
 import info5100.university.example.Persona.Person;
+import info5100.university.example.Persona.StudentProfile;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -33,6 +35,9 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
             TestData testData = TestData.getInstance();
             DepartmentDirectory department = testData.getDd();
             ArrayList<Department> departmentlist = department.getDd();
+            HashMap<String, CourseOffer> coursemap = new HashMap();
+            String depName;
+            String depNameProf;
 
     public UniversityAdminJFrame() {
         initComponents();
@@ -89,8 +94,28 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
         StdLstPnl = new javax.swing.JPanel();
         StdNameScrPnl = new javax.swing.JScrollPane();
         StdNameTable = new javax.swing.JTable();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
+        Addstupanel = new javax.swing.JPanel();
+        AddstudeptLbl = new javax.swing.JLabel();
+        AddstucouLbl = new javax.swing.JLabel();
+        AddstuNameLbl = new javax.swing.JLabel();
+        AddStuIdLbl = new javax.swing.JLabel();
+        AddStuDeptcb = new javax.swing.JComboBox<>();
+        Addstucoucom = new javax.swing.JComboBox<>();
+        AddstunameTxt = new javax.swing.JTextField();
+        AddstuIdTxt = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        AddStudent = new javax.swing.JButton();
+        AddProfPanel = new javax.swing.JPanel();
+        AddstudeptLbl1 = new javax.swing.JLabel();
+        AddstucouLbl1 = new javax.swing.JLabel();
+        AddstuNameLbl1 = new javax.swing.JLabel();
+        AddStuIdLbl1 = new javax.swing.JLabel();
+        AddProfDeptcb1 = new javax.swing.JComboBox<>();
+        AddProfcoucom = new javax.swing.JComboBox<>();
+        AddProfnameTxt = new javax.swing.JTextField();
+        AddProfIdTxt = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        AddProf = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
 
@@ -458,17 +483,17 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
 
         StdNameTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Student Name"
+                "Student Name", "Stduent GPA"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false
+                false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -527,31 +552,212 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
 
         InUnvTabPane.addTab("Student List", ShStdPnl);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 504, Short.MAX_VALUE)
+        AddstudeptLbl.setText("Department:");
+
+        AddstucouLbl.setText("Course:");
+
+        AddstuNameLbl.setText("Name:");
+
+        AddStuIdLbl.setText("Id:");
+
+        AddStuDeptcb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Department" }));
+        AddStuDeptcb.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                AddStuDeptcbMousePressed(evt);
+            }
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AddStuDeptcbMouseClicked(evt);
+            }
+        });
+        AddStuDeptcb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddStuDeptcbActionPerformed(evt);
+            }
+        });
+
+        Addstucoucom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Course" }));
+        Addstucoucom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddstucoucomActionPerformed(evt);
+            }
+        });
+
+        AddstunameTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddstunameTxtActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Add Student");
+
+        AddStudent.setText("Add");
+        AddStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddStudentActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout AddstupanelLayout = new javax.swing.GroupLayout(Addstupanel);
+        Addstupanel.setLayout(AddstupanelLayout);
+        AddstupanelLayout.setHorizontalGroup(
+            AddstupanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddstupanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AddstupanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AddstuNameLbl)
+                    .addComponent(AddStuIdLbl)
+                    .addComponent(AddstudeptLbl)
+                    .addComponent(AddstucouLbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
+                .addGroup(AddstupanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddstupanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Addstucoucom, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(AddStuDeptcb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(AddstuIdTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                    .addComponent(AddstunameTxt, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(83, 83, 83))
+            .addGroup(AddstupanelLayout.createSequentialGroup()
+                .addGap(128, 128, 128)
+                .addGroup(AddstupanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddStudent))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 303, Short.MAX_VALUE)
+        AddstupanelLayout.setVerticalGroup(
+            AddstupanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddstupanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel5)
+                .addGap(36, 36, 36)
+                .addGroup(AddstupanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(AddstuNameLbl)
+                    .addGroup(AddstupanelLayout.createSequentialGroup()
+                        .addComponent(AddstunameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(AddstupanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(AddStuIdLbl)
+                            .addComponent(AddstuIdTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(29, 29, 29)
+                .addGroup(AddstupanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddstudeptLbl)
+                    .addComponent(AddStuDeptcb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(AddstupanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddstucouLbl)
+                    .addComponent(Addstucoucom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(AddStudent)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
-        InUnvTabPane.addTab("tab3", jPanel3);
+        InUnvTabPane.addTab("Add Student", Addstupanel);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 504, Short.MAX_VALUE)
+        AddstudeptLbl1.setText("Department:");
+
+        AddstucouLbl1.setText("Course:");
+
+        AddstuNameLbl1.setText("Name:");
+
+        AddStuIdLbl1.setText("Id:");
+
+        AddProfDeptcb1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Department" }));
+        AddProfDeptcb1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AddProfDeptcb1MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                AddProfDeptcb1MousePressed(evt);
+            }
+        });
+        AddProfDeptcb1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddProfDeptcb1ActionPerformed(evt);
+            }
+        });
+
+        AddProfcoucom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Course" }));
+        AddProfcoucom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddProfcoucomActionPerformed(evt);
+            }
+        });
+
+        AddProfnameTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddProfnameTxtActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Add Professor");
+
+        AddProf.setText("Add");
+        AddProf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddProfActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout AddProfPanelLayout = new javax.swing.GroupLayout(AddProfPanel);
+        AddProfPanel.setLayout(AddProfPanelLayout);
+        AddProfPanelLayout.setHorizontalGroup(
+            AddProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddProfPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AddProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AddstuNameLbl1)
+                    .addComponent(AddStuIdLbl1)
+                    .addComponent(AddstudeptLbl1)
+                    .addComponent(AddstucouLbl1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
+                .addGroup(AddProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(AddProfcoucom, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(AddProfDeptcb1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(AddProfIdTxt, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(AddProfnameTxt, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(83, 83, 83))
+            .addGroup(AddProfPanelLayout.createSequentialGroup()
+                .addGroup(AddProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AddProfPanelLayout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(AddProf))
+                    .addGroup(AddProfPanelLayout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 303, Short.MAX_VALUE)
+        AddProfPanelLayout.setVerticalGroup(
+            AddProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddProfPanelLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel6)
+                .addGap(31, 31, 31)
+                .addGroup(AddProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(AddstuNameLbl1)
+                    .addGroup(AddProfPanelLayout.createSequentialGroup()
+                        .addComponent(AddProfnameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(AddProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(AddStuIdLbl1)
+                            .addComponent(AddProfIdTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(29, 29, 29)
+                .addGroup(AddProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddstudeptLbl1)
+                    .addComponent(AddProfDeptcb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(AddProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddstucouLbl1)
+                    .addComponent(AddProfcoucom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(AddProf)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
-        InUnvTabPane.addTab("tab4", jPanel4);
+        InUnvTabPane.addTab("Add Professor", AddProfPanel);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -587,7 +793,7 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
         );
         UnvTbPaneLayout.setVerticalGroup(
             UnvTbPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(InUnvTabPane, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+            .addComponent(InUnvTabPane)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -713,9 +919,9 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
     }                                        
 
 
-    public List getStudentsByDepartmentName(Department dpt){
+    public List<StudentProfile> getStudentsByDepartmentName(Department dpt){
             Helper helper = new Helper();
-            List<Person> p = helper.getStudent(dpt);
+            List<StudentProfile> p = helper.getStudent(dpt);
 //            for(Course c : course)
 //            {
 //                System.out.println(c.getName());
@@ -725,7 +931,7 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
 //            {
 //                System.out.println(p.getPersonId());
 //            }
-            System.out.println("PP "+ p.get(0).getPersonId());
+          //  System.out.println("PP "+ p.get(0).getPersonId());
             return p;
     }
     
@@ -781,6 +987,8 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
                    CrDptComboBox.addItem(name);
             for (String name : map.keySet()) 
                 StdDptComboBox.addItem(name);
+            for (String name : map.keySet())  
+                   AddStuDeptcb.addItem(name);
 
     }//GEN-LAST:event_UnvlgnbtnActionPerformed
 
@@ -865,13 +1073,13 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
 
             //System.out.println("Test "+ map.get("Information Systems"));
             //List<CourseOffer> co = getCourseOfferedByDepartment(map.get("Information Systems"));
-            List<Person> p = getStudentsByDepartmentName(map.get("Information Systems"));
+            List<StudentProfile> p = getStudentsByDepartmentName(map.get("Information Systems"));
             for(int i=0;i<p.size();i++)
             //for(CourseOffer c: co)
             {
                 Object[] row= new Object[1];
                 //row[0]=co.get(i).getCourse().getName().toString();
-                row[0]=p.get(i).getPersonId();
+                //row[0]=p.get(i).getPersonId();
                 model.addRow(row);
             }
         }
@@ -883,12 +1091,13 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
 
             System.out.println("Test "+ map.get("Computer Science"));
             //List<CourseOffer> co = getCourseOfferedByDepartment(map.get("Computer Science"));
-            List<Person> p = getStudentsByDepartmentName(map.get("Computer Science"));
+            List<StudentProfile> p = getStudentsByDepartmentName(map.get("Computer Science"));
             for(int i=0;i<p.size();i++)
             //for(CourseOffer c: co)
             {
-                Object[] row= new Object[1];
-                row[0]=p.get(i).getPersonId();
+                Object[] row= new Object[2];
+                row[0]=p.get(i).getPerson().getPersonId();
+                row[1]=p.get(i).getGpa();
                 model.addRow(row);
 
             }
@@ -963,13 +1172,14 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
 
             //System.out.println("Test "+ map.get("Information Systems"));
             //List<CourseOffer> co = getCourseOfferedByDepartment(map.get("Information Systems"));
-            List<Person> p = getStudentsByDepartmentName(map.get("Information Systems"));
+            List<StudentProfile> p = getStudentsByDepartmentName(map.get("Information Systems"));
             for(int i=0;i<p.size();i++)
             //for(CourseOffer c: co)
             {
-                Object[] row= new Object[1];
+                Object[] row= new Object[2];
                 //row[0]=co.get(i).getCourse().getName().toString();
-                row[0]=p.get(i).getPersonId();
+                row[0]=p.get(i).getPerson().getPersonId();
+                row[1]=p.get(i).getGpa();
                 model.addRow(row);
             }
             
@@ -983,12 +1193,14 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
 
             System.out.println("Test "+ map.get("Computer Science"));
             //List<CourseOffer> co = getCourseOfferedByDepartment(map.get("Computer Science"));
-            List<Person> p = getStudentsByDepartmentName(map.get("Computer Science"));
+            List<StudentProfile> p = getStudentsByDepartmentName(map.get("Computer Science"));
             for(int i=0;i<p.size();i++)
             //for(CourseOffer c: co)
             {
-                Object[] row= new Object[1];
-                row[0]=p.get(i).getPersonId();
+                Object[] row= new Object[2];
+                
+                row[0]=p.get(i).getPerson().getPersonId();
+                row[1]=p.get(i).getGpa();
                 model.addRow(row);
 
             }
@@ -999,6 +1211,96 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton4ActionPerformed
+
+    private void AddStuDeptcbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddStuDeptcbMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_AddStuDeptcbMouseClicked
+
+    private void AddStuDeptcbMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddStuDeptcbMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddStuDeptcbMousePressed
+
+    private void AddStuDeptcbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddStuDeptcbActionPerformed
+        // TODO add your handling code here:
+        //getDepartmentList();
+        depName = AddStuDeptcb.getSelectedItem().toString();
+        System.out.println(depName);
+        AddstucoucomActionPerformed(evt);
+        //                    List<CourseOffer> depname = getCourseOfferedByDepartment(map.get(depName));
+        //        for(CourseOffer co : depname){
+            //                        coursemap.put(co.getCourseNumber(), co);
+            //              }
+        //            for (String couname : coursemap.keySet())
+        //                   Addstucoucom.addItem(couname);
+
+    }//GEN-LAST:event_AddStuDeptcbActionPerformed
+
+    private void AddstucoucomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddstucoucomActionPerformed
+        // TODO add your handling code here:
+        //String courseName =
+        List<CourseOffer> depname = getCourseOfferedByDepartment(map.get(depName));
+        for(CourseOffer co : depname){
+            coursemap.put(co.getCourseNumber(), co);
+        }
+        for (String couname : coursemap.keySet())
+        Addstucoucom.addItem(couname);
+    }//GEN-LAST:event_AddstucoucomActionPerformed
+
+    private void AddstunameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddstunameTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddstunameTxtActionPerformed
+
+    private void AddStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddStudentActionPerformed
+        // TODO add your handling code here:
+        depName = AddStuDeptcb.getSelectedItem().toString();
+        String stuname=AddstunameTxt.getText();
+        String stid = AddstuIdTxt.getText();
+        String coursename = Addstucoucom.getSelectedItem().toString();
+        addStudent(map.get(depName), stuname, stid, "Fall2020 ", coursemap.get(coursename));
+        JOptionPane.showMessageDialog(this,"Student Added");
+        
+        
+
+    }//GEN-LAST:event_AddStudentActionPerformed
+
+    private void AddProfDeptcb1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddProfDeptcb1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddProfDeptcb1MouseClicked
+
+    private void AddProfDeptcb1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddProfDeptcb1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddProfDeptcb1MousePressed
+
+    private void AddProfDeptcb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddProfDeptcb1ActionPerformed
+        // TODO add your handling code here:
+        depNameProf = AddProfDeptcb1.getSelectedItem().toString();
+        System.out.println(depNameProf);
+        AddProfcoucomActionPerformed(evt);
+    }//GEN-LAST:event_AddProfDeptcb1ActionPerformed
+
+    private void AddProfcoucomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddProfcoucomActionPerformed
+        // TODO add your handling code here:
+        List<CourseOffer> depname = getCourseOfferedByDepartment(map.get(depNameProf));
+        for(CourseOffer co : depname){
+            coursemap.put(co.getCourseNumber(), co);
+        }
+        for (String couname : coursemap.keySet())
+        AddProfcoucom.addItem(couname);
+    }//GEN-LAST:event_AddProfcoucomActionPerformed
+
+    private void AddProfnameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddProfnameTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddProfnameTxtActionPerformed
+
+    private void AddProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddProfActionPerformed
+        // TODO add your handling code here:
+        String profname=AddProfnameTxt.getText();
+        String profid = AddProfIdTxt.getText();
+        String coursename = AddProfcoucom.getSelectedItem().toString();
+        addStudent(map.get(depNameProf), profname, profid, "Fall2020 ", coursemap.get(coursename));
+        System.out.println();
+    }//GEN-LAST:event_AddProfActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1036,6 +1338,26 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddProf;
+    private javax.swing.JComboBox<String> AddProfDeptcb1;
+    private javax.swing.JTextField AddProfIdTxt;
+    private javax.swing.JPanel AddProfPanel;
+    private javax.swing.JComboBox<String> AddProfcoucom;
+    private javax.swing.JTextField AddProfnameTxt;
+    private javax.swing.JComboBox<String> AddStuDeptcb;
+    private javax.swing.JLabel AddStuIdLbl;
+    private javax.swing.JLabel AddStuIdLbl1;
+    private javax.swing.JButton AddStudent;
+    private javax.swing.JTextField AddstuIdTxt;
+    private javax.swing.JLabel AddstuNameLbl;
+    private javax.swing.JLabel AddstuNameLbl1;
+    private javax.swing.JLabel AddstucouLbl;
+    private javax.swing.JLabel AddstucouLbl1;
+    private javax.swing.JComboBox<String> Addstucoucom;
+    private javax.swing.JLabel AddstudeptLbl;
+    private javax.swing.JLabel AddstudeptLbl1;
+    private javax.swing.JTextField AddstunameTxt;
+    private javax.swing.JPanel Addstupanel;
     private javax.swing.JComboBox<String> CrDptComboBox;
     private javax.swing.JComboBox<String> CrDptComboBoxOld;
     private javax.swing.JLabel CrLstDeptLbl;
@@ -1065,8 +1387,8 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel UnvLoginlbl;
     private javax.swing.JPanel UnvTbPane;
     private javax.swing.JButton Unvlgnbtn;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel jPasswordlbl;

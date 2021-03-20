@@ -10,6 +10,9 @@ import info5100.university.example.CourseSchedule.CourseLoad;
 import info5100.university.example.CourseSchedule.CourseOffer;
 import info5100.university.example.CourseSchedule.CourseSchedule;
 import info5100.university.example.Department.Department;
+import info5100.university.example.Persona.Faculty.Alumni.Alumni;
+import info5100.university.example.Persona.Faculty.Alumni.CompanyEmployers.EmployeeDirectory;
+import info5100.university.example.Persona.Faculty.Alumni.CompanyEmployers.Employers;
 import info5100.university.example.Persona.Faculty.FacultyDirectory;
 import info5100.university.example.Persona.Faculty.FacultyProfile;
 import info5100.university.example.Persona.Person;
@@ -17,6 +20,7 @@ import info5100.university.example.Persona.PersonDirectory;
 import info5100.university.example.Persona.StudentDirectory;
 import info5100.university.example.Persona.StudentProfile;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -45,13 +49,14 @@ public class Helper {
         return courseOffer;
     }
     
-    public List<Person> getStudent(Department d)
+    public List<StudentProfile> getStudent(Department d)
     {
         List<StudentProfile> profile = d.getStudentDirectory().getStudentlist();
-        List<Person> list = new ArrayList();
+        List<StudentProfile> list = new ArrayList();
         for(StudentProfile studentProfile : profile)
         {
-            list.add(studentProfile.getPerson());
+            if(!studentProfile.getIsAlumni())
+                list.add(studentProfile);
         }
         return list;
         
@@ -59,6 +64,42 @@ public class Helper {
         
     }
     
+        public List<StudentProfile> getAlumni(Department d)
+    {
+        List<Alumni> profile = d.getAlumniDirectory().getAd();
+        List<StudentProfile> list = new ArrayList();
+        for(Alumni studentProfile : profile)
+        {
+            list.add(studentProfile.getStudentProfile());
+        }
+        return list;
+        
+       
+        
+    }
+    
+     public void addStudentToAlumni(StudentProfile sp){
+        Employers em = new Employers();
+        em.setEmployerName("");
+//        emp.add(em);
+//        ed.setEmployers(emp);
+       
+        sp.setIsAlumni(true);
+        Alumni al = new Alumni();
+        al.setStudentProfile(sp);
+        al.setGradutationYear(2020);
+        al.setEmp(em);
+        al.setPosition("");
+        HashMap<String, Alumni> map = new HashMap<>();
+        map.put(sp.getPerson().getPersonId(), al);
+        al.setAlumniDir(map);
+        ArrayList<Alumni> alu = new ArrayList();
+        alu.add(al);
+       // ad.setAd(alu);
+       
+    //    System.out.println("AS "+ ad.getAd().size());
+     }
+        
     public void addStudent(Department d , String studentName , String studentId , String semester , CourseOffer co)
     {
         //CourseSchedule courseschedule = d.getCourseSchedule(semester);
@@ -76,15 +117,29 @@ public class Helper {
         
     }
     
-    public void addProfessor(Department d , String studentName , String studentId , String semester , CourseOffer co)
+    public void addProfessor(Department d , String professorName , String professorId , String semester , CourseOffer co)
     {
         //CourseSchedule courseschedule = d.getCourseSchedule(semester);
         PersonDirectory pd = d.getPersonDirectory();
         FacultyDirectory fd = d.getFacultyDirectory();
-        Person person1 = pd.newPerson("123456");
+        Person person1 = pd.newPerson(professorId);
         FacultyProfile fp = fd.newStudentProfile(person1);
         co.AssignAsTeacher(fp);
         
     }
+    
+    
+    public List<Alumni> getAlumniByDepartment(Department d){
+         
+        List<StudentProfile> profile = d.getStudentDirectory().getStudentlist();
+        List<Alumni> list = new ArrayList();
+        for(StudentProfile studentProfile : profile)
+        {
+            if(studentProfile.getIsAlumni())
+                list.add(studentProfile.getAl());
+        }
+        return list;
+     }
+
     
 }

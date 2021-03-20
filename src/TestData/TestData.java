@@ -194,7 +194,7 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         EmployeeDirectory ed = new EmployeeDirectory();
         ArrayList<Employers> emp = new ArrayList<>();
         Employers em = new Employers();
-        em.setEmployerName("Amazon");
+        em.setEmployerName("");
         emp.add(em);
         ed.setEmployers(emp);
        
@@ -294,42 +294,8 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
      }
      
      
-     public void addStudentToAlumni(){
-        Employers em = new Employers();
-        em.setEmployerName("Amazon");
-        emp.add(em);
-        ed.setEmployers(emp);
-       
-        StudentProfile sp = sd.findStudent("0112303");
-        StudentProfile sp1 = sd.findStudent("0112304");
-
-       // System.out.println("");
-        
-        
-        Alumni al = new Alumni();
-        al.setStudentProfile(sp);
-        al.setGradutationYear(2020);
-        al.setEmp(em);
-        al.setPosition("SDE");
-        HashMap<String, Alumni> map = new HashMap<>();
-        map.put("0112303", al);
-        al.setAlumniDir(map);
-        ArrayList<Alumni> alu = new ArrayList();
-        alu.add(al);
-        //ad.setAd(alu);
-        
-        Alumni al1 = new Alumni();
-        al1.setStudentProfile(sp1);
-        al1.setGradutationYear(2021);
-        al1.setEmp(em);
-        al1.setPosition("SDE-2");
-        HashMap<String, Alumni> map1 = al1.getAlumniDir();
-        map1.put("0112304", al1);
-        al1.setAlumniDir(map1);
-        alu.add(al);
-        ad.setAd(alu);
-        System.out.println("AS "+ ad.getAd().size());
-     }
-
+    
+     
+     
 
 }
