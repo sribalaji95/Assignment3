@@ -23,6 +23,10 @@ import java.util.HashMap;
 public class Department {
 
     String name;
+
+    public String getName() {
+        return name;
+    }
     CourseCatalog coursecatalog;
     PersonDirectory persondirectory;
     StudentDirectory studentdirectory;
