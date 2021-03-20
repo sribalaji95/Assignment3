@@ -57,6 +57,7 @@ public class StdJFrame extends javax.swing.JFrame {
         StdIDlbl = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         CGPAtxt = new javax.swing.JTextField();
+        btback = new javax.swing.JButton();
         StdLgnPnl = new javax.swing.JPanel();
         jStdLoginlbl = new javax.swing.JLabel();
         jUnamelbl = new javax.swing.JLabel();
@@ -110,6 +111,13 @@ public class StdJFrame extends javax.swing.JFrame {
             }
         });
 
+        btback.setText("Back");
+        btback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btbackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout StdDspPnlLayout = new javax.swing.GroupLayout(StdDspPnl);
         StdDspPnl.setLayout(StdDspPnlLayout);
         StdDspPnlLayout.setHorizontalGroup(
@@ -124,15 +132,19 @@ public class StdJFrame extends javax.swing.JFrame {
                                     .addComponent(jUnamelbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(StdIDlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(StdDtlScrlPn, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(StdDtlScrlPn, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btback)))
                         .addGroup(StdDspPnlLayout.createSequentialGroup()
                             .addGap(155, 155, 155)
                             .addComponent(jStdDtlLb, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(StdDspPnlLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(GpaLbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(StdDspPnlLayout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(GpaLbl))
+                            .addGroup(StdDspPnlLayout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2)))
                         .addGap(18, 18, 18)
                         .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(GpaTxtfld, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
@@ -153,12 +165,13 @@ public class StdJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GpaLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GpaTxtfld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(GpaTxtfld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btback))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(CGPAtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         jStdLoginlbl.setText("Student Login");
@@ -340,6 +353,11 @@ public class StdJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPwdTxtfldActionPerformed
 
+    private void btbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbackActionPerformed
+       StdLgnPnl.setVisible(true);
+       StdDspPnl.setVisible(false);
+    }//GEN-LAST:event_btbackActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -457,6 +475,7 @@ public class StdJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel StdIDlbl;
     private javax.swing.JPanel StdLgnPnl;
     private javax.swing.JButton Stdlgnbtn;
+    private javax.swing.JButton btback;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jPasswordlbl;
     private javax.swing.JPasswordField jPwdTxtfld;
