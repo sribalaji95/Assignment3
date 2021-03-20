@@ -11,18 +11,28 @@ package info5100.university.example.CourseSchedule;
  */
 public class SeatAssignment {
 
- 
-    Seat seat;
-    CourseLoad courseload;
-    String grade;
+  Seat seat;
 
-    public String getGrade() {
+    public void setSeat(Seat seat) {
+        this.seat = seat;
+    }
+
+    public Seat getSeat() {
+        return seat;
+    }
+    CourseLoad courseload;
+    String grade="B+";
+     public String getGrade() {
         return grade;
     }
-    public SeatAssignment(CourseLoad cl, Seat s){
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+    public SeatAssignment(CourseLoad cl, Seat s,String g){
         seat = s;
         courseload = cl;
-        grade = "U";
+        grade=g;
     }
         public SeatAssignment(){
 

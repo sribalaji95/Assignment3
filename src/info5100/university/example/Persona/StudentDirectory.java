@@ -15,6 +15,10 @@ import java.util.ArrayList;
 public class StudentDirectory {
 
     Department department;
+
+    public Department getDepartment() {
+        return department;
+    }
     ArrayList<StudentProfile> studentlist;
 
      public StudentDirectory() {

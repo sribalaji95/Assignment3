@@ -6,6 +6,7 @@
 package info5100.university.example.Persona;
 
 import info5100.university.example.CourseSchedule.CourseLoad;
+import info5100.university.example.CourseSchedule.SeatAssignment;
 import java.util.HashMap;
 
 /**
@@ -24,12 +25,19 @@ public class Transcript {
         courseloadlist = new HashMap<String, CourseLoad>();
         
     }
-    
+    public CourseLoad getAllcourses(){
+        return currentcourseload;
+    }
     public CourseLoad newCourseLoad(String sem){
         
         currentcourseload = new CourseLoad(sem);
         courseloadlist.put(sem, currentcourseload);
         return currentcourseload;
+    }
+    
+    public CourseLoad getCourseLoad(String sem)
+    {
+        return courseloadlist.get(sem);
     }
     
     public CourseLoad getCurrentCourseLoad(){
@@ -42,4 +50,18 @@ public class Transcript {
         return courseloadlist.get(semester);
         
     }
+	
+	public double calculateGpa(){
+            double gpa=0.0;
+            for(CourseLoad value: courseloadlist.values()){
+                System.out.println("The semester is "+ value.getSemester());
+                gpa += value.iterateSeatAssignments();
+//                if(grade.equals("M")){
+//                    gpa=10;
+//                }else{
+//                    gpa=15;
+//                }
+            }
+            return gpa;
+        }
 }

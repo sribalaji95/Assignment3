@@ -18,12 +18,25 @@ public class CourseOffer {
 
     Course course;
     ArrayList<Seat> seatlist;
+
     FacultyAssignment facultyassignment;
    
-    
+    public ArrayList<Seat> getSeatlist() {
+        return seatlist;
+    }
+  	
+    public Course getCourse() {
+        return course;
+    }
     public CourseOffer(Course c) {
         course = c;
         seatlist = new ArrayList();
+    }
+
+   
+
+    public void setCourse(Course course) {
+        this.course = course;
     }
     public void AssignAsTeacher(FacultyProfile fp) {
 

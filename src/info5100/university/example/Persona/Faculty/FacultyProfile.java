@@ -24,6 +24,10 @@ public class FacultyProfile {
         facultyassignments = new ArrayList();
     }
 
+    public Person getPerson() {
+        return person;
+    }
+
     public FacultyAssignment AssignAsTeacher(CourseOffer co){
         
         FacultyAssignment fa = new FacultyAssignment(this, co);

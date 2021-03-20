@@ -88,7 +88,9 @@ public class NewJFrame extends javax.swing.JFrame {
 //            
 //            
 //        }
+
        new Info5001UniversityExample().test2();
+
 //       StudentDirectory sd = new StudentDirectory();
 //       StudentProfile sp = sd.findStudent("0112303");
        Alumni al = new Alumni();

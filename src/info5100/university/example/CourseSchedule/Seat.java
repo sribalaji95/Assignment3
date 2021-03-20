@@ -14,7 +14,16 @@ public class Seat {
     Boolean occupied; 
     int number;
     SeatAssignment seatassignment;
+
+    public SeatAssignment getSeatassignment() {
+        return seatassignment;
+    }
     CourseOffer courseoffer;
+	
+	public CourseOffer getCourseoffer() {
+        return courseoffer;
+    }
+	
     public Seat (CourseOffer co, int n){
         courseoffer = co;
         number = n;
@@ -33,7 +42,8 @@ public class Seat {
     public SeatAssignment newSeatAssignment(){
         
         seatassignment = new SeatAssignment(); //links seatassignment to seat
-        occupied = true;   
+        seatassignment.setSeat(this);
+		occupied = true;   
         return seatassignment;
     }
     

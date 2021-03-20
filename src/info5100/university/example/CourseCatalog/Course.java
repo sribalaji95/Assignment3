@@ -12,6 +12,9 @@ package info5100.university.example.CourseCatalog;
 public class Course {
     String number;
     String name;
+	public String getName() {
+        return name;
+    }
     int credits;
     int price = 1500; //per credit hour
     public Course(String n, String numb, int ch){
