@@ -15,6 +15,7 @@ import info5100.university.example.Info5001UniversityExample;
 import info5100.university.example.Persona.Person;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -31,6 +32,7 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
     public UniversityAdminJFrame() {
         initComponents();
         testData.test2();
+        SelDeptPnl.setVisible(false);
     }
 
     /**
@@ -42,12 +44,21 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        SelDeptPnl = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        StdDeptLbl = new javax.swing.JLabel();
+        DeptComboBox = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        CrPnl = new javax.swing.JPanel();
+        CrNameScrPnl = new javax.swing.JScrollPane();
+        CrNameTable = new javax.swing.JTable();
+        UnvLgnPnl = new javax.swing.JPanel();
+        UnvLoginlbl = new javax.swing.JLabel();
+        jUnamelbl = new javax.swing.JLabel();
+        jUserTxtfld = new javax.swing.JTextField();
+        jPasswordlbl = new javax.swing.JLabel();
+        jPwdTxtfld = new javax.swing.JPasswordField();
+        Unvlgnbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,137 +69,202 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Add Student Details");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        StdDeptLbl.setText("Select Department");
+
+        DeptComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Option" }));
+        DeptComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                DeptComboBoxActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("jLabel1");
-
-        jLabel2.setText("jLabel2");
-
         jTextField1.setText("jTextField1");
 
-        jTextField2.setText("jTextField2");
+        CrNameTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Course Name"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        CrNameScrPnl.setViewportView(CrNameTable);
+
+        javax.swing.GroupLayout CrPnlLayout = new javax.swing.GroupLayout(CrPnl);
+        CrPnl.setLayout(CrPnlLayout);
+        CrPnlLayout.setHorizontalGroup(
+            CrPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 226, Short.MAX_VALUE)
+            .addGroup(CrPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(CrPnlLayout.createSequentialGroup()
+                    .addGap(5, 5, 5)
+                    .addComponent(CrNameScrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        CrPnlLayout.setVerticalGroup(
+            CrPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 122, Short.MAX_VALUE)
+            .addGroup(CrPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(CrPnlLayout.createSequentialGroup()
+                    .addGap(7, 7, 7)
+                    .addComponent(CrNameScrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(7, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout SelDeptPnlLayout = new javax.swing.GroupLayout(SelDeptPnl);
+        SelDeptPnl.setLayout(SelDeptPnlLayout);
+        SelDeptPnlLayout.setHorizontalGroup(
+            SelDeptPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SelDeptPnlLayout.createSequentialGroup()
+                .addGroup(SelDeptPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SelDeptPnlLayout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(StdDeptLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(DeptComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(SelDeptPnlLayout.createSequentialGroup()
+                        .addGap(322, 322, 322)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(238, Short.MAX_VALUE))
+            .addGroup(SelDeptPnlLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SelDeptPnlLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(CrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        SelDeptPnlLayout.setVerticalGroup(
+            SelDeptPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SelDeptPnlLayout.createSequentialGroup()
+                .addGroup(SelDeptPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SelDeptPnlLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(SelDeptPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(StdDeptLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DeptComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(SelDeptPnlLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(26, 26, 26)
+                .addComponent(CrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(154, 154, 154))
+        );
+
+        UnvLoginlbl.setText("University Login");
+
+        jUnamelbl.setText("Username:");
+
+        jUserTxtfld.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jUserTxtfldActionPerformed(evt);
+            }
+        });
+
+        jPasswordlbl.setText("Password:");
+
+        jPwdTxtfld.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPwdTxtfldActionPerformed(evt);
+            }
+        });
+
+        Unvlgnbtn.setText("Login");
+        Unvlgnbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UnvlgnbtnMouseClicked(evt);
+            }
+        });
+        Unvlgnbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UnvlgnbtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout UnvLgnPnlLayout = new javax.swing.GroupLayout(UnvLgnPnl);
+        UnvLgnPnl.setLayout(UnvLgnPnlLayout);
+        UnvLgnPnlLayout.setHorizontalGroup(
+            UnvLgnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(UnvLgnPnlLayout.createSequentialGroup()
+                .addGroup(UnvLgnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(UnvLgnPnlLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(UnvLgnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(UnvLgnPnlLayout.createSequentialGroup()
+                                .addComponent(jPasswordlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jPwdTxtfld, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(UnvLgnPnlLayout.createSequentialGroup()
+                                .addComponent(jUnamelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jUserTxtfld, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(UnvLgnPnlLayout.createSequentialGroup()
+                        .addGap(111, 111, 111)
+                        .addComponent(UnvLoginlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(UnvLgnPnlLayout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addComponent(Unvlgnbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(222, Short.MAX_VALUE))
+        );
+        UnvLgnPnlLayout.setVerticalGroup(
+            UnvLgnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(UnvLgnPnlLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(UnvLoginlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(UnvLgnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jUnamelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jUserTxtfld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(UnvLgnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jPasswordlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPwdTxtfld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(Unvlgnbtn)
+                .addContainerGap(130, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(67, 67, 67)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(372, 372, 372)
-                            .addComponent(jLabel1))))
-                .addGap(114, 114, 114)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(289, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(319, 319, 319))
+                .addComponent(UnvLgnPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 206, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(109, 109, 109)
+                    .addComponent(SelDeptPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(109, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(135, 135, 135)
-                .addComponent(jButton1)
-                .addGap(73, 73, 73)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(84, 84, 84)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(124, 124, 124)
-                .addComponent(jButton2)
-                .addContainerGap(189, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(UnvLgnPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(230, 230, 230))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(121, 121, 121)
+                    .addComponent(SelDeptPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(121, 121, 121)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-       getDepartmentList();
-        
-        }
-    
-    public void getDepartmentList(){
-         DepartmentDirectory department = testData.getDd();
-        ArrayList<Department> departmentlist = department.getDd();
-        for(Department d : departmentlist)
-        {
-            System.out.println(d.getName());
-//            Helper helper = new Helper();
-//            List<Course> course = helper.getCourseOffer(d, "Fall2020");
-//            for(Course c : course)
-//            {
-//                System.out.println(c.getName());
-//            }
-//            List<Person> list = helper.getStudent(d);
-//            for(Person p : list)
-//            {
-//                System.out.println(p.getPersonId());
-//            }
-            
-           
-          // getStudentsByDepartmentName(d); 
-    }
-    
-        
-        
-//        String d1 ="Information Systems";
-//        String course ="app eng";
-//       
-//        for(Department d : departmentlist)
-//        {
-//            //System.out.println(d.getName());
-//            Helper helper = new Helper();
-//            List<CourseOffer> course1 = helper.getCourseOfferList(d, "Fall2020");
-//            for(CourseOffer c : course1)
-//            {
-//                    if(c.getCourse().getName().equals(course))
-//                    {
-//                        helper.addStudent(d, "test", "1234", "Fall2020",c );
-//                        
-//                    }
-//            }
-//        }
-//        for(Department d : departmentlist)
-//        {
-//            System.out.println(d.getName());
-//            Helper helper = new Helper();
-//            List<Course> course2 = helper.getCourseOffer(d, "Fall2020");
-//            for(Course c : course2)
-//            {
-//                System.out.println(c.getName());
-//            }
-//            List<Person> list = helper.getStudent(d);
-//            for(Person p : list)
-//            {
-//                System.out.println(p.getPersonId());
-//            }
-//        }
-            
-            
-            
-        
-        
-      //  System.out.println("DD "+ uni.getDd().toString());
-//        ArrayList<DepartmentDirectory> d = uni.getDd();
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     public List getStudentsByDepartmentName(Department dpt){
             Helper helper = new Helper();
@@ -207,9 +283,132 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
     }
     
     
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jUserTxtfldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUserTxtfldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jUserTxtfldActionPerformed
+
+    private void jPwdTxtfldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPwdTxtfldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPwdTxtfldActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        getDepartmentList();
+
+        }
+DepartmentDirectory department = testData.getDd();
+        public void getDepartmentList(){
+            //DepartmentDirectory department = testData.getDd();
+            ArrayList<Department> departmentlist = department.getDd();
+            for(Department d : departmentlist)
+            {
+                System.out.println(d.getName());
+                //            Helper helper = new Helper();
+                //            List<Course> course = helper.getCourseOffer(d, "Fall2020");
+                //            for(Course c : course)
+                //            {
+                    //                System.out.println(c.getName());
+                    //            }
+                //            List<Person> list = helper.getStudent(d);
+                //            for(Person p : list)
+                //            {
+                    //                System.out.println(p.getPersonId());
+                    //            }
+
+                // getStudentsByDepartmentName(d);
+            }
+
+            //        String d1 ="Information Systems";
+            //        String course ="app eng";
+            //
+            //        for(Department d : departmentlist)
+            //        {
+                //            //System.out.println(d.getName());
+                //            Helper helper = new Helper();
+                //            List<CourseOffer> course1 = helper.getCourseOfferList(d, "Fall2020");
+                //            for(CourseOffer c : course1)
+                //            {
+                    //                    if(c.getCourse().getName().equals(course))
+                    //                    {
+                        //                        helper.addStudent(d, "test", "1234", "Fall2020",c );
+                        //
+                        //                    }
+                    //            }
+                //        }
+            //        for(Department d : departmentlist)
+            //        {
+                //            System.out.println(d.getName());
+                //            Helper helper = new Helper();
+                //            List<Course> course2 = helper.getCourseOffer(d, "Fall2020");
+                //            for(Course c : course2)
+                //            {
+                    //                System.out.println(c.getName());
+                    //            }
+                //            List<Person> list = helper.getStudent(d);
+                //            for(Person p : list)
+                //            {
+                    //                System.out.println(p.getPersonId());
+                    //            }
+                //        }
+
+            //  System.out.println("DD "+ uni.getDd().toString());
+            //        ArrayList<DepartmentDirectory> d = uni.getDd();
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void UnvlgnbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UnvlgnbtnActionPerformed
+        // TODO add your handling code here:
+        String uname = "";
+        String pwd = "admin";
+        String usertxt = jUserTxtfld.getText();
+
+        
+       
+            UnvLgnPnl.setVisible(false);
+            SelDeptPnl.setVisible(true);
+            CrPnl.setVisible(false);
+            ArrayList<Department> departmentlist = department.getDd();
+            
+            for(int i =0;i<departmentlist.size();i++)
+            {
+                DeptComboBox.addItem(departmentlist.get(i).getName());
+            }
+            
+
+        
+    }//GEN-LAST:event_UnvlgnbtnActionPerformed
+
+    private void UnvlgnbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UnvlgnbtnMouseClicked
+        // TODO add your handling code here:
+
+        //        StudentProfile student = sd.findStudent("1");
+        //        System.out.println(student.studentPerformanceMetric());
+    }//GEN-LAST:event_UnvlgnbtnMouseClicked
+
+//    Information Systems
+//    Computer Science
+    private void DeptComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeptComboBoxActionPerformed
+        // TODO add your handling code here:
+//        if(evt.getSource()== DeptComboBox)
+//        {
+//            jTextField1.setText(evt.getActionCommand().equals());
+//            //jTextField1.setText(evt.getActionCommand().equals("Information Systems"));
+//        }
+
+            String selval = DeptComboBox.getSelectedItem().toString();
+            jTextField1.setText(selval);
+//            CrNameScrPnl.setVisible(true);
+//            CrNameTable.setVisible(true);
+            if(selval.equals("Information Systems"))
+            {
+                CrPnl.setVisible(true);
+                DefaultTableModel model = (DefaultTableModel) CrNameTable.getModel();
+                model.setRowCount(0);
+                
+                
+            }
+        
+    }//GEN-LAST:event_DeptComboBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -247,11 +446,20 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane CrNameScrPnl;
+    private javax.swing.JTable CrNameTable;
+    private javax.swing.JPanel CrPnl;
+    private javax.swing.JComboBox<String> DeptComboBox;
+    private javax.swing.JPanel SelDeptPnl;
+    private javax.swing.JLabel StdDeptLbl;
+    private javax.swing.JPanel UnvLgnPnl;
+    private javax.swing.JLabel UnvLoginlbl;
+    private javax.swing.JButton Unvlgnbtn;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jPasswordlbl;
+    private javax.swing.JPasswordField jPwdTxtfld;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel jUnamelbl;
+    private javax.swing.JTextField jUserTxtfld;
     // End of variables declaration//GEN-END:variables
 }
