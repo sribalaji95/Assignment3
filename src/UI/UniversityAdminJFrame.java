@@ -26,9 +26,11 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
      * Creates new form UniversityAdminJFrame
      */
     Info5001UniversityExample uni = new Info5001UniversityExample();
+            TestData testData = TestData.getInstance();
+
     public UniversityAdminJFrame() {
         initComponents();
-        uni.test2();
+        testData.test2();
     }
 
     /**
@@ -118,70 +120,93 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        TestData testData = TestData.getInstance();
-        testData.test2();
-        DepartmentDirectory department = testData.getDd();
+       getDepartmentList();
+        
+        }
+    
+    public void getDepartmentList(){
+         DepartmentDirectory department = testData.getDd();
         ArrayList<Department> departmentlist = department.getDd();
         for(Department d : departmentlist)
         {
             System.out.println(d.getName());
-            Helper helper = new Helper();
-            List<Course> course = helper.getCourseOffer(d, "Fall2020");
-            for(Course c : course)
-            {
-                System.out.println(c.getName());
-            }
-            List<Person> list = helper.getStudent(d);
-            for(Person p : list)
-            {
-                System.out.println(p.getPersonId());
-            }
+//            Helper helper = new Helper();
+//            List<Course> course = helper.getCourseOffer(d, "Fall2020");
+//            for(Course c : course)
+//            {
+//                System.out.println(c.getName());
+//            }
+//            List<Person> list = helper.getStudent(d);
+//            for(Person p : list)
+//            {
+//                System.out.println(p.getPersonId());
+//            }
             
-            
-            
-        }
-         String d1 ="Information Systems";
-        String course ="app eng";
-       
-        for(Department d : departmentlist)
-        {
-            //System.out.println(d.getName());
-            Helper helper = new Helper();
-            List<CourseOffer> course1 = helper.getCourseOfferList(d, "Fall2020");
-            for(CourseOffer c : course1)
-            {
-                    if(c.getCourse().getName().equals(course))
-                    {
-                        helper.addStudent(d, "test", "1234", "Fall2020",c );
-                        
-                    }
-            }
-        }
-        for(Department d : departmentlist)
-        {
-            System.out.println(d.getName());
-            Helper helper = new Helper();
-            List<Course> course2 = helper.getCourseOffer(d, "Fall2020");
-            for(Course c : course2)
-            {
-                System.out.println(c.getName());
-            }
-            List<Person> list = helper.getStudent(d);
-            for(Person p : list)
-            {
-                System.out.println(p.getPersonId());
-            }
-        }
+           
+          // getStudentsByDepartmentName(d); 
+    }
+    
+        
+        
+//        String d1 ="Information Systems";
+//        String course ="app eng";
+//       
+//        for(Department d : departmentlist)
+//        {
+//            //System.out.println(d.getName());
+//            Helper helper = new Helper();
+//            List<CourseOffer> course1 = helper.getCourseOfferList(d, "Fall2020");
+//            for(CourseOffer c : course1)
+//            {
+//                    if(c.getCourse().getName().equals(course))
+//                    {
+//                        helper.addStudent(d, "test", "1234", "Fall2020",c );
+//                        
+//                    }
+//            }
+//        }
+//        for(Department d : departmentlist)
+//        {
+//            System.out.println(d.getName());
+//            Helper helper = new Helper();
+//            List<Course> course2 = helper.getCourseOffer(d, "Fall2020");
+//            for(Course c : course2)
+//            {
+//                System.out.println(c.getName());
+//            }
+//            List<Person> list = helper.getStudent(d);
+//            for(Person p : list)
+//            {
+//                System.out.println(p.getPersonId());
+//            }
+//        }
             
             
             
         
         
-        System.out.println("DD "+ uni.getDd().toString());
+      //  System.out.println("DD "+ uni.getDd().toString());
 //        ArrayList<DepartmentDirectory> d = uni.getDd();
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public List getStudentsByDepartmentName(Department dpt){
+            Helper helper = new Helper();
+            List<Person> p = helper.getStudent(dpt);
+//            for(Course c : course)
+//            {
+//                System.out.println(c.getName());
+//            }
+//            List<Person> list = helper.getStudent(d);
+//            for(Person p : list)
+//            {
+//                System.out.println(p.getPersonId());
+//            }
+            System.out.println("PP "+ p.get(0).getPersonId());
+            return p;
+    }
+    
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
