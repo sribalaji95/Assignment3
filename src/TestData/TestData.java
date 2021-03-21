@@ -50,7 +50,8 @@ public class TestData {
     AlumniDirectory ad  = new AlumniDirectory();
     EmployeeDirectory ed = new EmployeeDirectory();
     DepartmentDirectory dd = new DepartmentDirectory();
-    
+    StudentDirectory sd ;
+    HashMap<String, Alumni> map;
 
     public  DepartmentDirectory getDd() {
         return dd;
@@ -68,10 +69,17 @@ public class TestData {
         return sd;
     }
 
+    public HashMap<String, Alumni> getMap() {
+        return map;
+    }
+    
+    
+    
+
     /**
      * @param args the command line arguments
      */
-    static StudentDirectory sd ;
+    
     public static void main(String[] args) {
         // TODO code application logic here
          
@@ -384,6 +392,40 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         courseload23.newSeatAssignment(courseoffer11);
 
 
+        
+        
+        EmployeeDirectory ed = new EmployeeDirectory();
+        ArrayList<Employers> emp = new ArrayList<>();
+        Employers em = new Employers();
+        em.setEmployerName("Amazon");
+        emp.add(em);
+        ed.setEmployers(emp);
+        
+        StudentProfile sp = sd.findStudent("info1");
+        sp.setIsAlumni(true);
+        Alumni al = new Alumni();
+        al.setStudentProfile(sp);
+        al.setGradutationYear(2020);
+        al.setEmp(em);
+        al.setPosition("SDE");
+        al.setSalaryRange(25000);
+        al.setPromotions(2);
+        
+        HashMap<String, Alumni> map = new HashMap<>();
+        map.put("info1", al);
+        al.setAlumniDir(map);
+        StudentProfile sp1 = sd.findStudent("info2");
+       // System.out.println("");
+        //Alumni al = new Alumni();
+        Alumni al1 = new Alumni();
+        al1.setStudentProfile(sp1);
+        al1.setGradutationYear(2021);
+        al1.setEmp(em);
+        al1.setPosition("SDE2");
+        al1.setSalaryRange(15000);
+        al1.setPromotions(5);
+        map.put("info2", al1);
+        al1.setAlumniDir(map);
              
     }
      

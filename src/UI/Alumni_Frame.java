@@ -5,6 +5,7 @@
  */
 package UI;
 
+import TestData.TestData;
 import info5100.university.example.Info5001UniversityExample;
 import info5100.university.example.Persona.Faculty.Alumni.Alumni;
 import info5100.university.example.Persona.Faculty.Alumni.CompanyEmployers.Employers;
@@ -24,8 +25,7 @@ public class Alumni_Frame extends javax.swing.JFrame {
         initComponents();
         AlumDetail.setVisible(false);
         String id= null;
-        new Info5001UniversityExample().test1();
-        //Alumniusertext.setText("0112303");
+       
     }
 
     /**
@@ -300,8 +300,8 @@ public class Alumni_Frame extends javax.swing.JFrame {
         
         //System.out.println(al.getGradutationYear());
         id = Alumniusertext.getText();
-                Alumni al = new Alumni();
-        HashMap<String, Alumni> m = al.getAlumniDir();
+        Alumni al = new Alumni();
+        HashMap<String, Alumni> m = new TestData().getInstance().getMap();
         System.out.println("Map "+ m.size());
         Alumni al1 = m.get(id);
         al1.calculateAMG();

@@ -104,17 +104,5 @@ public class CourseLoad {
     }
     
     //Transcript transcript;
-    public void checkAlumniRequiements(StudentProfile sp){
-       //sp.getTranscript().getCourseLoadBySemester("Fall2020").getCourseInformation();
-       int creditsTotal = 0;
-       for(SeatAssignment value1:seatassignments){
-         creditsTotal += value1.getSeat().getCourseoffer().getCourse().getCoursePrice();
-       }
-        System.out.println("The Number of Credits is :"+creditsTotal);
-        if(creditsTotal >= 4){
-            //Call Function which Sribalaji which would add for Alumni
-            new Helper().addStudentToAlumni(sp);
-        }
-        
-    }
+  
 }

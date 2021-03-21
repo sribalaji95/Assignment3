@@ -24,7 +24,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public class univAdmin extends javax.swing.JPanel {
      HashMap<String, Department> map = new HashMap();
-    Info5001UniversityExample uni = new Info5001UniversityExample();
             TestData testData = TestData.getInstance();
             DepartmentDirectory department = testData.getDd();
             ArrayList<Department> departmentlist = department.getDd();

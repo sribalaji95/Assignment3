@@ -428,16 +428,20 @@ public  ArrayList<StudentProfile> getStudentTakenByProf(String courseID, Departm
             List<SeatAssignment> list1 = sp.getCourseLoadBySemester("Fall2020").getSeatassignments();
             for(SeatAssignment seatAssignment : list1)
             {
-                if(seatAssignment.getSeat().getCourseoffer().getCourse().getCOurseNumber().equals(courseID) && sp.getPerson().getPersonId().equals(studentId))
+                if(seatAssignment.getSeat().getCourseoffer().getCourse().getCOurseNumber().equals(courseID) 
+                        && sp.getPerson().getPersonId().equals(studentId))
                 {
                   //  System.out.println(sp.getPerson().getPersonId());
                     seatAssignment.setGrade(grade);
                 }
             }
         }
-     
         
+        
+      
     }
+    
+    
     
     public static void getGrade(String courseID, StudentDirectory sd , String grade , String studentId){
         
@@ -489,6 +493,7 @@ public  ArrayList<StudentProfile> getStudentTakenByProf(String courseID, Departm
         // TODO add your handling code here:
         System.out.println(grade);
         setGrade(sl.get(0),sd,grade,mainList.get(0));
+        
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
