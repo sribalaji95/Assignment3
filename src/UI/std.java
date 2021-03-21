@@ -7,6 +7,7 @@ package UI;
 
 
 import TestData.TestData;
+import helper.Helper;
 import info5100.university.example.Persona.StudentProfile;
 import info5100.university.example.CourseCatalog.Course;
 import info5100.university.example.CourseSchedule.CourseLoad;
@@ -38,12 +39,16 @@ public class std extends javax.swing.JPanel {
      * Creates new form std
      */
     TestData td;
+   Department d;
+   StudentProfile sp;
+   String profName;
     public std() {
         initComponents();
         
         td = TestData.getInstance();
       // td.test2();
         StdDspPnl.setVisible(false);
+        RateProfPanel.setVisible(false);
         
         
     }
@@ -78,6 +83,15 @@ public class std extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         CGPAtxt = new javax.swing.JTextField();
         btback = new javax.swing.JButton();
+        RateProfessorbtn = new javax.swing.JButton();
+        RateProfPanel = new javax.swing.JPanel();
+        ProfNamelbl = new javax.swing.JLabel();
+        RatingDropdown = new javax.swing.JComboBox<>();
+        Ratinglbl = new javax.swing.JLabel();
+        ProfNameValueTxt = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        Cancelbtn = new javax.swing.JButton();
+        OKbtn = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(29, 44, 64));
         jPanel1.setPreferredSize(new java.awt.Dimension(478, 419));
@@ -264,35 +278,47 @@ public class std extends javax.swing.JPanel {
             }
         });
 
+        RateProfessorbtn.setText("Rate Professor");
+        RateProfessorbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RateProfessorbtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout StdDspPnlLayout = new javax.swing.GroupLayout(StdDspPnl);
         StdDspPnl.setLayout(StdDspPnlLayout);
         StdDspPnlLayout.setHorizontalGroup(
             StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(StdDspPnlLayout.createSequentialGroup()
-                .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(StdDspPnlLayout.createSequentialGroup()
-                            .addGap(23, 23, 23)
-                            .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(StdDspPnlLayout.createSequentialGroup()
-                                    .addComponent(jUnamelbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(StdIDlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(StdDtlScrlPn, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btback)))
-                        .addGroup(StdDspPnlLayout.createSequentialGroup()
-                            .addGap(155, 155, 155)
-                            .addComponent(jStdDtlLb, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(23, 23, 23)
+                .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(StdDspPnlLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(GpaLbl)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(GpaTxtfld, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-                            .addComponent(CGPAtxt))))
-                .addContainerGap(24, Short.MAX_VALUE))
+                        .addComponent(jUnamelbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(StdIDlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(StdDspPnlLayout.createSequentialGroup()
+                            .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(RateProfessorbtn)
+                                .addComponent(btback))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StdDspPnlLayout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addGap(31, 31, 31))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StdDspPnlLayout.createSequentialGroup()
+                                    .addComponent(GpaLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                            .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(CGPAtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(StdDspPnlLayout.createSequentialGroup()
+                                    .addComponent(GpaTxtfld, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(StdDtlScrlPn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE))))
+            .addGroup(StdDspPnlLayout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(jStdDtlLb, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(223, Short.MAX_VALUE))
         );
         StdDspPnlLayout.setVerticalGroup(
             StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -313,15 +339,97 @@ public class std extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(CGPAtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(46, Short.MAX_VALUE))
+                    .addComponent(CGPAtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RateProfessorbtn))
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
+        ProfNamelbl.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        ProfNamelbl.setText("Professor Name:");
+
+        RatingDropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        RatingDropdown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RatingDropdownActionPerformed(evt);
+            }
+        });
+
+        Ratinglbl.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Ratinglbl.setText("Please Enter Rating:");
+
+        ProfNameValueTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProfNameValueTxtActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("RATE MY PROFESSOR ");
+
+        Cancelbtn.setText("CANCEL");
+        Cancelbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelbtnActionPerformed(evt);
+            }
+        });
+
+        OKbtn.setText("OK");
+        OKbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OKbtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout RateProfPanelLayout = new javax.swing.GroupLayout(RateProfPanel);
+        RateProfPanel.setLayout(RateProfPanelLayout);
+        RateProfPanelLayout.setHorizontalGroup(
+            RateProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(RateProfPanelLayout.createSequentialGroup()
+                .addGap(122, 122, 122)
+                .addGroup(RateProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Cancelbtn)
+                    .addGroup(RateProfPanelLayout.createSequentialGroup()
+                        .addGroup(RateProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ProfNamelbl)
+                            .addComponent(Ratinglbl))
+                        .addGap(39, 39, 39)
+                        .addGroup(RateProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RatingDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ProfNameValueTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addComponent(OKbtn)
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+
+        RateProfPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {Cancelbtn, OKbtn});
+
+        RateProfPanelLayout.setVerticalGroup(
+            RateProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RateProfPanelLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel3)
+                .addGap(44, 44, 44)
+                .addGroup(RateProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ProfNamelbl)
+                    .addComponent(ProfNameValueTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(RateProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RatingDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ratinglbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, Short.MAX_VALUE)
+                .addGroup(RateProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Cancelbtn)
+                    .addComponent(OKbtn))
+                .addGap(21, 21, 21))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 466, Short.MAX_VALUE)
+            .addGap(0, 496, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -331,6 +439,11 @@ public class std extends javax.swing.JPanel {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(StdDspPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(RateProfPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -345,6 +458,11 @@ public class std extends javax.swing.JPanel {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(StdDspPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(RateProfPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -372,13 +490,15 @@ public class std extends javax.swing.JPanel {
             StudentProfile sp = sd.findStudent(usertxt);
             if(sp!=null)
             {
-
+            this.sp = sp;    
+            this.d=d;
                 //            System.out.println(student);
 
                 StdIDlbl.setText(usertxt);
                 //if((student!=null) && (jPwdTxtfld.getPassword().equals(pwd)))
 
                 jPanel1.setVisible(false);
+                RateProfPanel.setVisible(false);
                 StdDspPnl.setVisible(true);
                 //jPanel1.setVisible(false);
                 //ListOfCoursesPnl.setVisible(true);
@@ -431,39 +551,65 @@ public class std extends javax.swing.JPanel {
        jPanel1.setVisible(true);
         StdDspPnl.setVisible(false);
     }//GEN-LAST:event_btbackActionPerformed
-static Department department;
-    static PersonDirectory pd;
-         
-         static FacultyDirectory facultyDirectory ;
-         static Person person1;
-        
-       
-        
-        static Course course ;
-        static Course course1;
-        static Course course2;
-        
-        static Transcript transcript;
 
-        static CourseSchedule courseschedule ;
+    private void RateProfessorbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RateProfessorbtnActionPerformed
+        // TODO add your handling code here:
+        List<String> l = new Helper().getProfessors(d,sp);
+        profName = l.get(0);
+        //System.out.println("Check");
+//        for(String item : l ){
+//        }
+        ProfNameValueTxt.setText(profName);
+        StdDspPnl.setVisible(false);
+        RateProfPanel.setVisible(true);
+        
+    }//GEN-LAST:event_RateProfessorbtnActionPerformed
 
-        static CourseOffer courseoffer ;
+    private void RatingDropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RatingDropdownActionPerformed
+        // TODO add your handling code here:
+        //String[] dropDown = {"1","2"};
+        //RatingDropdown obj = new RatingDropdown(dropDown);
         
         
-        static FacultyProfile facultyProfile ;
+    }//GEN-LAST:event_RatingDropdownActionPerformed
+
+    private void CancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelbtnActionPerformed
+        // TODO add your handling code here:
+        StdDspPnl.setVisible(true);
+        RateProfPanel.setVisible(false);
+    }//GEN-LAST:event_CancelbtnActionPerformed
+
+    private void OKbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKbtnActionPerformed
+        // TODO add your handling code here:
+        StdDspPnl.setVisible(true);
+        RateProfPanel.setVisible(false);
+        String selectValue = RatingDropdown.getSelectedItem().toString();
         
-        static CourseOffer courseoffer1 ;
-        static CourseLoad courseload;
+        //System.out.println(selectValue);
+        Boolean flag = false;
+        DepartmentDirectory dd = TestData.getInstance().getDd();
+        List<Department> list = dd.getDd();
+        for(Department d : list)
+        {
+            if(d.getFacultyDirectory().getTeacherlist().get(0).getPerson().getPersonId().equals(profName)){
+                d.getFacultyDirectory().getTeacherlist().get(0).setFacultyRatings(Integer.parseInt(selectValue));
+                
+                flag=true;
+                System.out.println("Professor Ratings: "+d.getFacultyDirectory().getTeacherlist().get(0).getFacultyRatings());
+                break;
+            }
+        }
+            
+        if(flag)
+         JOptionPane.showMessageDialog(this ,"Your Rating has been Saved!");
+    }//GEN-LAST:event_OKbtnActionPerformed
+
+    private void ProfNameValueTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfNameValueTxtActionPerformed
+        // TODO add your handling code here:
         
         
-        
-        static CourseOffer courseoffer2 ;//added by myself
-        
-       
-       
-        static Person person ;
-        static StudentDirectory sd ;
-        static StudentProfile student;
+    }//GEN-LAST:event_ProfNameValueTxtActionPerformed
+
         
 public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -500,12 +646,20 @@ public static void main(String args[]) {
                 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CGPAtxt;
+    private javax.swing.JButton Cancelbtn;
     private javax.swing.JLabel GpaLbl;
     private javax.swing.JTextField GpaTxtfld;
     private javax.swing.JButton LoginButton;
+    private javax.swing.JButton OKbtn;
     private javax.swing.JPasswordField PasswordField;
     private javax.swing.JLabel PasswordLabel;
     private javax.swing.JPanel PasswordLowerPanel;
+    private javax.swing.JTextField ProfNameValueTxt;
+    private javax.swing.JLabel ProfNamelbl;
+    private javax.swing.JPanel RateProfPanel;
+    private javax.swing.JButton RateProfessorbtn;
+    private javax.swing.JComboBox<String> RatingDropdown;
+    private javax.swing.JLabel Ratinglbl;
     private javax.swing.JPanel StdDspPnl;
     private javax.swing.JScrollPane StdDtlScrlPn;
     private javax.swing.JTable StdDtlTbl;
@@ -517,6 +671,7 @@ public static void main(String args[]) {
     private javax.swing.JButton btback;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jStdDtlLb;
     private javax.swing.JLabel jUnamelbl1;

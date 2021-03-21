@@ -51,7 +51,6 @@ public class TestData {
     EmployeeDirectory ed = new EmployeeDirectory();
     DepartmentDirectory dd = new DepartmentDirectory();
     
-
     public  DepartmentDirectory getDd() {
         return dd;
     }
@@ -211,11 +210,14 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         Person prof2 = pd.newPerson("prof1");
 
         FacultyProfile fp = fd.newStudentProfile(prof1);
-        FacultyProfile fp1 = fd.newStudentProfile(prof2);
+        FacultyProfile fp1 = fd1.newStudentProfile(prof2);
         
         
         courseoffer.AssignAsTeacher(fp);
+        fp.AssignAsTeacher(courseoffer);
         courseoffer1.AssignAsTeacher(fp1);
+        fp1.AssignAsTeacher(courseoffer1);
+        
         
 
         courseload.newSeatAssignment(courseoffer); //register student in class
