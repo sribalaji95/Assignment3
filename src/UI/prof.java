@@ -535,9 +535,19 @@ public  ArrayList<StudentProfile> getStudentTakenByProf(String courseID, Departm
 
         //System.out.println(grade);
         //System.out.println(studentName);
-        setGrade(sl.get(0),sd,grade,studentName);
+        //setGrade(sl.get(0),sd,grade,studentName);
 
     
+
+//<<<<<<< HEAD
+        //System.out.println(grade);
+        //System.out.println(studentName);
+        //setGrade(sl.get(0),sd,grade,studentName);
+//=======
+        System.out.println(grade);
+        setGrade(sl.get(0),sd,grade,mainList.get(0));
+        
+//>>>>>>> 379d1d2ce19ed31f303c684f32e7c00a98156029
 
     }//GEN-LAST:event_jButton2ActionPerformed
 

@@ -306,7 +306,7 @@ List<Course> list1;
                     int col = evt.getColumn();
                     int row = evt.getFirstRow();
                     //System.out.println(row+"as");
-                    rating = model.getValueAt(row, col).toString();
+                    rating = model.getValueAt(row, 1).toString();
                     course =model.getValueAt(row,0).toString();
                     
                    
@@ -321,16 +321,18 @@ List<Course> list1;
         DepartmentDirectory dd = TestData.getInstance().getDd();
         List<Department> list = dd.getDd();
         Boolean flag = false;
+        for(Department d:list){
         for(int i=0;i<list1.size();i++)
         {
-            if(list.get(0).getCourseCatalog().getCourseList().get(i).getName().equals(course)){
-                list.get(0).getCourseCatalog().getCourseList().get(i).setRating(rating);
+            if(d.getCourseCatalog().getCourseList().get(i).getName().equals(course)){
+                d.getCourseCatalog().getCourseList().get(i).setRating(rating);
                 
                 flag=true;
-                System.out.println("Course Ratings: "+list.get(0).getCourseCatalog().getCourseList().get(0).getRating());
+                System.out.println("Course Ratings: "+d.getCourseCatalog().getCourseList().get(i).getRating());
                 break;
             }
         }
+    }
             
         if(flag)
          JOptionPane.showMessageDialog(this ,"Your Rating has been Saved!");

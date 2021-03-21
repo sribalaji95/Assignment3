@@ -422,11 +422,13 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         al.setPosition("SDE");
         al.setSalaryRange(25000);
         al.setPromotions(2);
-        
+        sp.setAl(al);
         HashMap<String, Alumni> map = new HashMap<>();
         map.put("info1", al);
         al.setAlumniDir(map);
+        
         StudentProfile sp1 = sd.findStudent("info2");
+        sp1.setIsAlumni(true);
        // System.out.println("");
         //Alumni al = new Alumni();
         Alumni al1 = new Alumni();
@@ -438,6 +440,38 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         al1.setPromotions(5);
         map.put("info2", al1);
         al1.setAlumniDir(map);
+        sp1.setAl(al1);
+        
+        StudentProfile sp2 = sd1.findStudent("cs1");
+        sp2.setIsAlumni(true);
+       // System.out.println("");
+        //Alumni al = new Alumni();
+        Alumni al2 = new Alumni();
+        al2.setStudentProfile(sp2);
+        al2.setGradutationYear(2021);
+        al2.setEmp(em);
+        al2.setPosition("SDE1");
+        al2.setSalaryRange(20000);
+        al2.setPromotions(5);
+        map.put("info3", al2);
+        al2.setAlumniDir(map);
+        sp2.setAl(al2);
+        
+        StudentProfile sp3 = sd1.findStudent("cs2");
+        sp3.setIsAlumni(true);
+       // System.out.println("");
+        //Alumni al = new Alumni();
+        Alumni al3 = new Alumni();
+        al3.setStudentProfile(sp3);
+        al3.setGradutationYear(2021);
+        al3.setEmp(em);
+        al3.setPosition("SDE2");
+        al3.setSalaryRange(25000);
+        al3.setPromotions(5);
+        map.put("cs2", al3);
+        al3.setAlumniDir(map);
+        sp3.setAl(al3);
+        
              
     }
      
