@@ -17,6 +17,19 @@ public class FacultyProfile {
 
     Person person;
     ArrayList <FacultyAssignment> facultyassignments;
+    int facultyRatings;
+
+    public int getFacultyRatings() {
+        return facultyRatings;
+    }
+
+    public void setFacultyRatings(int facultyRatings) {
+        this.facultyRatings = facultyRatings;
+    }
+
+    public ArrayList<FacultyAssignment> getFacultyassignments() {
+        return facultyassignments;
+    }
     int professorRatings;
 
     public FacultyProfile(Person p) {

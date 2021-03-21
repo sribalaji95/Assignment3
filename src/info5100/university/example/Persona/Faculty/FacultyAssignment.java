@@ -14,6 +14,10 @@ import info5100.university.example.CourseSchedule.CourseOffer;
 public class FacultyAssignment {
     
     CourseOffer courseoffer;
+
+    public CourseOffer getCourseoffer() {
+        return courseoffer;
+    }
     FacultyProfile facultyprofile;
     public FacultyAssignment(FacultyProfile fp, CourseOffer co){
         courseoffer = co;

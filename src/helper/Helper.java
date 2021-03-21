@@ -9,10 +9,12 @@ import info5100.university.example.CourseCatalog.Course;
 import info5100.university.example.CourseSchedule.CourseLoad;
 import info5100.university.example.CourseSchedule.CourseOffer;
 import info5100.university.example.CourseSchedule.CourseSchedule;
+import info5100.university.example.CourseSchedule.SeatAssignment;
 import info5100.university.example.Department.Department;
 import info5100.university.example.Persona.Faculty.Alumni.Alumni;
 import info5100.university.example.Persona.Faculty.Alumni.CompanyEmployers.EmployeeDirectory;
 import info5100.university.example.Persona.Faculty.Alumni.CompanyEmployers.Employers;
+import info5100.university.example.Persona.Faculty.FacultyAssignment;
 import info5100.university.example.Persona.Faculty.FacultyDirectory;
 import info5100.university.example.Persona.Faculty.FacultyProfile;
 import info5100.university.example.Persona.Person;
@@ -141,8 +143,51 @@ public class Helper {
         return list;
      }
     
+
+    
+    
+    public List<String> getProfessors(Department d , StudentProfile sp)
+    {
+        List<SeatAssignment> courseId = sp.getCurrentCourseLoad().getSeatassignments();
+        List <String> list = new ArrayList();
+        List<String> result = new ArrayList();
+        for(SeatAssignment s : courseId)
+        {
+            list.add(s.getSeat().getCourseoffer().getCourse().getCOurseNumber());
+        }
+        FacultyDirectory f = d.getFacultyDirectory();
+        List<FacultyProfile> facultyProfile = f.getTeacherlist();
+        for(FacultyProfile f1 : facultyProfile)
+        {
+            List<FacultyAssignment> facultyAssignment = f1.getFacultyassignments();
+            for(FacultyAssignment f2 : facultyAssignment)
+            {
+            if(list.contains(f2.getCourseoffer().getCourseNumber()))
+                    {
+                        result.add(f2.getFacultyProfile().getPerson().getPersonId());
+                    }
+            }
+            
+        }
+        
+       return result; 
+    }
+
 //    public List<FacultyProfile> getProfessors(StudentProfile sp)
 //    {
+//        
+//    }
+//  public void checkAlumniRequiements(StudentProfile sp){
+//       //sp.getTranscript().getCourseLoadBySemester("Fall2020").getCourseInformation();
+//       int creditsTotal = 0;
+//       for(SeatAssignment value1:seatassignments){
+//         creditsTotal += value1.getSeat().getCourseoffer().getCourse().getCoursePrice();
+//       }
+//        System.out.println("The Number of Credits is :"+creditsTotal);
+//        if(creditsTotal >= 4){
+//            //Call Function which Sribalaji which would add for Alumni
+//            new Helper().addStudentToAlumni(sp);
+//        }
 //        
 //    }
 

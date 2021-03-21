@@ -434,7 +434,10 @@ public class prof extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 public  ArrayList<StudentProfile> getStudentTakenByProf(String courseID, DepartmentDirectory d){
+<<<<<<< HEAD
     
+=======
+>>>>>>> 379d1d2ce19ed31f303c684f32e7c00a98156029
     List<Department> list2 = d.getDd();
     for(Department d1 : list2)
     {
@@ -469,16 +472,20 @@ public  ArrayList<StudentProfile> getStudentTakenByProf(String courseID, Departm
             List<SeatAssignment> list1 = sp.getCourseLoadBySemester("Fall2020").getSeatassignments();
             for(SeatAssignment seatAssignment : list1)
             {
-                if(seatAssignment.getSeat().getCourseoffer().getCourse().getCOurseNumber().equals(courseID) && sp.getPerson().getPersonId().equals(studentId))
+                if(seatAssignment.getSeat().getCourseoffer().getCourse().getCOurseNumber().equals(courseID) 
+                        && sp.getPerson().getPersonId().equals(studentId))
                 {
                   //  System.out.println(sp.getPerson().getPersonId());
                     seatAssignment.setGrade(grade);
                 }
             }
         }
-     
         
+        
+      
     }
+    
+    
     
     public static void getGrade(String courseID, StudentDirectory sd , String grade , String studentId){
         
@@ -528,9 +535,15 @@ public  ArrayList<StudentProfile> getStudentTakenByProf(String courseID, Departm
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         //System.out.println(grade);
         //System.out.println(studentName);
         setGrade(sl.get(0),sd,grade,studentName);
+=======
+        System.out.println(grade);
+        setGrade(sl.get(0),sd,grade,mainList.get(0));
+        
+>>>>>>> 379d1d2ce19ed31f303c684f32e7c00a98156029
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
