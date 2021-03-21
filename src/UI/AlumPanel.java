@@ -370,6 +370,8 @@ public class AlumPanel extends javax.swing.JPanel {
         Alumni al = new Alumni();
         HashMap<String, Alumni> m = al.getAlumniDir();
         System.out.println("Map "+ m.size());
+        System.out.println("IDD "+ id);
+                
         Alumni al1 = m.get(id);
         AlumIdtxt.setText(al1.getStudentProfile().getPerson().getPersonId());
         AlumgradyearTxt.setText(String.valueOf(al1.getGradutationYear()));
