@@ -12,6 +12,15 @@ package info5100.university.example.CourseCatalog;
 public class Course {
     String number;
     String name;
+    String rating;
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
 //    int courseRatings;
 //
 //    public int getCourseRatings() {
