@@ -33,11 +33,12 @@ import javax.swing.table.DefaultTableModel;
  */
 public class prof extends javax.swing.JPanel {
   static ArrayList<String> al2 = new ArrayList();
-    static ArrayList<StudentProfile> al3 = new ArrayList();
-     static StudentDirectory sd ;
-      ArrayList<String> mainList = new ArrayList<>();
-        ArrayList<String> mainList1 = new ArrayList<>();
-       String grade ;
+  static ArrayList<StudentProfile> al3 = new ArrayList();
+  static StudentDirectory sd ;
+   static StudentDirectory sd1;
+     ArrayList<String> mainList = new ArrayList<>();
+       ArrayList<String> mainList1 = new ArrayList<>();
+      String grade ;
       TestData testData;
       ArrayList<String> sl;
     /**
@@ -47,6 +48,7 @@ public class prof extends javax.swing.JPanel {
         initComponents();
       testData = TestData.getInstance();
       sd = testData.getSd();
+      
         PrfLgnPnl1.setVisible(false);
     }
 
@@ -359,10 +361,7 @@ public class prof extends javax.swing.JPanel {
             mainList.add(sl1.get(i).getPerson().getPersonId());
             mainList1.add(sl1.get(i).getCourseLoadBySemester("Fall2020").getSeatassignments().get(0).getGrade());
         }
-       // System.out.println("*** "+sl1.get(0).getPerson().getPersonId());
-         //       System.out.println("++++ "+sl1.get(0).getCourseLoadBySemester("Fall2020").getSeatassignments().get(0).getGrade());
-//System.out.println(mainList);
-//System.out.println(mainList1);
+      
         jPanel1.setVisible(false);
         PrfLgnPnl1.setVisible(true);
         jPanel3.setVisible(false);
@@ -378,7 +377,6 @@ public class prof extends javax.swing.JPanel {
         Object[] row = new Object[2];
         for(int i=0;i<mainList.size();i++)
         {
-
             row[0]=mainList.get(i);
             row[1]=mainList1.get(i);
             model.addRow(row);
@@ -420,7 +418,8 @@ public static ArrayList<StudentProfile> getStudentTakenByProf(String courseID, D
      return al3;
 }
     
-    public static void setGrade(String courseID, StudentDirectory sd , String grade , String studentId){
+    public static void setGrade(String courseID, StudentDirectory d , String grade , String studentId){
+        
         
         ArrayList<StudentProfile> as = new ArrayList();
         List<StudentProfile> list = sd.getStudentlist();

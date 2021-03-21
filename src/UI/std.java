@@ -431,40 +431,6 @@ public class std extends javax.swing.JPanel {
        jPanel1.setVisible(true);
         StdDspPnl.setVisible(false);
     }//GEN-LAST:event_btbackActionPerformed
-static Department department;
-    static PersonDirectory pd;
-         
-         static FacultyDirectory facultyDirectory ;
-         static Person person1;
-        
-       
-        
-        static Course course ;
-        static Course course1;
-        static Course course2;
-        
-        static Transcript transcript;
-
-        static CourseSchedule courseschedule ;
-
-        static CourseOffer courseoffer ;
-        
-        
-        static FacultyProfile facultyProfile ;
-        
-        static CourseOffer courseoffer1 ;
-        static CourseLoad courseload;
-        
-        
-        
-        static CourseOffer courseoffer2 ;//added by myself
-        
-       
-       
-        static Person person ;
-        static StudentDirectory sd ;
-        static StudentProfile student;
-        
 public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

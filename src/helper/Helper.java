@@ -111,7 +111,7 @@ public class Helper {
         StudentProfile student = sd.newStudentProfile(person);
         
         
-        CourseLoad courseload = student.newCourseLoad(semester); 
+        CourseLoad courseload = student.newCourseLoad("Fall2020"); 
   
         courseload.newSeatAssignment(co);
         
