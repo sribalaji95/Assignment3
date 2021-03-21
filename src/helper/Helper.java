@@ -138,7 +138,10 @@ public class Helper {
         for(StudentProfile studentProfile : profile)
         {
             if(studentProfile.getIsAlumni())
+            {
+                System.out.println(studentProfile.getIsAlumni() + " "+ studentProfile.getAl());
                 list.add(studentProfile.getAl());
+            }
         }
         return list;
      }

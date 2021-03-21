@@ -11,7 +11,11 @@ import info5100.university.example.CourseSchedule.CourseOffer;
 import info5100.university.example.Department.Department;
 import info5100.university.example.Department.DepartmentDirectory;
 import info5100.university.example.Info5001UniversityExample;
+<<<<<<< HEAD
 import info5100.university.example.Persona.Faculty.FacultyProfile;
+=======
+import info5100.university.example.Persona.Faculty.Alumni.Alumni;
+>>>>>>> 67a08cfc8598cc4c2364afeba0f057b506be2e23
 import info5100.university.example.Persona.StudentProfile;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -98,7 +102,12 @@ public class univAdmin extends javax.swing.JPanel {
         AddProfIdTxt = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         AddProf = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
+        ShAlmn = new javax.swing.JPanel();
+        AlmnLstDeptLbl = new javax.swing.JLabel();
+        AlmnDptComboBox = new javax.swing.JComboBox<>();
+        AlmnLstPnl = new javax.swing.JPanel();
+        AlmnNameScrPnl = new javax.swing.JScrollPane();
+        AlmnNameTable = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
 
         jPanel1.setBackground(new java.awt.Color(29, 44, 64));
@@ -295,7 +304,7 @@ public class univAdmin extends javax.swing.JPanel {
                     .addGroup(ShwCrPnlLayout.createSequentialGroup()
                         .addGap(191, 191, 191)
                         .addComponent(CrLstPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(302, Short.MAX_VALUE))
         );
         ShwCrPnlLayout.setVerticalGroup(
             ShwCrPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -370,7 +379,7 @@ public class univAdmin extends javax.swing.JPanel {
                     .addGroup(ShStdPnlLayout.createSequentialGroup()
                         .addGap(184, 184, 184)
                         .addComponent(StdLstPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(314, Short.MAX_VALUE))
         );
         ShStdPnlLayout.setVerticalGroup(
             ShStdPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -444,12 +453,12 @@ public class univAdmin extends javax.swing.JPanel {
                     .addComponent(AddStuIdLbl)
                     .addComponent(AddstudeptLbl)
                     .addComponent(AddstucouLbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
                 .addGroup(AddstupanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddstupanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(Addstucoucom, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(AddStuDeptcb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(AddstuIdTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                    .addComponent(AddstuIdTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
                     .addComponent(AddstunameTxt, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(83, 83, 83))
             .addGroup(AddstupanelLayout.createSequentialGroup()
@@ -546,7 +555,7 @@ public class univAdmin extends javax.swing.JPanel {
                     .addComponent(AddStuIdLbl1)
                     .addComponent(AddstudeptLbl1)
                     .addComponent(AddstucouLbl1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 367, Short.MAX_VALUE)
                 .addGroup(AddProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddProfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(AddProfcoucom, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -593,24 +602,81 @@ public class univAdmin extends javax.swing.JPanel {
 
         InUnvTabPane.addTab("Add Professor", AddProfPanel);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 504, Short.MAX_VALUE)
+        AlmnLstDeptLbl.setText("Select Department");
+
+        AlmnDptComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Option" }));
+        AlmnDptComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlmnDptComboBoxActionPerformed(evt);
+            }
+        });
+
+        AlmnNameTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Alumini Name", "Promotions", "Salary Range", "Gradutation Year", "Position"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        AlmnNameScrPnl.setViewportView(AlmnNameTable);
+
+        javax.swing.GroupLayout AlmnLstPnlLayout = new javax.swing.GroupLayout(AlmnLstPnl);
+        AlmnLstPnl.setLayout(AlmnLstPnlLayout);
+        AlmnLstPnlLayout.setHorizontalGroup(
+            AlmnLstPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AlmnLstPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(AlmnNameScrPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 342, Short.MAX_VALUE)
+        AlmnLstPnlLayout.setVerticalGroup(
+            AlmnLstPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(AlmnNameScrPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
         );
 
-        InUnvTabPane.addTab("tab5", jPanel5);
+        javax.swing.GroupLayout ShAlmnLayout = new javax.swing.GroupLayout(ShAlmn);
+        ShAlmn.setLayout(ShAlmnLayout);
+        ShAlmnLayout.setHorizontalGroup(
+            ShAlmnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ShAlmnLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(AlmnLstDeptLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(ShAlmnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AlmnDptComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AlmnLstPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(152, Short.MAX_VALUE))
+        );
+        ShAlmnLayout.setVerticalGroup(
+            ShAlmnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ShAlmnLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(ShAlmnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AlmnLstDeptLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AlmnDptComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(AlmnLstPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(64, Short.MAX_VALUE))
+        );
+
+        InUnvTabPane.addTab("Alumini Details", ShAlmn);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 504, Short.MAX_VALUE)
+            .addGap(0, 719, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -627,14 +693,14 @@ public class univAdmin extends javax.swing.JPanel {
         );
         UnvTbPaneLayout.setVerticalGroup(
             UnvTbPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(InUnvTabPane, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+            .addComponent(InUnvTabPane)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 537, Short.MAX_VALUE)
+            .addGap(0, 752, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -677,6 +743,7 @@ public class univAdmin extends javax.swing.JPanel {
            
             CrLstPnl.setVisible(false);
             StdLstPnl.setVisible(false);
+            AlmnLstPnl.setVisible(false);
             ArrayList<Department> departmentlist = department.getDd();
             
             for(Department d : departmentlist){
@@ -692,6 +759,8 @@ public class univAdmin extends javax.swing.JPanel {
                    AddStuDeptcb.addItem(name);
             for (String name : map.keySet())  
                    AddProfDeptcb1.addItem(name);
+            for (String name : map.keySet())  
+                   AlmnDptComboBox.addItem(name);
         
     }//GEN-LAST:event_LoginButtonActionPerformed
 
@@ -709,7 +778,7 @@ public class univAdmin extends javax.swing.JPanel {
             DefaultTableModel model = (DefaultTableModel) CrNameTable.getModel();
             model.setRowCount(0);
 
-            System.out.println("Test "+ map.get("Information Systems"));
+            //System.out.println("Test "+ map.get("Information Systems"));
             List<CourseOffer> co = getCourseOfferedByDepartment(map.get("Information Systems"));
 
             for(int i=0;i<co.size();i++)
@@ -727,7 +796,7 @@ public class univAdmin extends javax.swing.JPanel {
             DefaultTableModel model = (DefaultTableModel) CrNameTable.getModel();
             model.setRowCount(0);
 
-            System.out.println("Test "+ map.get("Computer Science"));
+            //System.out.println("Test "+ map.get("Computer Science"));
             List<CourseOffer> co = getCourseOfferedByDepartment(map.get("Computer Science"));
             for(int i=0;i<co.size();i++)
             //for(CourseOffer c: co)
@@ -845,7 +914,9 @@ public class univAdmin extends javax.swing.JPanel {
     public List<CourseOffer> getCourseOfferedByDepartment(Department d){
         return new Helper().getCourseOfferList(d, "Fall2020");
     }
-    
+        public List<Alumni> addaluminiDepartment(Department d){
+        return new Helper().getAlumniByDepartment(d);
+    }
     public void addStudent(Department d, String sname, String sid, String sem, CourseOffer co){
         
         new Helper().addStudent(d, sname, sid, sem, co);
@@ -863,7 +934,7 @@ public class univAdmin extends javax.swing.JPanel {
         // TODO add your handling code here:
 
         StdLstPnl.setVisible(false);
-
+        AlmnLstPnl.setVisible(false);
         String selval = StdDptComboBox.getSelectedItem().toString();
         //jTextField1.setText(selval);
 
@@ -996,6 +1067,58 @@ public class univAdmin extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(this,"Professor Added");
     }//GEN-LAST:event_AddProfActionPerformed
 
+    private void AlmnDptComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlmnDptComboBoxActionPerformed
+        // TODO add your handling code here:
+        AlmnLstPnl.setVisible(false);
+        StdLstPnl.setVisible(false);
+        CrLstPnl.setVisible(false);
+
+        String selval = AlmnDptComboBox.getSelectedItem().toString();
+       
+        if(selval.equals("Information Systems"))
+        {
+            AlmnLstPnl.setVisible(true);
+            DefaultTableModel model = (DefaultTableModel) AlmnNameTable.getModel();
+            model.setRowCount(0);
+            List<Alumni> al = addaluminiDepartment(map.get("Information Systems"));
+            System.out.println("ID"+al.get(0).getStudentProfile().getPerson().getPersonId());
+            for(int i=0;i<al.size();i++)
+
+            {
+                Object[] row= new Object[5];
+                row[0]=al.get(i).getStudentProfile().getPerson().getPersonId();
+                row[1]=al.get(i).getPromotions();
+                row[2]=al.get(i).getSalaryRange();
+                row[3]=al.get(i).getGradutationYear();
+                row[4]=al.get(i).getPosition();
+                model.addRow(row);
+            } 
+            
+        }
+        
+        else if(selval.equals("Computer Science"))
+        {
+            AlmnLstPnl.setVisible(true);
+            DefaultTableModel model = (DefaultTableModel) AlmnNameTable.getModel();
+            model.setRowCount(0);
+
+           // System.out.println("Test "+ map.get("Computer Science"));
+            List<Alumni> al = addaluminiDepartment(map.get("Computer Science"));
+            for(int i=0;i<al.size();i++)
+
+            {
+                Object[] row= new Object[5];
+                row[0]=al.get(i).getStudentProfile().getPerson().getPersonId();
+                row[1]=al.get(i).getPromotions();
+                row[2]=al.get(i).getSalaryRange();
+                row[3]=al.get(i).getGradutationYear();
+                row[4]=al.get(i).getPosition();
+                model.addRow(row);
+            } 
+
+        }
+    }//GEN-LAST:event_AlmnDptComboBoxActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddProf;
@@ -1018,6 +1141,11 @@ public class univAdmin extends javax.swing.JPanel {
     private javax.swing.JLabel AddstudeptLbl1;
     private javax.swing.JTextField AddstunameTxt;
     private javax.swing.JPanel Addstupanel;
+    private javax.swing.JComboBox<String> AlmnDptComboBox;
+    private javax.swing.JLabel AlmnLstDeptLbl;
+    private javax.swing.JPanel AlmnLstPnl;
+    private javax.swing.JScrollPane AlmnNameScrPnl;
+    private javax.swing.JTable AlmnNameTable;
     private javax.swing.JComboBox<String> CrDptComboBox;
     private javax.swing.JLabel CrLstDeptLbl;
     private javax.swing.JPanel CrLstPnl;
@@ -1028,6 +1156,7 @@ public class univAdmin extends javax.swing.JPanel {
     private javax.swing.JPasswordField PasswordField;
     private javax.swing.JLabel PasswordLabel;
     private javax.swing.JPanel PasswordLowerPanel;
+    private javax.swing.JPanel ShAlmn;
     private javax.swing.JPanel ShStdPnl;
     private javax.swing.JPanel ShwCrPnl;
     private javax.swing.JComboBox<String> StdDptComboBox;
@@ -1044,7 +1173,6 @@ public class univAdmin extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     // End of variables declaration//GEN-END:variables
 
