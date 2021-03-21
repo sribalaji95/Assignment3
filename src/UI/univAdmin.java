@@ -121,7 +121,8 @@ public class univAdmin extends javax.swing.JPanel {
         FcRkLbl = new javax.swing.JLabel();
         CrRkLbl = new javax.swing.JLabel();
         CrScMtrxLbl = new javax.swing.JLabel();
-        CrScMtrxValLbl = new javax.swing.JLabel();
+        CsMScrPnl = new javax.swing.JScrollPane();
+        CsMTxtArea = new javax.swing.JTextArea();
 
         jPanel1.setBackground(new java.awt.Color(29, 44, 64));
         jPanel1.setPreferredSize(new java.awt.Dimension(0, 0));
@@ -255,7 +256,7 @@ public class univAdmin extends javax.swing.JPanel {
                 .addComponent(PasswordLowerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(615, Short.MAX_VALUE))
+                .addContainerGap(613, Short.MAX_VALUE))
         );
 
         InUnvTabPane.setBackground(new java.awt.Color(29, 44, 64));
@@ -823,9 +824,13 @@ public class univAdmin extends javax.swing.JPanel {
         CrRkLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CrRkLbl.setText("Course Ranking");
 
+        CrScMtrxLbl.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        CrScMtrxLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CrScMtrxLbl.setText("Carrer Success Metrics");
 
-        CrScMtrxValLbl.setText("Value");
+        CsMTxtArea.setColumns(20);
+        CsMTxtArea.setRows(5);
+        CsMScrPnl.setViewportView(CsMTxtArea);
 
         javax.swing.GroupLayout ShAyPnlLayout = new javax.swing.GroupLayout(ShAyPnl);
         ShAyPnl.setLayout(ShAyPnlLayout);
@@ -848,14 +853,14 @@ public class univAdmin extends javax.swing.JPanel {
                             .addComponent(AyCrRkPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(CrRkLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(ShAyPnlLayout.createSequentialGroup()
-                        .addGap(294, 294, 294)
-                        .addComponent(CrScMtrxValLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(734, Short.MAX_VALUE))
+                        .addGap(274, 274, 274)
+                        .addComponent(CsMScrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(616, Short.MAX_VALUE))
             .addGroup(ShAyPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(ShAyPnlLayout.createSequentialGroup()
-                    .addGap(93, 93, 93)
-                    .addComponent(CrScMtrxLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(1146, Short.MAX_VALUE)))
+                    .addGap(47, 47, 47)
+                    .addComponent(CrScMtrxLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(1162, Short.MAX_VALUE)))
         );
         ShAyPnlLayout.setVerticalGroup(
             ShAyPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -876,14 +881,14 @@ public class univAdmin extends javax.swing.JPanel {
                 .addGroup(ShAyPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(AyFcRkPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AyCrRkPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(60, 60, 60)
-                .addComponent(CrScMtrxValLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(584, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addComponent(CsMScrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(530, Short.MAX_VALUE))
             .addGroup(ShAyPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(ShAyPnlLayout.createSequentialGroup()
-                    .addGap(362, 362, 362)
-                    .addComponent(CrScMtrxLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(583, Short.MAX_VALUE)))
+                    .addGap(349, 349, 349)
+                    .addComponent(CrScMtrxLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(535, Short.MAX_VALUE)))
         );
 
         InUnvTabPane.addTab("Analysis", ShAyPnl);
@@ -951,7 +956,7 @@ public class univAdmin extends javax.swing.JPanel {
             AyCrRkPnl.setVisible(false);
             FcRkLbl.setVisible(false);
             CrRkLbl.setVisible(false);
-            CrScMtrxValLbl.setVisible(false);
+            CsMScrPnl.setVisible(false);
             CrScMtrxLbl.setVisible(false);
             ArrayList<Department> departmentlist = department.getDd();
             
@@ -1060,20 +1065,28 @@ public class univAdmin extends javax.swing.JPanel {
         
     }
     
-    public Double careerSuccesMetricRank(Department d){
+    public ArrayList<Double> careerSuccesMetricRank(Department d){
         System.out.println(d.getName());
-        ArrayList<Alumni> al = d.getAlumniDirectory().getAd();
-        int size = al.size();
-          System.out.println(" s ss"+ al);
-        Double res =0.0;
-        for(Alumni a : al){
-            System.out.println("BEfore Sorted form "+ a.toString());
-            res += a.getCareerSuccess();
+        ArrayList<Double> ald = new ArrayList<>();
+        int size = d.getStudentDirectory().getStudentlist().size();
+        int count =0;
+        double gpaCount =0.0;
+        double professionalGrowthCount = 0.0;
+        Double res = 0.0;
+        for(int i=0 ; i < size ; i++){ 
+            if(d.getStudentDirectory().getStudentlist().get(i).getIsAlumni()){
+                gpaCount += (d.getStudentDirectory().getStudentlist().get(i).getGpa())*2+2;
+                professionalGrowthCount += d.getStudentDirectory().getStudentlist().get(i).getAl().getCareerSuccess();
+                count++;
+            }
         }
-        res = res/size;
-        
-        return res;
-        
+        ald.add(gpaCount/count);
+        ald.add(professionalGrowthCount/count);
+     
+        System.out.println("ALl GPA"+ ald.get(0));
+        System.out.println("ALl CGM"+ ald.get(1));
+
+        return ald;
     }
         public void getDepartmentList(){
          
@@ -1375,7 +1388,7 @@ public class univAdmin extends javax.swing.JPanel {
         AyCrRkPnl.setVisible(false);
         FcRkLbl.setVisible(false);
         CrRkLbl.setVisible(false);
-        CrScMtrxValLbl.setVisible(false);
+        CsMScrPnl.setVisible(false);
         CrScMtrxLbl.setVisible(false);
         
 
@@ -1388,10 +1401,11 @@ public class univAdmin extends javax.swing.JPanel {
             AyCrRkPnl.setVisible(true);
             FcRkLbl.setVisible(true);
             CrRkLbl.setVisible(true);
-            CrScMtrxValLbl.setVisible(true);
+            //CrScMtrxValLbl.setVisible(true);
             CrScMtrxLbl.setVisible(true);
+            CsMScrPnl.setVisible(true);
             
-            //For Faculty Ranking
+            //For Faculty Ranking of Information Systems
             DefaultTableModel model = (DefaultTableModel) AyFkRkTable.getModel();
             model.setRowCount(0);
 
@@ -1407,7 +1421,7 @@ public class univAdmin extends javax.swing.JPanel {
 
             }
 
-            //For Course Ranking
+            //For Course Ranking of Information Systems
             DefaultTableModel model1 = (DefaultTableModel) AyCrRkTable.getModel();
             model1.setRowCount(0);
             
@@ -1423,12 +1437,29 @@ public class univAdmin extends javax.swing.JPanel {
 
             }
             
-            Double csm = careerSuccesMetricRank(map.get("Information Systems"));
-            System.out.println(csm);
-            CrScMtrxValLbl.setText(csm.toString());
+            //Carrer SuccesMetric ranking for Information Systems
+            careerSuccesMetricRank(map.get("Information Systems"));
+           // System.out.println(csm);
+           // CrScMtrxValLbl.setText(csm.toString());
             
             //ArrayList<Alumni> al = d.getAlumniDirectory().getAd();
            // CrMtrxTxtFld.setText(careerSuccesMetricRank);
+           
+           ArrayList<Double> values = careerSuccesMetricRank(map.get("Information Systems"));
+            Double gpa = values.get(0);
+            Double CGM = values.get(1);
+            System.out.println(gpa + " "+ CGM);
+            StringBuilder sb = new StringBuilder();
+             if(gpa < 8.4 && CGM > 5.0 ){
+                  sb.append("Having a below average CGPA "+gpa + "doesnt affect the student's Industry Performance score "+CGM+"!!");
+            System.out.println("Having a below average CGPA doesnt affect the student's Industry Performance!!");
+        } 
+             //else if(gpa > 8.4 && CGM < 5.0){
+             else{
+                   sb.append("Having a very good CGPA "+gpa +"doesnt guarantee Industry Success "+CGM+" !!");
+        }
+            CsMTxtArea.setText(sb.toString());
+
             
         }
         if(selval.equals("Computer Science"))
@@ -1438,10 +1469,10 @@ public class univAdmin extends javax.swing.JPanel {
             AyCrRkPnl.setVisible(true);
             FcRkLbl.setVisible(true);
             CrRkLbl.setVisible(true);
-            CrScMtrxValLbl.setVisible(true);
+            CsMScrPnl.setVisible(true);
             CrScMtrxLbl.setVisible(true);
             
-            //For Faculty Ranking
+            //For Faculty Ranking of Computer Science
             
             DefaultTableModel model = (DefaultTableModel) AyFkRkTable.getModel();
             model.setRowCount(0);
@@ -1457,7 +1488,7 @@ public class univAdmin extends javax.swing.JPanel {
 
             }
             
-            //For Course Ranking
+            //For Course Ranking of Computer Science
             DefaultTableModel model1 = (DefaultTableModel) AyCrRkTable.getModel();
             model1.setRowCount(0);
             
@@ -1472,6 +1503,21 @@ public class univAdmin extends javax.swing.JPanel {
                 model1.addRow(row);
 
             }
+            ///Carrer SuccesMetric ranking for Information Systems
+            ArrayList<Double> values = careerSuccesMetricRank(map.get("Computer Science"));
+            Double gpa = values.get(0);
+            Double CGM = values.get(1);
+            System.out.println(gpa + " "+ CGM);
+            StringBuilder sb = new StringBuilder();
+             if(gpa < 8.4 && CGM > 5.0 ){
+                  sb.append("Having a below average CGPA "+gpa + "doesnt affect the student's Industry Performance score "+CGM+"!!");
+            System.out.println("Having a below average CGPA doesnt affect the student's Industry Performance!!");
+        } 
+             //else if(gpa > 8.4 && CGM < 5.0){
+             else{
+                   sb.append("Having a very good CGPA "+gpa +"doesnt guarantee Industry Success "+CGM+" !!");
+        }
+            CsMTxtArea.setText(sb.toString());
         }
     }//GEN-LAST:event_AyDptComboBoxActionPerformed
     
@@ -1518,7 +1564,8 @@ public class univAdmin extends javax.swing.JPanel {
     private javax.swing.JTable CrNameTable;
     private javax.swing.JLabel CrRkLbl;
     private javax.swing.JLabel CrScMtrxLbl;
-    private javax.swing.JLabel CrScMtrxValLbl;
+    private javax.swing.JScrollPane CsMScrPnl;
+    private javax.swing.JTextArea CsMTxtArea;
     private javax.swing.JLabel FcRkLbl;
     private javax.swing.JTabbedPane InUnvTabPane;
     private javax.swing.JButton LoginButton;

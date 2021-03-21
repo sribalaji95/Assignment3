@@ -5,6 +5,7 @@
  */
 package info5100.university.example.Persona.Faculty.Alumni;
 
+import info5100.university.example.Department.Department;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -17,7 +18,8 @@ public class AlumniDirectory {
 
     ArrayList<Alumni> ad ;
     HashMap<String, Alumni> adm = new HashMap<>();
-
+    Department department;
+    
     public HashMap<String, Alumni> getAdm(String id) {
         
            

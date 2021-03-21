@@ -113,7 +113,7 @@
                   <Component id="PasswordLowerPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Component id="LoginButton" min="-2" pref="31" max="-2" attributes="0"/>
-                  <EmptySpace pref="615" max="32767" attributes="0"/>
+                  <EmptySpace pref="613" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -1104,17 +1104,17 @@
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="294" max="-2" attributes="0"/>
-                                  <Component id="CrScMtrxValLbl" min="-2" pref="176" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="274" max="-2" attributes="0"/>
+                                  <Component id="CsMScrPnl" min="-2" pref="541" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="734" max="32767" attributes="0"/>
+                          <EmptySpace pref="616" max="32767" attributes="0"/>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                              <Component id="CrScMtrxLbl" min="-2" pref="176" max="-2" attributes="0"/>
-                              <EmptySpace pref="1146" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="CrScMtrxLbl" min="-2" pref="222" max="-2" attributes="0"/>
+                              <EmptySpace pref="1162" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -1143,15 +1143,15 @@
                               <Component id="AyFcRkPnl" min="-2" pref="162" max="-2" attributes="0"/>
                               <Component id="AyCrRkPnl" min="-2" pref="162" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="CrScMtrxValLbl" min="-2" pref="28" max="-2" attributes="0"/>
-                          <EmptySpace pref="584" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                          <Component id="CsMScrPnl" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="530" max="32767" attributes="0"/>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="362" max="-2" attributes="0"/>
-                              <Component id="CrScMtrxLbl" min="-2" pref="28" max="-2" attributes="0"/>
-                              <EmptySpace pref="583" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="349" max="-2" attributes="0"/>
+                              <Component id="CrScMtrxLbl" min="-2" pref="91" max="-2" attributes="0"/>
+                              <EmptySpace pref="535" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -1323,14 +1323,28 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="CrScMtrxLbl">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="18" style="1"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Carrer Success Metrics"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="CrScMtrxValLbl">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Value"/>
-                  </Properties>
-                </Component>
+                <Container class="javax.swing.JScrollPane" name="CsMScrPnl">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTextArea" name="CsMTxtArea">
+                      <Properties>
+                        <Property name="columns" type="int" value="20"/>
+                        <Property name="rows" type="int" value="5"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
               </SubComponents>
             </Container>
           </SubComponents>
