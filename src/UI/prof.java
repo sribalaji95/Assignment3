@@ -32,10 +32,10 @@ import javax.swing.table.DefaultTableModel;
  * @author shreyascr
  */
 public class prof extends javax.swing.JPanel {
-  static ArrayList<String> al2 = new ArrayList();
-  static ArrayList<StudentProfile> al3 = new ArrayList();
-  static StudentDirectory sd ;
-   static StudentDirectory sd1;
+   ArrayList<String> al2 = new ArrayList();
+   ArrayList<StudentProfile> al3 = new ArrayList();
+   StudentDirectory sd ;
+    StudentDirectory sd1;
      ArrayList<String> mainList = new ArrayList<>();
        ArrayList<String> mainList1 = new ArrayList<>();
       String grade ;
@@ -394,7 +394,7 @@ public class prof extends javax.swing.JPanel {
             // System.out.println(model.getValueAt(jTable1.getSelectedRow(),jTable1.getSelectedColumn()).toString());
 
     }//GEN-LAST:event_jButton1ActionPerformed
-public static ArrayList<StudentProfile> getStudentTakenByProf(String courseID, DepartmentDirectory d){
+public  ArrayList<StudentProfile> getStudentTakenByProf(String courseID, DepartmentDirectory d){
     List<Department> list2 = d.getDd();
     for(Department d1 : list2)
     {
@@ -418,7 +418,7 @@ public static ArrayList<StudentProfile> getStudentTakenByProf(String courseID, D
      return al3;
 }
     
-    public static void setGrade(String courseID, StudentDirectory d , String grade , String studentId){
+    public  void setGrade(String courseID, StudentDirectory d , String grade , String studentId){
         
         
         ArrayList<StudentProfile> as = new ArrayList();
