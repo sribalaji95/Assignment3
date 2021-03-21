@@ -1034,20 +1034,17 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel) AlmnNameTable.getModel();
             model.setRowCount(0);
             List<Alumni> al = addaluminiDepartment(map.get("Information Systems"));
-<<<<<<< HEAD
+
            // System.out.println("Prom"+al.get(0).getPromotions());
-=======
+
             System.out.println("ID"+al.get(0).getStudentProfile().getPerson().getPersonId());
->>>>>>> 67a08cfc8598cc4c2364afeba0f057b506be2e23
             for(int i=0;i<al.size();i++)
 
             {
                 Object[] row= new Object[5];
-<<<<<<< HEAD
+
                 row[0]=al.get(i).getId();
-=======
                 row[0]=al.get(i).getStudentProfile().getPerson().getPersonId();
->>>>>>> 67a08cfc8598cc4c2364afeba0f057b506be2e23
                 row[1]=al.get(i).getPromotions();
                 row[2]=al.get(i).getSalaryRange();
                 row[3]=al.get(i).getGradutationYear();
@@ -1069,11 +1066,9 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
 
             {
                 Object[] row= new Object[5];
-<<<<<<< HEAD
+
                 row[0]=al.get(i).getId();
-=======
                 row[0]=al.get(i).getStudentProfile().getPerson().getPersonId();
->>>>>>> 67a08cfc8598cc4c2364afeba0f057b506be2e23
                 row[1]=al.get(i).getPromotions();
                 row[2]=al.get(i).getSalaryRange();
                 row[3]=al.get(i).getGradutationYear();
