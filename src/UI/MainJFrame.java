@@ -39,6 +39,7 @@ public class MainJFrame extends javax.swing.JFrame {
         AdminLoginButton = new javax.swing.JButton();
         FacultyLoginButton = new javax.swing.JButton();
         EmployeeLoginButton = new javax.swing.JButton();
+        AluminiLoginButton = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -101,6 +102,15 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        AluminiLoginButton.setBackground(new java.awt.Color(44, 63, 87));
+        AluminiLoginButton.setForeground(new java.awt.Color(153, 153, 153));
+        AluminiLoginButton.setText("ALUMINI");
+        AluminiLoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AluminiLoginButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
@@ -109,10 +119,10 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(EmployeeLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(FacultyLoginButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(StudentLoginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(AdminLoginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(FacultyLoginButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(StudentLoginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AdminLoginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AluminiLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
         controlPanelLayout.setVerticalGroup(
@@ -126,7 +136,9 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(FacultyLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(EmployeeLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(AluminiLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(113, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(controlPanel);
@@ -167,7 +179,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void AdminLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminLoginButtonActionPerformed
         // TODO add your handling code here:
-        AdminLoginPanel1 adminLogin = new AdminLoginPanel1();
+        univAdmin adminLogin = new univAdmin();
         splitPane.setRightComponent(adminLogin);
     }//GEN-LAST:event_AdminLoginButtonActionPerformed
 
@@ -189,6 +201,12 @@ public class MainJFrame extends javax.swing.JFrame {
         std stdPanel = new std();
         splitPane.setRightComponent(stdPanel);
     }//GEN-LAST:event_StudentLoginButtonActionPerformed
+
+    private void AluminiLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AluminiLoginButtonActionPerformed
+        // TODO add your handling code here:
+        AlumPanel alum = new AlumPanel();
+        splitPane.setRightComponent(alum);
+    }//GEN-LAST:event_AluminiLoginButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,6 +245,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AdminLoginButton;
+    private javax.swing.JButton AluminiLoginButton;
     private javax.swing.JButton EmployeeLoginButton;
     private javax.swing.JButton FacultyLoginButton;
     private javax.swing.JButton StudentLoginButton;

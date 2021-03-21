@@ -107,6 +107,7 @@
                           <Component id="FacultyLoginButton" alignment="1" max="32767" attributes="0"/>
                           <Component id="StudentLoginButton" max="32767" attributes="0"/>
                           <Component id="AdminLoginButton" max="32767" attributes="0"/>
+                          <Component id="AluminiLoginButton" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -123,7 +124,9 @@
                       <Component id="FacultyLoginButton" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="EmployeeLoginButton" min="-2" pref="30" max="-2" attributes="0"/>
-                      <EmptySpace pref="171" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="AluminiLoginButton" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace pref="113" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -183,6 +186,20 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmployeeLoginButtonActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="AluminiLoginButton">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="57" green="3f" red="2c" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="99" green="99" red="99" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="ALUMINI"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AluminiLoginButtonActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
