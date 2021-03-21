@@ -532,7 +532,15 @@ public  ArrayList<StudentProfile> getStudentTakenByProf(String courseID, Departm
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
+
+
+        //System.out.println(grade);
+        //System.out.println(studentName);
+        //setGrade(sl.get(0),sd,grade,studentName);
+
+    
+
+
 
         //System.out.println(grade);
         //System.out.println(studentName);
@@ -542,17 +550,15 @@ public  ArrayList<StudentProfile> getStudentTakenByProf(String courseID, Departm
         setGrade(sl.get(0),sd,grade,mainList.get(0));
         
 
-=======
-//<<<<<<< HEAD
+
+
         //System.out.println(grade);
         //System.out.println(studentName);
-        setGrade(sl.get(0),sd,grade,studentName);
-//=======
+        //setGrade(sl.get(0),sd,grade,studentName);
+
         System.out.println(grade);
         setGrade(sl.get(0),sd,grade,mainList.get(0));
         
-//>>>>>>> 379d1d2ce19ed31f303c684f32e7c00a98156029
->>>>>>> 67a08cfc8598cc4c2364afeba0f057b506be2e23
 
     }//GEN-LAST:event_jButton2ActionPerformed
 

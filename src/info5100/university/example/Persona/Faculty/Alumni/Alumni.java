@@ -36,6 +36,15 @@ String id;
     int salaryRange;
     int gradutationYear;
     String position;
+    int workExp;
+
+    public int getWorkExp() {
+        return workExp;
+    }
+
+    public void setWorkExp(int workExp) {
+        this.workExp = workExp;
+    }
     static HashMap<String, Alumni> alumniDir;
 
     HashMap<String, Double> map = new HashMap();
@@ -126,8 +135,8 @@ String id;
     
     public double calculateAMG(){
         
-       setAGM((getSalaryPoints() + getPromotionPoints())/2);
-       return (getSalaryPoints() + getPromotionPoints()) /2;
+       setAGM((getSalaryPoints() + getPromotionPoints() + getWorkExpPoints())/3);
+       return (getSalaryPoints() + getPromotionPoints()+ getWorkExpPoints()) /3;
     }
     
     public double getSalaryPoints(){
@@ -157,6 +166,22 @@ String id;
             points = 10.0;
         }
        return points;
+    }
+    
+    public double getWorkExpPoints(){
+        
+        Double points = 0.0;
+        if(workExp > 0 && workExp < 2)
+            points = 2.5;
+        else if(workExp > 3 && workExp < 5)
+            points = 5.0;
+        else if(workExp > 5 && workExp < 8)
+            points = 7.5;
+        else 
+            points = 10.0;
+        
+        return points;
+       
     }
     
     //To Calcuate the Career Success Metric which is a combination of Professional & Academic Performance

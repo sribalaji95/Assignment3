@@ -191,7 +191,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void EmployeeLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeLoginButtonActionPerformed
         // TODO add your handling code here:
-        EmployerLoginPanel employerLogin = new EmployerLoginPanel();
+        empPanel employerLogin = new empPanel();
         splitPane.setRightComponent(employerLogin);
     }//GEN-LAST:event_EmployeeLoginButtonActionPerformed
 

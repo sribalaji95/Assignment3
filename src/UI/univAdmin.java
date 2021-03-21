@@ -7,15 +7,16 @@
 package UI;
 import TestData.TestData;
 import helper.Helper;
+import info5100.university.example.CourseCatalog.Course;
 import info5100.university.example.CourseSchedule.CourseOffer;
 import info5100.university.example.Department.Department;
 import info5100.university.example.Department.DepartmentDirectory;
 import info5100.university.example.Info5001UniversityExample;
-<<<<<<< HEAD
+
 import info5100.university.example.Persona.Faculty.FacultyProfile;
-=======
+
 import info5100.university.example.Persona.Faculty.Alumni.Alumni;
->>>>>>> 67a08cfc8598cc4c2364afeba0f057b506be2e23
+
 import info5100.university.example.Persona.StudentProfile;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -810,7 +811,27 @@ public class univAdmin extends javax.swing.JPanel {
 
     }//GEN-LAST:event_CrDptComboBoxActionPerformed
 
-    public void rankProfessorByDepartment(Department d){
+    
+    
+    public ArrayList<Course> rankCourseByDepartment(Department d){
+        
+        ArrayList<Course> course = d.getCourseCatalog().getCourseList();
+        for(Course c : course)
+            System.out.println("BEfore Sorted form course"+ c);
+        Collections.sort(course,new Comparator<Course>() {
+            @Override
+            public int compare(Course o1, Course o2) {
+               
+                return Integer.parseInt(o1.getRating()) - Integer.parseInt(o2.getRating());
+            }
+        } );
+        for(Course c : course)
+            System.out.println("Sorted form course"+ c); 
+        return course;
+        
+    }
+            
+    public ArrayList<FacultyProfile> rankProfessorByDepartment(Department d){
         
         ArrayList<FacultyProfile> fp = d.getFacultyDirectory().getTeacherlist();
         for(FacultyProfile f : fp)
@@ -825,7 +846,22 @@ public class univAdmin extends javax.swing.JPanel {
         for(FacultyProfile f : fp)
             System.out.println("Sorted form "+ f);
 
-                
+        return fp;
+        
+    }
+    
+    public Double careerSuccesMetricRank(Department d){
+        
+        ArrayList<Alumni> al = d.getAlumniDirectory().getAd();
+        int size = al.size();
+        Double res =0.0;
+        for(Alumni a : al){
+            System.out.println("BEfore Sorted form "+ a);
+            res += a.getCareerSuccess();
+        }
+        res = res/size;
+        
+        return res;
         
     }
         public void getDepartmentList(){

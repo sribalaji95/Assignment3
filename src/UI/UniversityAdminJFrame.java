@@ -1045,6 +1045,7 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
 
                 row[0]=al.get(i).getId();
                 row[0]=al.get(i).getStudentProfile().getPerson().getPersonId();
+                row[0]=al.get(i).getStudentProfile().getPerson().getPersonId();
                 row[1]=al.get(i).getPromotions();
                 row[2]=al.get(i).getSalaryRange();
                 row[3]=al.get(i).getGradutationYear();
@@ -1066,8 +1067,8 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
 
             {
                 Object[] row= new Object[5];
-
                 row[0]=al.get(i).getId();
+                row[0]=al.get(i).getStudentProfile().getPerson().getPersonId();
                 row[0]=al.get(i).getStudentProfile().getPerson().getPersonId();
                 row[1]=al.get(i).getPromotions();
                 row[2]=al.get(i).getSalaryRange();
