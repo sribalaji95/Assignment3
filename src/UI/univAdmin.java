@@ -1050,7 +1050,7 @@ public class univAdmin extends javax.swing.JPanel {
             @Override
             public int compare(FacultyProfile o1, FacultyProfile o2) {
                
-                return o1.getFacultyRatings() - o2.getFacultyRatings();
+                return o2.getFacultyRatings() - o1.getFacultyRatings();
             }
         } );
         for(FacultyProfile f : fp)
