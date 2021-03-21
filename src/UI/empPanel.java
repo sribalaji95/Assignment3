@@ -9,7 +9,10 @@ import TestData.TestData;
 import info5100.university.example.CourseCatalog.Course;
 import info5100.university.example.Department.Department;
 import info5100.university.example.Department.DepartmentDirectory;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.swing.DefaultCellEditor;
@@ -30,6 +33,7 @@ public class empPanel extends javax.swing.JPanel {
      */
     String rating;
     String course;
+   Map<String,String> map1 = new HashMap<>();
     public empPanel() {
         initComponents();
         jPanel2.setVisible(false);
@@ -305,10 +309,11 @@ List<Course> list1;
                     
                     int col = evt.getColumn();
                     int row = evt.getFirstRow();
-                    //System.out.println(row+"as");
+                   // System.out.println(row+"as");
+                   // System.out.println(col+"as1");
                     rating = model.getValueAt(row, 1).toString();
                     course =model.getValueAt(row,0).toString();
-                    
+                    map1.put(course, rating);
                    
                 }
             });
@@ -321,16 +326,22 @@ List<Course> list1;
         DepartmentDirectory dd = TestData.getInstance().getDd();
         List<Department> list = dd.getDd();
         Boolean flag = false;
+        System.out.println("TT ");
+        Iterator it = map1.entrySet().iterator();
         for(Department d:list){
-        for(int i=0;i<list1.size();i++)
-        {
-            if(d.getCourseCatalog().getCourseList().get(i).getName().equals(course)){
-                d.getCourseCatalog().getCourseList().get(i).setRating(rating);
-                
+        for(int i=0;i<list1.size();i++){
+           while (it.hasNext()) {
+               Map.Entry pair = (Map.Entry)it.next();
+            if(d.getCourseCatalog().getCourseList().get(i).getName().equals(pair.getKey())){
+                d.getCourseCatalog().getCourseList().get(i).setRating(pair.getValue().toString());
+                System.out.println("TT jkk");
+
+                it.remove();
                 flag=true;
                 System.out.println("Course Ratings: "+d.getCourseCatalog().getCourseList().get(i).getRating());
                 break;
             }
+           }
         }
     }
             

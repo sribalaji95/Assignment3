@@ -5,6 +5,18 @@
  */
 package UI;
 
+import TestData.TestData;
+import info5100.university.example.CourseCatalog.Course;
+import info5100.university.example.Department.Department;
+import info5100.university.example.Department.DepartmentDirectory;
+import info5100.university.example.Employer.EmployerDirectory;
+import info5100.university.example.Persona.Faculty.Alumni.CompanyEmployers.EmployeeDirectory;
+import info5100.university.example.Persona.Faculty.Alumni.CompanyEmployers.Employers;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 /**
  *
  * @author Apoorva
@@ -14,8 +26,11 @@ public class EmployerLoginPanel extends javax.swing.JPanel {
     /**
      * Creates new form StudentLoginPanel
      */
+    TestData td;
     public EmployerLoginPanel() {
         initComponents();
+        td = TestData.getInstance();
+        
     }
 
     /**
@@ -176,8 +191,38 @@ public class EmployerLoginPanel extends javax.swing.JPanel {
 
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_LoginButtonActionPerformed
+        
+        System.out.println("Login pressed");
+        EmployeeDirectory ed = td.getED();
+        DepartmentDirectory dd = td.getDd();
+        
+   //     for(DepartmentD)
+        
+//        ArrayList<Employers> em = td.getED().getEmployers();
+//        
+//        
+//        for(Employers e : em){
+//            e.getRelevantcourses().get(0).getName();
+//        }
 
+            getReleventCourses();
+
+        
+        
+        
+    }//GEN-LAST:event_LoginButtonActionPerformed
+   public List<Course> getReleventCourses(){
+        
+       
+        Department dept = td.getDd().getDd().get(0);
+        Department dept1 = td.getDd().getDd().get(1);
+
+        List<Course> res1 = dept.getCourseCatalog().getCourseList();
+        List<Course> res2 = dept1.getCourseCatalog().getCourseList();
+        List<Course> res = Stream.concat(res1.stream(), res2.stream()).collect(Collectors.toList());
+        System.out.println("SS "+ res.get(0).getCOurseNumber());
+        return res;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LoginButton;

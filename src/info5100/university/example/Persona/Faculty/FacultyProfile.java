@@ -30,7 +30,6 @@ public class FacultyProfile {
     public ArrayList<FacultyAssignment> getFacultyassignments() {
         return facultyassignments;
     }
-    int professorRatings;
 
     public FacultyProfile(Person p) {
 

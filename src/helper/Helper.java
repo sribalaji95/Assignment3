@@ -146,8 +146,7 @@ public class Helper {
         return list;
      }
     
-
-    
+   
     
     public List<String> getProfessors(Department d , StudentProfile sp)
     {
@@ -175,6 +174,7 @@ public class Helper {
         
        return result; 
     }
+
 
 //    public List<FacultyProfile> getProfessors(StudentProfile sp)
 //    {

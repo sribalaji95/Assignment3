@@ -11,9 +11,17 @@ import info5100.university.example.CourseSchedule.CourseOffer;
 import info5100.university.example.Department.Department;
 import info5100.university.example.Department.DepartmentDirectory;
 import info5100.university.example.Info5001UniversityExample;
+
+import info5100.university.example.Persona.Faculty.FacultyProfile;
+
 import info5100.university.example.Persona.Faculty.Alumni.Alumni;
+
 import info5100.university.example.Persona.StudentProfile;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -802,6 +810,24 @@ public class univAdmin extends javax.swing.JPanel {
 
     }//GEN-LAST:event_CrDptComboBoxActionPerformed
 
+    public void rankProfessorByDepartment(Department d){
+        
+        ArrayList<FacultyProfile> fp = d.getFacultyDirectory().getTeacherlist();
+        for(FacultyProfile f : fp)
+            System.out.println("BEfore Sorted form "+ f);
+        Collections.sort(fp,new Comparator<FacultyProfile>() {
+            @Override
+            public int compare(FacultyProfile o1, FacultyProfile o2) {
+               
+                return o1.getFacultyRatings() - o2.getFacultyRatings();
+            }
+        } );
+        for(FacultyProfile f : fp)
+            System.out.println("Sorted form "+ f);
+
+                
+        
+    }
         public void getDepartmentList(){
          
 //        ArrayList<Department> departmentlist = department.getDd();

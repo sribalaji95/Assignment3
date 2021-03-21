@@ -24,6 +24,8 @@ import info5100.university.example.Persona.PersonDirectory;
 import info5100.university.example.Persona.StudentDirectory;
 import info5100.university.example.Persona.StudentProfile;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
@@ -338,15 +340,24 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         Person prof12 = pd.newPerson("prof11");
         
         
+        
 
         FacultyProfile fp = fd.newStudentProfile(prof1);
+        fp.setFacultyRatings(10);
 
         FacultyProfile fp1 = fd1.newStudentProfile(prof2);
-
+      //  fp1.setFacultyRatings(9);
         FacultyProfile fp2 = fd.newStudentProfile(prof3);
+        fp2.setFacultyRatings(1);
         FacultyProfile fp3 = fd.newStudentProfile(prof4);
+        fp3.setFacultyRatings(7);
+        
         FacultyProfile fp4 = fd.newStudentProfile(prof5);
+        fp4.setFacultyRatings(4);
+
         FacultyProfile fp5 = fd.newStudentProfile(prof6);
+        fp5.setFacultyRatings(8);
+
         FacultyProfile fp6 = fd.newStudentProfile(prof7);
         FacultyProfile fp7 = fd.newStudentProfile(prof8);
         FacultyProfile fp8 = fd1.newStudentProfile(prof9);
@@ -405,7 +416,7 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
 
 
         
-        
+        rankProfessorByDepartment(department);
         EmployeeDirectory ed = new EmployeeDirectory();
         ArrayList<Employers> emp = new ArrayList<>();
         Employers em = new Employers();
@@ -490,5 +501,24 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
       
                  
      } 
+     
+        public void rankProfessorByDepartment(Department d){
+        
+        ArrayList<FacultyProfile> fp = d.getFacultyDirectory().getTeacherlist();
+        for(FacultyProfile f : fp)
+            System.out.println("BEfore Sorted form "+ f.getFacultyRatings());
+        Collections.sort(fp,new Comparator<FacultyProfile>() {
+            @Override
+            public int compare(FacultyProfile o1, FacultyProfile o2) {
+               
+                return o2.getFacultyRatings() - o1.getFacultyRatings();
+            }
+        } );
+        for(FacultyProfile f : fp)
+            System.out.println("Sorted form "+ f.getFacultyRatings());
+
+                
+        
+    }
     
 }

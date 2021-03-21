@@ -12,6 +12,7 @@ package info5100.university.example.CourseCatalog;
 public class Course {
     String number;
     String name;
+
     String rating;
 
     public String getRating() {
@@ -22,6 +23,8 @@ public class Course {
         this.rating = rating;
     }
 //    int courseRatings;
+
+    int courseRatings;
 //
 //    public int getCourseRatings() {
 //        return courseRatings;
