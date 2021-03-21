@@ -18,6 +18,10 @@ public class CourseSchedule {
     CourseCatalog coursecatalog;
 
     ArrayList<CourseOffer> schedule;
+
+    public String getSemester() {
+        return semester;
+    }
     String semester;
 
         public CourseSchedule(){

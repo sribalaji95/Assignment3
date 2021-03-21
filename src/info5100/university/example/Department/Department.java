@@ -10,6 +10,7 @@ import info5100.university.example.CourseCatalog.CourseCatalog;
 import info5100.university.example.CourseSchedule.CourseLoad;
 import info5100.university.example.CourseSchedule.CourseOffer;
 import info5100.university.example.CourseSchedule.CourseSchedule;
+import info5100.university.example.Persona.Faculty.Alumni.AlumniDirectory;
 import info5100.university.example.Persona.Faculty.FacultyDirectory;
 import info5100.university.example.Persona.PersonDirectory;
 import info5100.university.example.Persona.StudentDirectory;
@@ -23,11 +24,24 @@ import java.util.HashMap;
 public class Department {
 
     String name;
+
+    public String getName() {
+        return name;
+    }
     CourseCatalog coursecatalog;
     PersonDirectory persondirectory;
     StudentDirectory studentdirectory;
     FacultyDirectory facultydirectory;
+    AlumniDirectory alumniDirectory;
     //EmployerDirectory employerdirectory;
+
+    public AlumniDirectory getAlumniDirectory() {
+        return alumniDirectory;
+    }
+
+    public void setAlumniDirectory(AlumniDirectory alumniDirectory) {
+        this.alumniDirectory = alumniDirectory;
+    }
 
     HashMap<String, CourseSchedule> mastercoursecatalog;
 

@@ -17,13 +17,22 @@ public class StudentProfile {
 
     Person person;
     Transcript transcript;
+    Boolean isAlumni = false;
 
+    public Boolean getIsAlumni() {
+        return isAlumni;
+    }
+
+    public void setIsAlumni(Boolean isAlumni) {
+        this.isAlumni = isAlumni;
+    }
+    
     public Transcript getTranscript() {
         return transcript;
     }
     EmploymentHistroy employmenthistory;
     Alumni al;
-
+    
     public Alumni getAl() {
         return al;
     }

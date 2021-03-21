@@ -5,6 +5,7 @@
  */
 package info5100.university.example.CourseSchedule;
 
+import helper.Helper;
 import info5100.university.example.Persona.StudentProfile;
 import info5100.university.example.Persona.Transcript;
 import java.util.ArrayList;
@@ -112,7 +113,7 @@ public class CourseLoad {
         System.out.println("The Number of Credits is :"+creditsTotal);
         if(creditsTotal >= 4){
             //Call Function which Sribalaji which would add for Alumni
-            
+            new Helper().addStudentToAlumni(sp);
         }
         
     }

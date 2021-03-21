@@ -315,7 +315,7 @@ public class Alumni_Frame extends javax.swing.JFrame {
 //        Alumni_Details Alumdet = new Alumni_Details();
  //       Alumdet.setVisible(true);
         System.out.println("CSM "+ al1.getCareerSuccess());
-        al1.rateCourses();
+        
         
     }//GEN-LAST:event_AlumniloginbtnActionPerformed
 

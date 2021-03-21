@@ -5,6 +5,7 @@
  */
 package info5100.university.example.Persona.Faculty.Alumni;
 
+import info5100.university.example.CourseCatalog.Course;
 import info5100.university.example.CourseSchedule.CourseLoad;
 import info5100.university.example.Persona.EmploymentHistory.EmploymentHistroy;
 import info5100.university.example.Persona.Faculty.Alumni.CompanyEmployers.Employers;
@@ -178,19 +179,20 @@ String id;
         return (careerMetric + alumniCGPA )/ 2;
     }
     
-    public void rateCourses(){
-        double value = calculateAMG();
-        ArrayList<String> al  = getStudentProfile().getTranscript().getCourseLoadBySemester("Fall2020").getCourseInformation();
-        
-        for(String a : al){
-            System.out.println("tets "+ a);
-        }
-        
+//    public void rateCourses(){
+//        double value = calculateAMG();
+//        ArrayList<String> al  = getStudentProfile().getTranscript().getCourseLoadBySemester("Fall2020").getCourseInformation();
+//       
+//        for(String a : al){
+//             Course c =  a;
+//        }
+//        getStudentProfile().getTranscript().getCourseLoad("Fall2020").g
+//        
 //        if(value > ){
 //            getStudentProfile().getCourseLoadBySemester("Fall2020").getCourseInformation;
 //        }
-//        
-    }
+//       
+    
     
    
 }
