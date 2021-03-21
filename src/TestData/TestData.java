@@ -24,6 +24,8 @@ import info5100.university.example.Persona.PersonDirectory;
 import info5100.university.example.Persona.StudentDirectory;
 import info5100.university.example.Persona.StudentProfile;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
@@ -50,8 +52,12 @@ public class TestData {
     AlumniDirectory ad  = new AlumniDirectory();
     EmployeeDirectory ed = new EmployeeDirectory();
     DepartmentDirectory dd = new DepartmentDirectory();
+
+    
+
     StudentDirectory sd ;
     HashMap<String, Alumni> map;
+
 
     public  DepartmentDirectory getDd() {
         return dd;
@@ -177,8 +183,21 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         ad.add(department1);
         dd.setDd(ad);
         
-        Course course = department.newCourse("app eng", "info 5100", 4);        
-        Course course1 = department1.newCourse("PDP", "cs 5010", 4);
+        Course courseinfo1 = department.newCourse("app eng", "info 5100", 4); 
+        Course courseinfo2 = department.newCourse("DSC", "info 5101", 4);
+        Course courseinfo3 = department.newCourse("Web Design", "info 6203", 4);
+        Course courseinfo4 = department.newCourse("DWBI", "info 7546", 4);
+        Course courseinfo5 = department.newCourse("Web Tools", "info 6100", 4); 
+        Course courseinfo6 = department.newCourse("Cloud", "info 7101", 4);
+        Course courseinfo7 = department.newCourse("DMDB", "info 6353", 4);
+        Course courseinfo8 = department.newCourse("ADSC", "info 7106", 4);
+        Course coursecsc1 = department1.newCourse("PDP", "cs 5010", 4);
+        Course coursecsc2 = department1.newCourse("NLP", "cs 5204", 4);
+        Course coursecsc3 = department1.newCourse("AI", "cs 7010", 4);
+        Course coursecsc4 = department1.newCourse("Network", "cs 6284", 4);
+        
+        
+        
 
         CourseSchedule courseschedule = department.newCourseSchedule("Fall2020");
         CourseSchedule courseschedule1 = department1.newCourseSchedule("Fall2020");
@@ -186,30 +205,122 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         CourseOffer courseoffer = courseschedule.newCourseOffer("info 5100");
         courseoffer.generatSeats(10);
         
+        CourseOffer courseoffer2 = courseschedule.newCourseOffer("info 5101");
+        courseoffer2.generatSeats(10);
+        
+        CourseOffer courseoffer3 = courseschedule.newCourseOffer("info 6203");
+        courseoffer3.generatSeats(10);
+        
+        CourseOffer courseoffer4 = courseschedule.newCourseOffer("info 7546");
+        courseoffer4.generatSeats(10);
+        
+        CourseOffer courseoffer5 = courseschedule.newCourseOffer("info 6100");
+        courseoffer5.generatSeats(10);
+        
+        CourseOffer courseoffer6 = courseschedule.newCourseOffer("info 7101");
+        courseoffer6.generatSeats(10);
+        
+        CourseOffer courseoffer7 = courseschedule.newCourseOffer("info 6353");
+        courseoffer7.generatSeats(10);
+        
+        CourseOffer courseoffer8 = courseschedule.newCourseOffer("info 7106");
+        courseoffer8.generatSeats(10);
         CourseOffer courseoffer1 = courseschedule1.newCourseOffer("cs 5010");
         courseoffer1.generatSeats(10);
+        
+        CourseOffer courseoffer9 = courseschedule1.newCourseOffer("cs 6284");
+        courseoffer9.generatSeats(10);
+        
+        CourseOffer courseoffer10 = courseschedule1.newCourseOffer("cs 5204");
+        courseoffer10.generatSeats(10);
+        
+        CourseOffer courseoffer11 = courseschedule1.newCourseOffer("cs 7010");
+        courseoffer11.generatSeats(10);
+
+
         
         PersonDirectory pd = department.getPersonDirectory();
       //  PersonDirectory pd1 = department1.getPersonDirectory();
 
         Person person =  pd.newPerson("info1");
         Person person1 = pd.newPerson("info2");
-        Person person2 = pd.newPerson("cs1");
-        Person person3 = pd.newPerson("cs2");
+        Person person2 = pd.newPerson("info3");
+        Person person3 = pd.newPerson("info4");
+        Person person4 =  pd.newPerson("info5");
+        Person person5 = pd.newPerson("info6");
+        Person person6 = pd.newPerson("info7");
+        Person person7 = pd.newPerson("info8");
+        Person person8 =  pd.newPerson("info9");
+        Person person9 = pd.newPerson("info10");
+        Person person10 = pd.newPerson("info11");
+        Person person11 = pd.newPerson("info12");
+        Person person12 =  pd.newPerson("info13");
+        Person person13 = pd.newPerson("info14");
+        Person person14 = pd.newPerson("info15");
+        Person person15 = pd.newPerson("info16");
+        Person person16 =  pd.newPerson("cs1");
+        Person person17 = pd.newPerson("cs2");
+        Person person18 = pd.newPerson("cs3");
+        Person person19 = pd.newPerson("cs4");
+        Person person20 = pd.newPerson("cs5");
+        Person person21 = pd.newPerson("cs6");
+        Person person22 = pd.newPerson("cs7");
+        Person person23 = pd.newPerson("cs8");
+        
         
         sd = department.getStudentDirectory();
         StudentDirectory sd1 = department1.getStudentDirectory();
 
         StudentProfile student = sd.newStudentProfile(person);
         StudentProfile student1 = sd.newStudentProfile(person1);
-        
-        StudentProfile student2 = sd1.newStudentProfile(person2);
-        StudentProfile student3 = sd1.newStudentProfile(person3);
+        StudentProfile student2 = sd.newStudentProfile(person2);
+        StudentProfile student3 = sd.newStudentProfile(person3);
+        StudentProfile student4 = sd.newStudentProfile(person4);
+        StudentProfile student5 = sd.newStudentProfile(person5);
+        StudentProfile student6= sd.newStudentProfile(person6);
+        StudentProfile student7 = sd.newStudentProfile(person7);
+        StudentProfile student8= sd.newStudentProfile(person8);
+        StudentProfile student9 = sd.newStudentProfile(person9);
+        StudentProfile student10 = sd.newStudentProfile(person10);
+        StudentProfile student11 = sd.newStudentProfile(person11);
+        StudentProfile student12= sd.newStudentProfile(person12);
+        StudentProfile student13= sd.newStudentProfile(person13);
+        StudentProfile student14= sd.newStudentProfile(person14);
+        StudentProfile student15= sd.newStudentProfile(person15);
+        StudentProfile student16= sd1.newStudentProfile(person16);
+        StudentProfile student17= sd1.newStudentProfile(person17);
+        StudentProfile student18= sd1.newStudentProfile(person18);
+        StudentProfile student19 = sd1.newStudentProfile(person19);
+        StudentProfile student20 = sd1.newStudentProfile(person20);
+        StudentProfile student21 = sd1.newStudentProfile(person21);
+        StudentProfile student22 = sd1.newStudentProfile(person22);
+        StudentProfile student23 = sd1.newStudentProfile(person23);
         
         CourseLoad courseload = student.newCourseLoad("Fall2020"); 
         CourseLoad courseload1 = student1.newCourseLoad("Fall2020"); 
         CourseLoad courseload2 = student2.newCourseLoad("Fall2020"); 
         CourseLoad courseload3 = student3.newCourseLoad("Fall2020");
+        CourseLoad courseload4 = student4.newCourseLoad("Fall2020");
+        CourseLoad courseload5 = student5.newCourseLoad("Fall2020");
+        CourseLoad courseload6 = student6.newCourseLoad("Fall2020");
+        CourseLoad courseload7 = student7.newCourseLoad("Fall2020");
+        CourseLoad courseload8 = student8.newCourseLoad("Fall2020");
+        CourseLoad courseload9 = student9.newCourseLoad("Fall2020");
+        CourseLoad courseload10 = student10.newCourseLoad("Fall2020");
+        CourseLoad courseload11 = student11.newCourseLoad("Fall2020");
+        CourseLoad courseload12= student12.newCourseLoad("Fall2020");
+        CourseLoad courseload13 = student13.newCourseLoad("Fall2020");
+        CourseLoad courseload14 = student14.newCourseLoad("Fall2020");
+        CourseLoad courseload15 = student15.newCourseLoad("Fall2020");
+        CourseLoad courseload16 = student16.newCourseLoad("Fall2020");
+        CourseLoad courseload17 = student17.newCourseLoad("Fall2020");
+        CourseLoad courseload18 = student18.newCourseLoad("Fall2020");
+        CourseLoad courseload19 = student19.newCourseLoad("Fall2020");
+        CourseLoad courseload20 = student20.newCourseLoad("Fall2020");
+        CourseLoad courseload21 = student21.newCourseLoad("Fall2020");
+        CourseLoad courseload22 = student22.newCourseLoad("Fall2020");
+        CourseLoad courseload23 = student23.newCourseLoad("Fall2020");
+        
         FacultyDirectory fd = department.getFacultyDirectory();
        
         FacultyDirectory fd1 = department1.getFacultyDirectory();
@@ -217,22 +328,95 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         
         Person prof1 = pd.newPerson("prof");
         Person prof2 = pd.newPerson("prof1");
+        Person prof3 = pd.newPerson("prof2");
+        Person prof4 = pd.newPerson("prof3");
+        Person prof5 = pd.newPerson("prof4");
+        Person prof6 = pd.newPerson("prof5");
+        Person prof7 = pd.newPerson("prof6");
+        Person prof8 = pd.newPerson("prof7");
+        Person prof9 = pd.newPerson("prof8");
+        Person prof10 = pd.newPerson("prof9");
+        Person prof11 = pd.newPerson("prof10");
+        Person prof12 = pd.newPerson("prof11");
+        
+        
+        
 
         FacultyProfile fp = fd.newStudentProfile(prof1);
-        FacultyProfile fp1 = fd.newStudentProfile(prof2);
+        fp.setFacultyRatings(10);
+
+        FacultyProfile fp1 = fd1.newStudentProfile(prof2);
+      //  fp1.setFacultyRatings(9);
+        FacultyProfile fp2 = fd.newStudentProfile(prof3);
+        fp2.setFacultyRatings(1);
+        FacultyProfile fp3 = fd.newStudentProfile(prof4);
+        fp3.setFacultyRatings(7);
+        
+        FacultyProfile fp4 = fd.newStudentProfile(prof5);
+        fp4.setFacultyRatings(4);
+
+        FacultyProfile fp5 = fd.newStudentProfile(prof6);
+        fp5.setFacultyRatings(8);
+
+        FacultyProfile fp6 = fd.newStudentProfile(prof7);
+        FacultyProfile fp7 = fd.newStudentProfile(prof8);
+        FacultyProfile fp8 = fd1.newStudentProfile(prof9);
+        FacultyProfile fp9 = fd1.newStudentProfile(prof10);
+        FacultyProfile fp10 = fd1.newStudentProfile(prof11);
+        FacultyProfile fp11 = fd1.newStudentProfile(prof12);
+        
+        
+
         
         
         courseoffer.AssignAsTeacher(fp);
+        fp.AssignAsTeacher(courseoffer);
         courseoffer1.AssignAsTeacher(fp1);
+
+        fp1.AssignAsTeacher(courseoffer1);
+
+        courseoffer2.AssignAsTeacher(fp2);
+        courseoffer3.AssignAsTeacher(fp3);
+        courseoffer4.AssignAsTeacher(fp4);
+        courseoffer5.AssignAsTeacher(fp5);
+        courseoffer6.AssignAsTeacher(fp6);
+        courseoffer7.AssignAsTeacher(fp7);
+        courseoffer8.AssignAsTeacher(fp8);
+        courseoffer9.AssignAsTeacher(fp9);
+        courseoffer10.AssignAsTeacher(fp10);
+        courseoffer11.AssignAsTeacher(fp11);
+
+        
         
 
         courseload.newSeatAssignment(courseoffer); //register student in class
         courseload1.newSeatAssignment(courseoffer);
-        courseload2.newSeatAssignment(courseoffer1);
-        courseload3.newSeatAssignment(courseoffer1);
+        courseload2.newSeatAssignment(courseoffer2); //register student in class
+        courseload3.newSeatAssignment(courseoffer2);
+        courseload4.newSeatAssignment(courseoffer3);
+        courseload5.newSeatAssignment(courseoffer3);
+        courseload6.newSeatAssignment(courseoffer4); //register student in class
+        courseload7.newSeatAssignment(courseoffer4);
+        courseload8.newSeatAssignment(courseoffer5);
+        courseload9.newSeatAssignment(courseoffer5);
+        courseload10.newSeatAssignment(courseoffer6); //register student in class
+        courseload11.newSeatAssignment(courseoffer6);
+        courseload12.newSeatAssignment(courseoffer7);
+        courseload13.newSeatAssignment(courseoffer7);
+        courseload14.newSeatAssignment(courseoffer8); //register student in class
+        courseload15.newSeatAssignment(courseoffer8);
+        courseload16.newSeatAssignment(courseoffer1);
+        courseload17.newSeatAssignment(courseoffer1);
+        courseload18.newSeatAssignment(courseoffer9);
+        courseload19.newSeatAssignment(courseoffer9);
+        courseload20.newSeatAssignment(courseoffer10); //register student in class
+        courseload21.newSeatAssignment(courseoffer10);
+        courseload22.newSeatAssignment(courseoffer11);
+        courseload23.newSeatAssignment(courseoffer11);
+
 
         
-        
+        rankProfessorByDepartment(department);
         EmployeeDirectory ed = new EmployeeDirectory();
         ArrayList<Employers> emp = new ArrayList<>();
         Employers em = new Employers();
@@ -283,5 +467,24 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
       
                  
      } 
+     
+        public void rankProfessorByDepartment(Department d){
+        
+        ArrayList<FacultyProfile> fp = d.getFacultyDirectory().getTeacherlist();
+        for(FacultyProfile f : fp)
+            System.out.println("BEfore Sorted form "+ f.getFacultyRatings());
+        Collections.sort(fp,new Comparator<FacultyProfile>() {
+            @Override
+            public int compare(FacultyProfile o1, FacultyProfile o2) {
+               
+                return o2.getFacultyRatings() - o1.getFacultyRatings();
+            }
+        } );
+        for(FacultyProfile f : fp)
+            System.out.println("Sorted form "+ f.getFacultyRatings());
+
+                
+        
+    }
     
 }

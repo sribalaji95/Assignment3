@@ -12,7 +12,7 @@ package info5100.university.example.CourseCatalog;
 public class Course {
     String number;
     String name;
-//    int courseRatings;
+    int courseRatings;
 //
 //    public int getCourseRatings() {
 //        return courseRatings;
