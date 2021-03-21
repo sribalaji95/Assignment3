@@ -64,7 +64,7 @@ public class AlumPanel extends javax.swing.JPanel {
         AlumgradyearTxt = new javax.swing.JTextField();
 
         jPanel1.setBackground(new java.awt.Color(29, 44, 64));
-        jPanel1.setPreferredSize(new java.awt.Dimension(478, 419));
+        jPanel1.setPreferredSize(new java.awt.Dimension(0, 0));
 
         StudentLoginPanel.setBackground(new java.awt.Color(23, 35, 51));
 
@@ -160,9 +160,9 @@ public class AlumPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(116, 116, 116)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(PasswordLowerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                    .addComponent(PasswordLowerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1020, Short.MAX_VALUE)
                     .addComponent(PasswordField)
-                    .addComponent(UsernameLowerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                    .addComponent(UsernameLowerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1020, Short.MAX_VALUE)
                     .addComponent(UsernameTextField)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
@@ -170,8 +170,8 @@ public class AlumPanel extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addComponent(UsernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 823, Short.MAX_VALUE)))
+                .addContainerGap(284, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(218, 218, 218)
                 .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -195,20 +195,29 @@ public class AlumPanel extends javax.swing.JPanel {
                 .addComponent(PasswordLowerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(615, Short.MAX_VALUE))
         );
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel2.setText("Alumni Details");
+        AlumDetail.setBackground(new java.awt.Color(29, 44, 64));
+        AlumDetail.setPreferredSize(new java.awt.Dimension(1420, 1000));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel2.setText("ALUMNI DETAILS");
+
+        AlumNamelbl.setForeground(new java.awt.Color(153, 153, 153));
         AlumNamelbl.setText("Student Name:");
 
+        AlumIdlbl.setForeground(new java.awt.Color(153, 153, 153));
         AlumIdlbl.setText("Student ID:");
 
+        AlumEmplbl.setForeground(new java.awt.Color(153, 153, 153));
         AlumEmplbl.setText("Employer:");
 
+        AlumPromlbl.setForeground(new java.awt.Color(153, 153, 153));
         AlumPromlbl.setText("Promotions:");
 
+        AlumSallbl.setForeground(new java.awt.Color(153, 153, 153));
         AlumSallbl.setText("Salary:");
 
         AlumIdtxt.setEditable(false);
@@ -224,6 +233,8 @@ public class AlumPanel extends javax.swing.JPanel {
             }
         });
 
+        AlumupdBtn.setBackground(new java.awt.Color(44, 63, 87));
+        AlumupdBtn.setForeground(new java.awt.Color(153, 153, 153));
         AlumupdBtn.setText("Update");
         AlumupdBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,6 +242,8 @@ public class AlumPanel extends javax.swing.JPanel {
             }
         });
 
+        Alumbackbtn.setBackground(new java.awt.Color(44, 63, 87));
+        Alumbackbtn.setForeground(new java.awt.Color(153, 153, 153));
         Alumbackbtn.setText("Back");
         Alumbackbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -238,50 +251,54 @@ public class AlumPanel extends javax.swing.JPanel {
             }
         });
 
+        AlumgradLbl.setForeground(new java.awt.Color(153, 153, 153));
         AlumgradLbl.setText("Graduation Year:");
 
         javax.swing.GroupLayout AlumDetailLayout = new javax.swing.GroupLayout(AlumDetail);
         AlumDetail.setLayout(AlumDetailLayout);
         AlumDetailLayout.setHorizontalGroup(
             AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AlumDetailLayout.createSequentialGroup()
-                .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(AlumDetailLayout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(AlumupdBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                        .addComponent(Alumbackbtn)
-                        .addGap(55, 55, 55))
-                    .addGroup(AlumDetailLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AlumEmplbl)
-                            .addComponent(AlumPromlbl)
-                            .addComponent(AlumSallbl))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(AlumSalTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                            .addComponent(Alumpromtxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                            .addComponent(AlumEmptxt, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AlumIdtxt, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AlumNametxt, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AlumgradyearTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(75, 75, 75))
             .addGroup(AlumDetailLayout.createSequentialGroup()
                 .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AlumDetailLayout.createSequentialGroup()
                         .addGap(141, 141, 141)
                         .addComponent(jLabel2))
                     .addGroup(AlumDetailLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(AlumNamelbl))
+                        .addGap(10, 10, 10)
+                        .addComponent(AlumNamelbl)
+                        .addGap(65, 65, 65)
+                        .addComponent(AlumNametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(AlumDetailLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(AlumIdlbl))
+                        .addGap(10, 10, 10)
+                        .addComponent(AlumIdlbl)
+                        .addGap(82, 82, 82)
+                        .addComponent(AlumIdtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(AlumDetailLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(AlumgradLbl)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(10, 10, 10)
+                        .addComponent(AlumgradLbl)
+                        .addGap(56, 56, 56)
+                        .addComponent(AlumgradyearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AlumDetailLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(AlumEmplbl)
+                        .addGap(88, 88, 88)
+                        .addComponent(AlumEmptxt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AlumDetailLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(AlumPromlbl)
+                        .addGap(79, 79, 79)
+                        .addComponent(Alumpromtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AlumDetailLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(AlumSallbl)
+                        .addGap(101, 101, 101)
+                        .addComponent(AlumSalTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AlumDetailLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(AlumupdBtn)
+                        .addGap(48, 48, 48)
+                        .addComponent(Alumbackbtn)))
+                .addContainerGap(186, Short.MAX_VALUE))
         );
         AlumDetailLayout.setVerticalGroup(
             AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,65 +306,57 @@ public class AlumPanel extends javax.swing.JPanel {
                 .addGap(24, 24, 24)
                 .addComponent(jLabel2)
                 .addGap(21, 21, 21)
-                .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AlumNamelbl)
+                .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AlumDetailLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(AlumNamelbl))
                     .addComponent(AlumNametxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AlumIdlbl)
+                .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AlumDetailLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(AlumIdlbl))
                     .addComponent(AlumIdtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
-                .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AlumgradLbl)
+                .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AlumDetailLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(AlumgradLbl))
                     .addComponent(AlumgradyearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(AlumEmplbl)
                     .addComponent(AlumEmptxt, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AlumPromlbl)
+                .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AlumDetailLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(AlumPromlbl))
                     .addComponent(Alumpromtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AlumSallbl)
+                .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AlumDetailLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(AlumSallbl))
                     .addComponent(AlumSalTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(AlumupdBtn)
                     .addComponent(Alumbackbtn))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(40, 40, 40)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(41, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(AlumDetail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1420, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(AlumDetail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 403, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(25, 25, 25)
-                    .addComponent(AlumDetail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(25, 25, 25)))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(AlumDetail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

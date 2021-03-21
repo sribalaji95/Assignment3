@@ -86,7 +86,8 @@ public class prof extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(29, 44, 64));
-        jPanel1.setPreferredSize(new java.awt.Dimension(400, 400));
+        jPanel1.setPreferredSize(new java.awt.Dimension(0, 0));
+        jPanel1.setVerifyInputWhenFocusTarget(false);
 
         StudentLoginPanel.setBackground(new java.awt.Color(23, 35, 51));
 
@@ -182,9 +183,9 @@ public class prof extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(116, 116, 116)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(PasswordLowerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                    .addComponent(PasswordLowerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
                     .addComponent(PasswordField)
-                    .addComponent(UsernameLowerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                    .addComponent(UsernameLowerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
                     .addComponent(UsernameTextField)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
@@ -192,8 +193,8 @@ public class prof extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addComponent(UsernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 41, Short.MAX_VALUE)))
-                .addContainerGap(46, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(218, 218, 218)
                 .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -217,8 +218,10 @@ public class prof extends javax.swing.JPanel {
                 .addComponent(PasswordLowerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        PrfLgnPnl1.setBackground(new java.awt.Color(29, 44, 64));
 
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -247,6 +250,8 @@ public class prof extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        jButton2.setBackground(new java.awt.Color(44, 63, 87));
+        jButton2.setForeground(new java.awt.Color(153, 153, 153));
         jButton2.setText("Update");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -261,7 +266,7 @@ public class prof extends javax.swing.JPanel {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(83, 83, 83)
                 .addComponent(jButton2)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(119, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addGap(3, 3, 3)
@@ -271,7 +276,7 @@ public class prof extends javax.swing.JPanel {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(164, Short.MAX_VALUE)
+                .addContainerGap(172, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addGap(16, 16, 16))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -316,7 +321,7 @@ public class prof extends javax.swing.JPanel {
             .addGroup(PrfLgnPnl1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jButton1)
-                .addContainerGap(342, Short.MAX_VALUE))
+                .addContainerGap(354, Short.MAX_VALUE))
             .addGroup(PrfLgnPnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PrfLgnPnl1Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -335,7 +340,7 @@ public class prof extends javax.swing.JPanel {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1420, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -347,7 +352,7 @@ public class prof extends javax.swing.JPanel {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents

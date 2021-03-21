@@ -635,13 +635,13 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
         UnvTbPaneLayout.setHorizontalGroup(
             UnvTbPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(UnvTbPaneLayout.createSequentialGroup()
-                .addComponent(InUnvTabPane, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
+                .addComponent(InUnvTabPane)
                 .addContainerGap())
         );
         UnvTbPaneLayout.setVerticalGroup(
             UnvTbPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(UnvTbPaneLayout.createSequentialGroup()
-                .addComponent(InUnvTabPane, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+                .addComponent(InUnvTabPane)
                 .addContainerGap())
         );
 

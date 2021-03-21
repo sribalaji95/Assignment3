@@ -20,7 +20,7 @@
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel1" min="-2" pref="1420" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -39,7 +39,7 @@
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel1" min="-2" pref="1000" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -60,7 +60,7 @@
           <Color blue="40" green="2c" red="1d" type="rgb"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[400, 400]"/>
+          <Dimension value="[0, 0]"/>
         </Property>
       </Properties>
 
@@ -71,9 +71,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="116" pref="116" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="2" attributes="0">
-                      <Component id="PasswordLowerPanel" alignment="2" pref="238" max="32767" attributes="0"/>
+                      <Component id="PasswordLowerPanel" alignment="2" pref="197" max="32767" attributes="0"/>
                       <Component id="PasswordField" alignment="2" max="32767" attributes="0"/>
-                      <Component id="UsernameLowerPanel" alignment="2" pref="238" max="32767" attributes="0"/>
+                      <Component id="UsernameLowerPanel" alignment="2" pref="197" max="32767" attributes="0"/>
                       <Component id="UsernameTextField" alignment="2" max="32767" attributes="0"/>
                       <Group type="102" alignment="2" attributes="0">
                           <Group type="103" groupAlignment="2" attributes="0">
@@ -83,10 +83,10 @@
                                   <Component id="UsernameLabel" min="-2" pref="196" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="41" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="46" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
@@ -113,7 +113,7 @@
                   <Component id="PasswordLowerPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Component id="LoginButton" min="-2" pref="31" max="-2" attributes="0"/>
-                  <EmptySpace pref="15" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -300,10 +300,29 @@
       </Layout>
       <SubComponents>
         <Container class="javax.swing.JTabbedPane" name="InUnvTabPane">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="40" green="2c" red="1d" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="99" type="rgb"/>
+            </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[1420, 1000]"/>
+            </Property>
+          </Properties>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
           <SubComponents>
             <Container class="javax.swing.JPanel" name="ShwCrPnl">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="40" green="2c" red="1d" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="99" green="99" red="99" type="rgb"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Course List">
@@ -328,7 +347,7 @@
                                   <Component id="CrLstPnl" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="302" max="32767" attributes="0"/>
+                          <EmptySpace pref="998" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -342,7 +361,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="CrLstPnl" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="126" max="32767" attributes="0"/>
+                          <EmptySpace pref="757" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -350,6 +369,9 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="CrLstDeptLbl">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Select Department"/>
                   </Properties>
                 </Component>
@@ -415,6 +437,11 @@
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="ShStdPnl">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="40" green="2c" red="1d" type="rgb"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Student List">
@@ -439,7 +466,7 @@
                                   <Component id="StdLstPnl" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="314" max="32767" attributes="0"/>
+                          <EmptySpace pref="1010" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -453,7 +480,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="StdLstPnl" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="127" max="32767" attributes="0"/>
+                          <EmptySpace pref="758" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -461,6 +488,9 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="StdLstDeptLbl">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Select Department"/>
                   </Properties>
                 </Component>
@@ -527,6 +557,11 @@
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="Addstupanel">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="40" green="2c" red="1d" type="rgb"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Add Student">
@@ -546,16 +581,16 @@
                               <Component id="AddstudeptLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="AddstucouLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="273" max="32767" attributes="0"/>
+                          <EmptySpace pref="411" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="Addstucoucom" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="AddStuDeptcb" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="AddstunameTxt" pref="597" max="32767" attributes="0"/>
+                                  <Component id="AddstuIdTxt" max="32767" attributes="0"/>
+                                  <Component id="AddStuDeptcb" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="AddstuIdTxt" alignment="1" pref="279" max="32767" attributes="0"/>
-                              <Component id="AddstunameTxt" alignment="1" max="32767" attributes="0"/>
+                              <Component id="Addstucoucom" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="83" pref="83" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="339" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
@@ -596,7 +631,7 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="AddStudent" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="37" max="32767" attributes="0"/>
+                          <EmptySpace pref="707" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -604,26 +639,44 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="AddstudeptLbl">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Department:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="AddstucouLbl">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Course:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="AddstuNameLbl">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Name:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="AddStuIdLbl">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Id:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="AddStuDeptcb">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="57" green="3f" red="2c" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
                         <StringItem index="0" value="Select Department"/>
@@ -631,8 +684,8 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AddStuDeptcbMousePressed"/>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AddStuDeptcbMouseClicked"/>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AddStuDeptcbMousePressed"/>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddStuDeptcbActionPerformed"/>
                   </Events>
                   <AuxValues>
@@ -641,6 +694,12 @@
                 </Component>
                 <Component class="javax.swing.JComboBox" name="Addstucoucom">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="57" green="3f" red="2c" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
                         <StringItem index="0" value="Select Course"/>
@@ -664,14 +723,23 @@
                 <Component class="javax.swing.JLabel" name="jLabel5">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Times New Roman" size="18" style="0"/>
+                      <Font name="Tahoma" size="18" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Add Student"/>
+                    <Property name="text" type="java.lang.String" value="ADD STUDENT"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="AddStudent">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="57" green="3f" red="2c" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Add"/>
                   </Properties>
                   <Events>
@@ -681,6 +749,14 @@
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="AddProfPanel">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="40" green="2c" red="1d" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="99" green="99" red="99" type="rgb"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Add Professor">
@@ -700,16 +776,13 @@
                               <Component id="AddstudeptLbl1" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="AddstucouLbl1" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="367" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="AddProfcoucom" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="AddProfDeptcb1" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="AddProfIdTxt" alignment="1" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="341" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="AddProfDeptcb1" min="-2" max="-2" attributes="0"/>
+                              <Component id="AddProfIdTxt" pref="473" max="32767" attributes="0"/>
+                              <Component id="AddProfcoucom" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
                               <Component id="AddProfnameTxt" alignment="1" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="83" pref="83" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -732,30 +805,33 @@
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="AddstuNameLbl1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="AddProfnameTxt" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="AddStuIdLbl1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="AddProfIdTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="AddstuNameLbl1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                          <Component id="AddProfnameTxt" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="AddStuIdLbl1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="AddProfIdTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
+                                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="AddstudeptLbl1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="AddProfDeptcb1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="AddstucouLbl1" min="-2" max="-2" attributes="0"/>
                               </Group>
-                          </Group>
-                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="AddstudeptLbl1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="AddProfDeptcb1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="AddstucouLbl1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="AddProfcoucom" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="AddProfcoucom" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="AddProf" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="37" max="32767" attributes="0"/>
+                          <EmptySpace pref="710" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -763,26 +839,41 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="AddstudeptLbl1">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Department:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="AddstucouLbl1">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Course:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="AddstuNameLbl1">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Name:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="AddStuIdLbl1">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Id:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="AddProfDeptcb1">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="57" green="3f" red="2c" type="rgb"/>
+                    </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
                         <StringItem index="0" value="Select Department"/>
@@ -790,8 +881,8 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AddProfDeptcb1MousePressed"/>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AddProfDeptcb1MouseClicked"/>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AddProfDeptcb1MousePressed"/>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddProfDeptcb1ActionPerformed"/>
                   </Events>
                   <AuxValues>
@@ -800,6 +891,9 @@
                 </Component>
                 <Component class="javax.swing.JComboBox" name="AddProfcoucom">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="57" green="3f" red="2c" type="rgb"/>
+                    </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
                         <StringItem index="0" value="Select Course"/>
@@ -823,14 +917,23 @@
                 <Component class="javax.swing.JLabel" name="jLabel6">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Times New Roman" size="18" style="0"/>
+                      <Font name="Tahoma" size="18" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Add Professor"/>
+                    <Property name="text" type="java.lang.String" value="ADD PROFESSOR"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="AddProf">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="56" green="3f" red="2c" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Add"/>
                   </Properties>
                   <Events>
@@ -840,6 +943,11 @@
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="ShAlmn">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="40" green="2c" red="1d" type="rgb"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Alumini Details">
@@ -859,7 +967,7 @@
                               <Component id="AlmnDptComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="AlmnLstPnl" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="152" max="32767" attributes="0"/>
+                          <EmptySpace pref="846" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -873,7 +981,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="AlmnLstPnl" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="64" max="32767" attributes="0"/>
+                          <EmptySpace pref="695" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -881,11 +989,20 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="AlmnLstDeptLbl">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Select Department"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="AlmnDptComboBox">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="57" green="3f" red="2c" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
                         <StringItem index="0" value="Select Option"/>
@@ -958,12 +1075,12 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="719" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1415" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="342" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="973" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>

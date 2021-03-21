@@ -146,9 +146,9 @@ public class EmployerLoginPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(116, 116, 116)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(PasswordLowerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                    .addComponent(PasswordLowerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
                     .addComponent(PasswordField)
-                    .addComponent(UsernameLowerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                    .addComponent(UsernameLowerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
                     .addComponent(UsernameTextField)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
@@ -156,8 +156,8 @@ public class EmployerLoginPanel extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addComponent(UsernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 88, Short.MAX_VALUE)))
-                .addContainerGap(97, Short.MAX_VALUE))
+                        .addGap(0, 84, Short.MAX_VALUE)))
+                .addContainerGap(93, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(218, 218, 218)
                 .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -181,7 +181,7 @@ public class EmployerLoginPanel extends javax.swing.JPanel {
                 .addComponent(PasswordLowerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
