@@ -47,9 +47,9 @@ public class TestData {
     }
     
     ArrayList<Employers> emp = new ArrayList<>();
-     AlumniDirectory ad  = new AlumniDirectory();
-     EmployeeDirectory ed = new EmployeeDirectory();
-     DepartmentDirectory dd = new DepartmentDirectory();
+    AlumniDirectory ad  = new AlumniDirectory();
+    EmployeeDirectory ed = new EmployeeDirectory();
+    DepartmentDirectory dd = new DepartmentDirectory();
     
 
     public  DepartmentDirectory getDd() {
@@ -74,11 +74,12 @@ public class TestData {
     static StudentDirectory sd ;
     public static void main(String[] args) {
         // TODO code application logic here
-                
+         
         
         
         
     }
+    
 public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         
         ArrayList<StudentProfile> as = new ArrayList();
@@ -128,7 +129,7 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         em.setEmployerName("");
         emp.add(em);
         ed.setEmployers(emp);
-       
+        
         StudentProfile sp = sd.findStudent("01");
        // System.out.println("");
         Alumni al = new Alumni();
@@ -181,6 +182,8 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         courseoffer1.generatSeats(10);
         
         PersonDirectory pd = department.getPersonDirectory();
+      //  PersonDirectory pd1 = department1.getPersonDirectory();
+
         Person person =  pd.newPerson("info1");
         Person person1 = pd.newPerson("info2");
         Person person2 = pd.newPerson("cs1");
@@ -200,9 +203,20 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         CourseLoad courseload2 = student2.newCourseLoad("Fall2020"); 
         CourseLoad courseload3 = student3.newCourseLoad("Fall2020");
         FacultyDirectory fd = department.getFacultyDirectory();
-         person1 = pd.newPerson("1234567");
-        FacultyProfile fp = fd.newStudentProfile(person1);
+       
+        FacultyDirectory fd1 = department1.getFacultyDirectory();
+
+        
+        Person prof1 = pd.newPerson("prof");
+        Person prof2 = pd.newPerson("prof1");
+
+        FacultyProfile fp = fd.newStudentProfile(prof1);
+        FacultyProfile fp1 = fd.newStudentProfile(prof2);
+        
+        
         courseoffer.AssignAsTeacher(fp);
+        courseoffer1.AssignAsTeacher(fp1);
+        
 
         courseload.newSeatAssignment(courseoffer); //register student in class
         courseload1.newSeatAssignment(courseoffer);
@@ -226,11 +240,6 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
          
       
                  
-     }
-     
-     
+     } 
     
-     
-     
-
 }

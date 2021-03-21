@@ -13,6 +13,7 @@ import info5100.university.example.CourseSchedule.CourseOffer;
 import info5100.university.example.CourseSchedule.CourseSchedule;
 import info5100.university.example.CourseSchedule.SeatAssignment;
 import info5100.university.example.Department.Department;
+import info5100.university.example.Department.DepartmentDirectory;
 import info5100.university.example.Persona.Faculty.FacultyDirectory;
 import info5100.university.example.Persona.Faculty.FacultyProfile;
 import info5100.university.example.Persona.Person;
@@ -21,6 +22,7 @@ import info5100.university.example.Persona.StudentDirectory;
 import info5100.university.example.Persona.StudentProfile;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
@@ -32,17 +34,19 @@ import javax.swing.table.DefaultTableModel;
 public class prof extends javax.swing.JPanel {
   static ArrayList<String> al2 = new ArrayList();
     static ArrayList<StudentProfile> al3 = new ArrayList();
-     static StudentDirectory sd;
-     static ArrayList<String> mainList = new ArrayList<>();
-      static  ArrayList<String> mainList1 = new ArrayList<>();
-      static String grade ;
+     static StudentDirectory sd ;
+      ArrayList<String> mainList = new ArrayList<>();
+        ArrayList<String> mainList1 = new ArrayList<>();
+       String grade ;
       TestData testData;
+      ArrayList<String> sl;
     /**
      * Creates new form prof
      */
     public prof() {
         initComponents();
       testData = TestData.getInstance();
+      sd = testData.getSd();
         PrfLgnPnl1.setVisible(false);
     }
 
@@ -347,13 +351,13 @@ public class prof extends javax.swing.JPanel {
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
         // TODO add your handling code here:
         String id = UsernameTextField.getText();
-        ArrayList<String> sl=  getProfessorList("Fall2020",id);
+        sl=  getProfessorList("Fall2020",id);
         jButton1.setText(sl.get(0));
-        ArrayList<StudentProfile> sl1 = getStudentTakenByProf("info 5100",sd);
+        ArrayList<StudentProfile> sl1 = getStudentTakenByProf(sl.get(0),TestData.getInstance().getDd());
        
         for(int i=0;i<sl1.size();i++){
             mainList.add(sl1.get(i).getPerson().getPersonId());
-            mainList1.add(sl1.get(i).getCourseLoadBySemester("Fall2020").getSeatassignments().get(i).getGrade());
+            mainList1.add(sl1.get(i).getCourseLoadBySemester("Fall2020").getSeatassignments().get(0).getGrade());
         }
        // System.out.println("*** "+sl1.get(0).getPerson().getPersonId());
          //       System.out.println("++++ "+sl1.get(0).getCourseLoadBySemester("Fall2020").getSeatassignments().get(0).getGrade());
@@ -384,32 +388,37 @@ public class prof extends javax.swing.JPanel {
             {
                 public void tableChanged(TableModelEvent evt)
                 {
-
+                    
                     grade = model.getValueAt(0,1).toString();
+                    
                 }
             });
             // System.out.println(model.getValueAt(jTable1.getSelectedRow(),jTable1.getSelectedColumn()).toString());
 
     }//GEN-LAST:event_jButton1ActionPerformed
-public static ArrayList<StudentProfile> getStudentTakenByProf(String courseID, StudentDirectory sd){
+public static ArrayList<StudentProfile> getStudentTakenByProf(String courseID, DepartmentDirectory d){
+    List<Department> list2 = d.getDd();
+    for(Department d1 : list2)
+    {
         
         ArrayList<StudentProfile> as = new ArrayList();
-        List<StudentProfile> list = sd.getStudentlist();
+        List<StudentProfile> list = d1.getStudentDirectory().getStudentlist();
         for(StudentProfile sp : list)
         {
             List<SeatAssignment> list1 = sp.getCourseLoadBySemester("Fall2020").getSeatassignments();
             for(SeatAssignment seatAssignment : list1)
             {
-                if(seatAssignment.getSeat().getCourseoffer().getCourse().getCOurseNumber().equals("info 5100"))
+                if(seatAssignment.getSeat().getCourseoffer().getCourse().getCOurseNumber().equals(courseID))
                 {
                     //System.out.println(sp.getPerson().getPersonId());
                     al3.add(sp);
                 }
             }
         }
-     return al3;
-        
+    
     }
+     return al3;
+}
     
     public static void setGrade(String courseID, StudentDirectory sd , String grade , String studentId){
         
@@ -453,9 +462,18 @@ public static ArrayList<StudentProfile> getStudentTakenByProf(String courseID, S
     
     public ArrayList<String> getProfessorList(String semester, String pid)
     {
-        
-        Department department = sd.getDepartment();
-        CourseSchedule courseSchedule = department.getCourseSchedule("Fall2020");
+        System.out.println("Mouse Clicked");
+        String uname = "";
+        String pwd = "admin";
+        String usertxt = UsernameTextField.getText();
+        DepartmentDirectory dd = TestData.getInstance().getDd();
+        boolean found = false;
+        List<Department> list = dd.getDd();
+        for(Department d : list)
+        {
+        CourseSchedule courseSchedule = d.getCourseSchedule("Fall2020");
+        if(courseSchedule!=null)
+        {
        ArrayList<CourseOffer> al1 = courseSchedule.getSchedule();
         //System.out.println(al1.size());
                  for(int i=0 ; i < al1.size(); i++){
@@ -464,12 +482,14 @@ public static ArrayList<StudentProfile> getStudentTakenByProf(String courseID, S
                 al2.add(al1.get(i).getCourse().getCOurseNumber());
             }
         }
+        }
+        }
                  return al2;
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         System.out.println(grade);
-        setGrade("dmdd ",sd,grade,mainList.get(0));
+        setGrade(sl.get(0),sd,grade,mainList.get(0));
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
