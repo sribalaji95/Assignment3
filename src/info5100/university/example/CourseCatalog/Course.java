@@ -13,13 +13,13 @@ public class Course {
     String number;
     String name;
 
-    String rating;
+    int rating=0;
 
-    public String getRating() {
+    public int getRating() {
         return rating;
     }
 
-    public void setRating(String rating) {
+    public void setRating(int rating) {
         this.rating = rating;
     }
 //    int courseRatings;

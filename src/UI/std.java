@@ -244,6 +244,7 @@ public class std extends javax.swing.JPanel {
         Ratinglbl.setForeground(new java.awt.Color(153, 153, 153));
         Ratinglbl.setText("Please Enter Rating:");
 
+        ProfNameValueTxt.setEditable(false);
         ProfNameValueTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ProfNameValueTxtActionPerformed(evt);
