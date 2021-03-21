@@ -113,7 +113,7 @@ public class Helper {
         StudentProfile student = sd.newStudentProfile(person);
         
         
-        CourseLoad courseload = student.newCourseLoad(semester); 
+        CourseLoad courseload = student.newCourseLoad("Fall2020"); 
   
         courseload.newSeatAssignment(co);
         
@@ -143,6 +143,7 @@ public class Helper {
         return list;
      }
     
+
     
     
     public List<String> getProfessors(Department d , StudentProfile sp)
@@ -171,5 +172,24 @@ public class Helper {
         
        return result; 
     }
+
+//    public List<FacultyProfile> getProfessors(StudentProfile sp)
+//    {
+//        
+//    }
+//  public void checkAlumniRequiements(StudentProfile sp){
+//       //sp.getTranscript().getCourseLoadBySemester("Fall2020").getCourseInformation();
+//       int creditsTotal = 0;
+//       for(SeatAssignment value1:seatassignments){
+//         creditsTotal += value1.getSeat().getCourseoffer().getCourse().getCoursePrice();
+//       }
+//        System.out.println("The Number of Credits is :"+creditsTotal);
+//        if(creditsTotal >= 4){
+//            //Call Function which Sribalaji which would add for Alumni
+//            new Helper().addStudentToAlumni(sp);
+//        }
+//        
+//    }
+
     
 }

@@ -552,6 +552,7 @@ public class std extends javax.swing.JPanel {
         StdDspPnl.setVisible(false);
     }//GEN-LAST:event_btbackActionPerformed
 
+
     private void RateProfessorbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RateProfessorbtnActionPerformed
         // TODO add your handling code here:
         List<String> l = new Helper().getProfessors(d,sp);
@@ -612,6 +613,9 @@ public class std extends javax.swing.JPanel {
 
         
 public static void main(String args[]) {
+
+    
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

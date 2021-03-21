@@ -21,7 +21,7 @@ public class SeatAssignment {
         return seat;
     }
     CourseLoad courseload;
-    String grade="B+";
+    String grade="F";
      public String getGrade() {
         return grade;
     }

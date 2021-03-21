@@ -32,12 +32,13 @@ import javax.swing.table.DefaultTableModel;
  * @author shreyascr
  */
 public class prof extends javax.swing.JPanel {
-  static ArrayList<String> al2 = new ArrayList();
-    static ArrayList<StudentProfile> al3 = new ArrayList();
-     static StudentDirectory sd ;
-      ArrayList<String> mainList = new ArrayList<>();
-        ArrayList<String> mainList1 = new ArrayList<>();
-       String grade ;
+   ArrayList<String> al2 = new ArrayList();
+   ArrayList<StudentProfile> al3 = new ArrayList();
+   StudentDirectory sd ;
+    StudentDirectory sd1;
+     ArrayList<String> mainList = new ArrayList<>();
+       ArrayList<String> mainList1 = new ArrayList<>();
+      String grade ;
       TestData testData;
       ArrayList<String> sl;
     /**
@@ -47,6 +48,7 @@ public class prof extends javax.swing.JPanel {
         initComponents();
       testData = TestData.getInstance();
       sd = testData.getSd();
+      
         PrfLgnPnl1.setVisible(false);
     }
 
@@ -359,10 +361,7 @@ public class prof extends javax.swing.JPanel {
             mainList.add(sl1.get(i).getPerson().getPersonId());
             mainList1.add(sl1.get(i).getCourseLoadBySemester("Fall2020").getSeatassignments().get(0).getGrade());
         }
-       // System.out.println("*** "+sl1.get(0).getPerson().getPersonId());
-         //       System.out.println("++++ "+sl1.get(0).getCourseLoadBySemester("Fall2020").getSeatassignments().get(0).getGrade());
-//System.out.println(mainList);
-//System.out.println(mainList1);
+      
         jPanel1.setVisible(false);
         PrfLgnPnl1.setVisible(true);
         jPanel3.setVisible(false);
@@ -378,7 +377,6 @@ public class prof extends javax.swing.JPanel {
         Object[] row = new Object[2];
         for(int i=0;i<mainList.size();i++)
         {
-
             row[0]=mainList.get(i);
             row[1]=mainList1.get(i);
             model.addRow(row);
@@ -396,7 +394,7 @@ public class prof extends javax.swing.JPanel {
             // System.out.println(model.getValueAt(jTable1.getSelectedRow(),jTable1.getSelectedColumn()).toString());
 
     }//GEN-LAST:event_jButton1ActionPerformed
-public static ArrayList<StudentProfile> getStudentTakenByProf(String courseID, DepartmentDirectory d){
+public  ArrayList<StudentProfile> getStudentTakenByProf(String courseID, DepartmentDirectory d){
     List<Department> list2 = d.getDd();
     for(Department d1 : list2)
     {
@@ -420,7 +418,8 @@ public static ArrayList<StudentProfile> getStudentTakenByProf(String courseID, D
      return al3;
 }
     
-    public static void setGrade(String courseID, StudentDirectory sd , String grade , String studentId){
+    public  void setGrade(String courseID, StudentDirectory d , String grade , String studentId){
+        
         
         ArrayList<StudentProfile> as = new ArrayList();
         List<StudentProfile> list = sd.getStudentlist();
@@ -429,16 +428,20 @@ public static ArrayList<StudentProfile> getStudentTakenByProf(String courseID, D
             List<SeatAssignment> list1 = sp.getCourseLoadBySemester("Fall2020").getSeatassignments();
             for(SeatAssignment seatAssignment : list1)
             {
-                if(seatAssignment.getSeat().getCourseoffer().getCourse().getCOurseNumber().equals(courseID) && sp.getPerson().getPersonId().equals(studentId))
+                if(seatAssignment.getSeat().getCourseoffer().getCourse().getCOurseNumber().equals(courseID) 
+                        && sp.getPerson().getPersonId().equals(studentId))
                 {
                   //  System.out.println(sp.getPerson().getPersonId());
                     seatAssignment.setGrade(grade);
                 }
             }
         }
-     
         
+        
+      
     }
+    
+    
     
     public static void getGrade(String courseID, StudentDirectory sd , String grade , String studentId){
         
@@ -490,6 +493,7 @@ public static ArrayList<StudentProfile> getStudentTakenByProf(String courseID, D
         // TODO add your handling code here:
         System.out.println(grade);
         setGrade(sl.get(0),sd,grade,mainList.get(0));
+        
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
