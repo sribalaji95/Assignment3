@@ -25,7 +25,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public class univAdmin extends javax.swing.JPanel {
      HashMap<String, Department> map = new HashMap();
-    Info5001UniversityExample uni = new Info5001UniversityExample();
             TestData testData = TestData.getInstance();
             DepartmentDirectory department = testData.getDd();
             ArrayList<Department> departmentlist = department.getDd();
@@ -1050,47 +1049,48 @@ public class univAdmin extends javax.swing.JPanel {
 
         String selval = AlmnDptComboBox.getSelectedItem().toString();
        
-
         if(selval.equals("Information Systems"))
         {
             AlmnLstPnl.setVisible(true);
             DefaultTableModel model = (DefaultTableModel) AlmnNameTable.getModel();
             model.setRowCount(0);
             List<Alumni> al = addaluminiDepartment(map.get("Information Systems"));
+            System.out.println("ID"+al.get(0).getStudentProfile().getPerson().getPersonId());
             for(int i=0;i<al.size();i++)
 
             {
                 Object[] row= new Object[5];
-                row[0]=al.get(i).getId();
+                row[0]=al.get(i).getStudentProfile().getPerson().getPersonId();
                 row[1]=al.get(i).getPromotions();
                 row[2]=al.get(i).getSalaryRange();
                 row[3]=al.get(i).getGradutationYear();
                 row[4]=al.get(i).getPosition();
                 model.addRow(row);
-            }
+            } 
+            
         }
-
+        
         else if(selval.equals("Computer Science"))
         {
             AlmnLstPnl.setVisible(true);
             DefaultTableModel model = (DefaultTableModel) AlmnNameTable.getModel();
             model.setRowCount(0);
 
-            //System.out.println("Test "+ map.get("Computer Science"));
+           // System.out.println("Test "+ map.get("Computer Science"));
             List<Alumni> al = addaluminiDepartment(map.get("Computer Science"));
             for(int i=0;i<al.size();i++)
 
             {
                 Object[] row= new Object[5];
-                row[0]=al.get(i).getId();
+                row[0]=al.get(i).getStudentProfile().getPerson().getPersonId();
                 row[1]=al.get(i).getPromotions();
                 row[2]=al.get(i).getSalaryRange();
                 row[3]=al.get(i).getGradutationYear();
                 row[4]=al.get(i).getPosition();
                 model.addRow(row);
-            }
-        }
+            } 
 
+        }
     }//GEN-LAST:event_AlmnDptComboBoxActionPerformed
 
 

@@ -24,7 +24,7 @@ public class AlumPanel extends javax.swing.JPanel {
         initComponents();
           AlumDetail.setVisible(false);
         String id= null;
-        new Info5001UniversityExample().test1();
+        
     }
 
     /**
@@ -371,7 +371,7 @@ public class AlumPanel extends javax.swing.JPanel {
         
         //System.out.println(al.getGradutationYear());
         id = UsernameTextField.getText();
-                Alumni al = new Alumni();
+        Alumni al = new Alumni();
         HashMap<String, Alumni> m = al.getAlumniDir();
         System.out.println("Map "+ m.size());
         Alumni al1 = m.get(id);

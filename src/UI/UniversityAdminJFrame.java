@@ -1026,6 +1026,7 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
           
         String selval = AlmnDptComboBox.getSelectedItem().toString();
         jTextField1.setText(selval);
+            System.out.println("STd");
 
         if(selval.equals("Information Systems"))
         {
@@ -1033,17 +1034,19 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel) AlmnNameTable.getModel();
             model.setRowCount(0);
             List<Alumni> al = addaluminiDepartment(map.get("Information Systems"));
+            System.out.println("ID"+al.get(0).getStudentProfile().getPerson().getPersonId());
             for(int i=0;i<al.size();i++)
 
             {
                 Object[] row= new Object[5];
-                row[0]=al.get(i).getId();
+                row[0]=al.get(i).getStudentProfile().getPerson().getPersonId();
                 row[1]=al.get(i).getPromotions();
                 row[2]=al.get(i).getSalaryRange();
                 row[3]=al.get(i).getGradutationYear();
                 row[4]=al.get(i).getPosition();
                 model.addRow(row);
             } 
+            
         }
         
         else if(selval.equals("Computer Science"))
@@ -1052,19 +1055,20 @@ public class UniversityAdminJFrame extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel) AlmnNameTable.getModel();
             model.setRowCount(0);
 
-            System.out.println("Test "+ map.get("Computer Science"));
+           // System.out.println("Test "+ map.get("Computer Science"));
             List<Alumni> al = addaluminiDepartment(map.get("Computer Science"));
             for(int i=0;i<al.size();i++)
 
             {
                 Object[] row= new Object[5];
-                row[0]=al.get(i).getId();
+                row[0]=al.get(i).getStudentProfile().getPerson().getPersonId();
                 row[1]=al.get(i).getPromotions();
                 row[2]=al.get(i).getSalaryRange();
                 row[3]=al.get(i).getGradutationYear();
                 row[4]=al.get(i).getPosition();
                 model.addRow(row);
             } 
+//            System.out.println("STd"+al.get(0).getId());
         }
         
     }//GEN-LAST:event_AlmnDptComboBoxActionPerformed
