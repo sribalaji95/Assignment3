@@ -19,12 +19,13 @@ public class CourseOffer {
     Course course;
     ArrayList<Seat> seatlist;
 
+    FacultyAssignment facultyassignment;
+   
     public ArrayList<Seat> getSeatlist() {
         return seatlist;
     }
-    FacultyAssignment facultyassignment;
-	
-	public Course getCourse() {
+  	
+    public Course getCourse() {
         return course;
     }
     public CourseOffer(Course c) {

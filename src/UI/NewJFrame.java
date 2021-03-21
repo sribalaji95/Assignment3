@@ -89,12 +89,14 @@ public class NewJFrame extends javax.swing.JFrame {
 //            
 //        }
 
+       new Info5001UniversityExample().test2();
+
 //       StudentDirectory sd = new StudentDirectory();
 //       StudentProfile sp = sd.findStudent("0112303");
        Alumni al = new Alumni();
-        HashMap<String, Alumni> m = al.getAlumniDir();
-        System.out.println("Map "+ m.size());
-        Alumni al1 = m.get("0112303");
+       HashMap<String, Alumni> m = al.getAlumniDir();
+       System.out.println("Map "+ m.size());
+       Alumni al1 = m.get("0112303");
        System.out.println(al1.getGradutationYear());
     }//GEN-LAST:event_jButton1ActionPerformed
 

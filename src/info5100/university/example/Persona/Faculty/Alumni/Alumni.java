@@ -35,6 +35,8 @@ String id;
     String position;
     static HashMap<String, Alumni> alumniDir;
 
+    HashMap<String, Double> map = new HashMap();
+               
     public HashMap<String, Alumni> getAlumniDir() {
         return alumniDir;
     }
@@ -46,12 +48,12 @@ String id;
 //    }
 
     public void setAlumniDir(HashMap<String, Alumni> alumniDir) {
+        
         this.alumniDir = alumniDir;
-        System.out.println("ALm "+ alumniDir.get("0112303"));
+        System.out.println("ALm "+ alumniDir.size());
     }
     
-    
-        
+       
     
     public StudentProfile getStudentProfile() {
         
@@ -101,7 +103,39 @@ String id;
     public void setPosition(String position) {
         this.position = position;
     }
+    
+    public double getAMG(){
+        
+       return getSalaryPoints() + getPromotionPoints() /2;
+    }
+    
+    public double getSalaryPoints(){
+         Double points =0.0;
+         if(getSalaryRange()>70000 && getSalaryRange() <80000 ){
+            points = 2.5;
+        }else if(getSalaryRange()>= 80000 && getSalaryRange() <90000){
+            points = 5.0;
+        }else if(getSalaryRange()>= 90000 && getSalaryRange() < 130000){
+            points = 7.5;
+        }else if(getSalaryRange() >= 130000){
+            points =10.0;
+        }
+       return points;
+    }
+    
+    
+    public double getPromotionPoints(){
+        Double points =0.0;
+         if(getPromotions() == 0){
+            points = 2.5;
+        }else if(getPromotions()==1){
+            points = 5.0;
+        }else if(getPromotions()==2){
+            points = 7.5;
+        }else if(getPromotions()==3){
+            points = 10.0;
+        }
+       return points;
+    }
    
-    
-    
 }

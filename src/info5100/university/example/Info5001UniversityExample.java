@@ -12,10 +12,12 @@ import info5100.university.example.CourseSchedule.CourseSchedule;
 import info5100.university.example.CourseSchedule.SeatAssignment;
 import info5100.university.example.CourseCatalog.CourseCatalog;
 import info5100.university.example.Department.Department;
+import info5100.university.example.Department.DepartmentDirectory;
 import info5100.university.example.Persona.Faculty.FacultyAssignment;
 import info5100.university.example.Persona.Faculty.FacultyDirectory;
 import info5100.university.example.Persona.Faculty.FacultyProfile;
 import info5100.university.example.Persona.Faculty.Alumni.Alumni;
+import info5100.university.example.Persona.Faculty.Alumni.AlumniDirectory;
 import info5100.university.example.Persona.Faculty.Alumni.CompanyEmployers.EmployeeDirectory;
 import info5100.university.example.Persona.Faculty.Alumni.CompanyEmployers.Employers;
 import info5100.university.example.Persona.Person;
@@ -33,6 +35,23 @@ import java.util.List;
  */
 public class Info5001UniversityExample {
 
+    ArrayList<Employers> emp = new ArrayList<>();
+    static AlumniDirectory ad  = new AlumniDirectory();
+    static EmployeeDirectory ed = new EmployeeDirectory();
+    static DepartmentDirectory dd = new DepartmentDirectory();
+    
+
+    public  DepartmentDirectory getDd() {
+        return dd;
+    }
+
+    public AlumniDirectory getAd() {
+        return ad;
+    }
+    
+    public EmployeeDirectory getED(){
+        return ed;
+    }
 
     /**
      * @param args the command line arguments
@@ -76,7 +95,7 @@ public class Info5001UniversityExample {
         
         int total = department.calculateRevenuesBySemester("Fall2020");
         System.out.println("Total: " + total);
-ArrayList<CourseOffer> al1 = courseschedule.getSchedule();
+        ArrayList<CourseOffer> al1 = courseschedule.getSchedule();
         System.out.println(al1.size());
          ArrayList<String> al2 = new ArrayList();
         for(int i=0 ; i < al1.size(); i++){
@@ -96,7 +115,7 @@ ArrayList<CourseOffer> al1 = courseschedule.getSchedule();
         CourseLoad cd = sd.findStudent("0112303").getCourseLoadBySemester("Fall2020");
         //cd.newSeatAssignment(courseoffer)
 
-        EmployeeDirectory ed = new EmployeeDirectory();
+       
         ArrayList<Employers> emp = new ArrayList<>();
         Employers em = new Employers();
         em.setEmployerName("Amazon");
@@ -198,7 +217,108 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         
     }
     
-    
-    
+
+     public void test2(){
+        Department department = new Department("Information Systems");
+        Department department1 = new Department("Computer Science");
+        ArrayList<Department> ad = new ArrayList<>();
+        ad.add(department);
+        ad.add(department1);
+        dd.setDd(ad);
+        
+        Course course = department.newCourse("app eng", "info 5100", 4);        
+        Course course1 = department1.newCourse("PDP", "cs 5010", 4);
+
+        CourseSchedule courseschedule = department.newCourseSchedule("Fall2020");
+        CourseSchedule courseschedule1 = department1.newCourseSchedule("Fall2020");
+
+        CourseOffer courseoffer = courseschedule.newCourseOffer("info 5100");
+        courseoffer.generatSeats(10);
+        
+        CourseOffer courseoffer1 = courseschedule1.newCourseOffer("cs 5010");
+        courseoffer1.generatSeats(10);
+        
+        PersonDirectory pd = department.getPersonDirectory();
+        Person person =  pd.newPerson("info1");
+        Person person1 = pd.newPerson("info2");
+        Person person2 = pd.newPerson("cs1");
+        Person person3 = pd.newPerson("cs2");
+        
+        StudentDirectory sd = department.getStudentDirectory();
+        StudentDirectory sd1 = department1.getStudentDirectory();
+
+        StudentProfile student = sd.newStudentProfile(person);
+        StudentProfile student1 = sd.newStudentProfile(person1);
+        
+        StudentProfile student2 = sd1.newStudentProfile(person2);
+        StudentProfile student3 = sd1.newStudentProfile(person3);
+        
+        CourseLoad courseload = student.newCourseLoad("Fall2020"); 
+        CourseLoad courseload1 = student1.newCourseLoad("Fall2020"); 
+        CourseLoad courseload2 = student2.newCourseLoad("Fall2020"); 
+        CourseLoad courseload3 = student3.newCourseLoad("Fall2020"); 
+
+        courseload.newSeatAssignment(courseoffer); //register student in class
+        courseload1.newSeatAssignment(courseoffer);
+        courseload2.newSeatAssignment(courseoffer1);
+        courseload3.newSeatAssignment(courseoffer1);
+
+             
+    }
+     
+     
+     
+     
+     //Alumni Growth Metric
+     public void calculateAGM(){
+        
+        ArrayList<Alumni> all = ad.getAd();
+        
+        for(Alumni a : all){
+            
+        }
+         
+      
+                 
+     }
+     
+     
+     public void addStudentToAlumni(){
+        Employers em = new Employers();
+        em.setEmployerName("Amazon");
+        emp.add(em);
+        ed.setEmployers(emp);
+       
+        StudentProfile sp = sd.findStudent("0112303");
+        StudentProfile sp1 = sd.findStudent("0112304");
+
+       // System.out.println("");
+        
+        
+        Alumni al = new Alumni();
+        al.setStudentProfile(sp);
+        al.setGradutationYear(2020);
+        al.setEmp(em);
+        al.setPosition("SDE");
+        HashMap<String, Alumni> map = new HashMap<>();
+        map.put("0112303", al);
+        al.setAlumniDir(map);
+        ArrayList<Alumni> alu = new ArrayList();
+        alu.add(al);
+        //ad.setAd(alu);
+        
+        Alumni al1 = new Alumni();
+        al1.setStudentProfile(sp1);
+        al1.setGradutationYear(2021);
+        al1.setEmp(em);
+        al1.setPosition("SDE-2");
+        HashMap<String, Alumni> map1 = al1.getAlumniDir();
+        map1.put("0112304", al1);
+        al1.setAlumniDir(map1);
+        alu.add(al);
+        ad.setAd(alu);
+        System.out.println("AS "+ ad.getAd().size());
+     }
+
 
 }

@@ -18,6 +18,10 @@ public class CourseSchedule {
     CourseCatalog coursecatalog;
 
     ArrayList<CourseOffer> schedule;
+
+    public String getSemester() {
+        return semester;
+    }
     String semester;
 
         public CourseSchedule(){
@@ -69,7 +73,11 @@ public class CourseSchedule {
 //        for (CourseOffer co : schedule) {
 //
 
+//            sum = sum + co.getTotalCourseLoss();
+
+
 //            //sum = sum + co.getTotalCourseLoss();
+
 //
 //        }
 //        return sum;
