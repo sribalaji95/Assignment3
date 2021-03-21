@@ -21,7 +21,10 @@ import info5100.university.example.Persona.PersonDirectory;
 import info5100.university.example.Persona.StudentDirectory;
 import info5100.university.example.Persona.StudentProfile;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import javax.swing.JOptionPane;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
@@ -41,13 +44,16 @@ public class prof extends javax.swing.JPanel {
       String grade ;
       TestData testData;
       ArrayList<String> sl;
+      ArrayList<StudentProfile> sl1;
+      String studentName="";
+      
     /**
      * Creates new form prof
      */
     public prof() {
         initComponents();
       testData = TestData.getInstance();
-      sd = testData.getSd();
+     // sd = testData.getSd();
       
         PrfLgnPnl1.setVisible(false);
     }
@@ -355,46 +361,80 @@ public class prof extends javax.swing.JPanel {
         String id = UsernameTextField.getText();
         sl=  getProfessorList("Fall2020",id);
         jButton1.setText(sl.get(0));
-        ArrayList<StudentProfile> sl1 = getStudentTakenByProf(sl.get(0),TestData.getInstance().getDd());
-       
+        sl1 = getStudentTakenByProf(sl.get(0),TestData.getInstance().getDd());
+        
         for(int i=0;i<sl1.size();i++){
             mainList.add(sl1.get(i).getPerson().getPersonId());
             mainList1.add(sl1.get(i).getCourseLoadBySemester("Fall2020").getSeatassignments().get(0).getGrade());
         }
-      
-        jPanel1.setVisible(false);
-        PrfLgnPnl1.setVisible(true);
-        jPanel3.setVisible(false);
-    }//GEN-LAST:event_LoginButtonActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
         // TableCellListener tcl = (TableCellListener)evt.getSource();
 
-        jPanel3.setVisible(true);
+       // jPanel3.setVisible(true);
         Object[] row = new Object[2];
+        
         for(int i=0;i<mainList.size();i++)
         {
+            
             row[0]=mainList.get(i);
             row[1]=mainList1.get(i);
             model.addRow(row);
         }
+        
         model.addTableModelListener(
             new TableModelListener()
             {
                 public void tableChanged(TableModelEvent evt)
                 {
                     
-                    grade = model.getValueAt(0,1).toString();
+                    int col = evt.getColumn();
+                    int row = evt.getFirstRow();
+                    //System.out.println(row+"as");
+                    grade = model.getValueAt(row, col).toString();
+                    studentName = model.getValueAt(row, 0).toString();
                     
+                    
+                   
                 }
             });
+      
+        jPanel1.setVisible(false);
+        PrfLgnPnl1.setVisible(true);
+    }//GEN-LAST:event_LoginButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+//        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+//        model.setRowCount(0);
+//        // TableCellListener tcl = (TableCellListener)evt.getSource();
+//
+//       // jPanel3.setVisible(true);
+//        Object[] row = new Object[2];
+//        
+//        for(int i=0;i<mainList.size();i++)
+//        {
+//            row[0]=mainList.get(i);
+//            row[1]=mainList1.get(i);
+//            model.addRow(row);
+//        }
+//        
+//        model.addTableModelListener(
+//            new TableModelListener()
+//            {
+//                public void tableChanged(TableModelEvent evt)
+//                {
+//                    
+//                    grade = model.getValueAt(0,1).toString();
+//                    mainList.clear();
+//        mainList1.clear();
+//                }
+//            });
             // System.out.println(model.getValueAt(jTable1.getSelectedRow(),jTable1.getSelectedColumn()).toString());
 
     }//GEN-LAST:event_jButton1ActionPerformed
 public  ArrayList<StudentProfile> getStudentTakenByProf(String courseID, DepartmentDirectory d){
+
     List<Department> list2 = d.getDd();
     for(Department d1 : list2)
     {
@@ -409,6 +449,7 @@ public  ArrayList<StudentProfile> getStudentTakenByProf(String courseID, Departm
                 if(seatAssignment.getSeat().getCourseoffer().getCourse().getCOurseNumber().equals(courseID))
                 {
                     //System.out.println(sp.getPerson().getPersonId());
+                    sd = d1.getStudentDirectory();
                     al3.add(sp);
                 }
             }
@@ -422,7 +463,7 @@ public  ArrayList<StudentProfile> getStudentTakenByProf(String courseID, Departm
         
         
         ArrayList<StudentProfile> as = new ArrayList();
-        List<StudentProfile> list = sd.getStudentlist();
+        List<StudentProfile> list = d.getStudentlist();
         for(StudentProfile sp : list)
         {
             List<SeatAssignment> list1 = sp.getCourseLoadBySemester("Fall2020").getSeatassignments();
@@ -491,9 +532,15 @@ public  ArrayList<StudentProfile> getStudentTakenByProf(String courseID, Departm
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+//<<<<<<< HEAD
+        //System.out.println(grade);
+        //System.out.println(studentName);
+        setGrade(sl.get(0),sd,grade,studentName);
+//=======
         System.out.println(grade);
         setGrade(sl.get(0),sd,grade,mainList.get(0));
         
+//>>>>>>> 379d1d2ce19ed31f303c684f32e7c00a98156029
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -501,6 +548,23 @@ public  ArrayList<StudentProfile> getStudentTakenByProf(String courseID, Departm
         // TODO add your handling code here:
     }//GEN-LAST:event_UsernameTextFieldActionPerformed
 
+    
+    public ArrayList<String> removeDuplicates(ArrayList<String> list){
+        
+        Set<String> set = new HashSet();
+        for(String s : list)
+            set.add(s);
+        
+        list.clear();
+        Iterator it = set.iterator();
+        while(it.hasNext()){
+           list.add(it.next().toString());
+        }
+        
+        return list;
+            
+        
+    }
  
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

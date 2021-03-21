@@ -50,8 +50,12 @@ public class TestData {
     AlumniDirectory ad  = new AlumniDirectory();
     EmployeeDirectory ed = new EmployeeDirectory();
     DepartmentDirectory dd = new DepartmentDirectory();
+
+    
+
     StudentDirectory sd ;
     HashMap<String, Alumni> map;
+
 
     public  DepartmentDirectory getDd() {
         return dd;
@@ -336,7 +340,9 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         
 
         FacultyProfile fp = fd.newStudentProfile(prof1);
-        FacultyProfile fp1 = fd.newStudentProfile(prof2);
+
+        FacultyProfile fp1 = fd1.newStudentProfile(prof2);
+
         FacultyProfile fp2 = fd.newStudentProfile(prof3);
         FacultyProfile fp3 = fd.newStudentProfile(prof4);
         FacultyProfile fp4 = fd.newStudentProfile(prof5);
@@ -349,10 +355,15 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         FacultyProfile fp11 = fd1.newStudentProfile(prof12);
         
         
+
         
         
         courseoffer.AssignAsTeacher(fp);
+        fp.AssignAsTeacher(courseoffer);
         courseoffer1.AssignAsTeacher(fp1);
+
+        fp1.AssignAsTeacher(courseoffer1);
+
         courseoffer2.AssignAsTeacher(fp2);
         courseoffer3.AssignAsTeacher(fp3);
         courseoffer4.AssignAsTeacher(fp4);
@@ -363,6 +374,7 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         courseoffer9.AssignAsTeacher(fp9);
         courseoffer10.AssignAsTeacher(fp10);
         courseoffer11.AssignAsTeacher(fp11);
+
         
         
 
