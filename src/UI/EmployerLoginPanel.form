@@ -28,9 +28,9 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="116" pref="116" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="PasswordLowerPanel" alignment="2" pref="285" max="32767" attributes="0"/>
+                  <Component id="PasswordLowerPanel" alignment="2" pref="197" max="32767" attributes="0"/>
                   <Component id="PasswordField" alignment="2" max="32767" attributes="0"/>
-                  <Component id="UsernameLowerPanel" alignment="2" pref="285" max="32767" attributes="0"/>
+                  <Component id="UsernameLowerPanel" alignment="2" pref="197" max="32767" attributes="0"/>
                   <Component id="UsernameTextField" alignment="2" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="2" attributes="0">
@@ -40,10 +40,10 @@
                               <Component id="UsernameLabel" min="-2" pref="196" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="88" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="97" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
@@ -70,7 +70,7 @@
               <Component id="PasswordLowerPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Component id="LoginButton" min="-2" pref="31" max="-2" attributes="0"/>
-              <EmptySpace pref="35" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

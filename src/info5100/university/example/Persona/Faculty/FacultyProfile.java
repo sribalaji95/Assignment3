@@ -17,7 +17,7 @@ public class FacultyProfile {
 
     Person person;
     ArrayList <FacultyAssignment> facultyassignments;
-    int professorRatings;
+    int professorRatings=5;
 
     public FacultyProfile(Person p) {
 

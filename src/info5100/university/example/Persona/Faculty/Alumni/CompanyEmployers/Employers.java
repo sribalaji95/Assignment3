@@ -23,6 +23,14 @@ public class Employers  {
    // ArrayList<CourseOffer> relevantcourseoffers;
     ArrayList<Course> relevantcourses;
 
+    public ArrayList<Course> getRelevantcourses() {
+        return relevantcourses;
+    }
+
+    public void setRelevantcourses(ArrayList<Course> relevantcourses) {
+        this.relevantcourses = relevantcourses;
+    }
+
     public String getEmployerName() {
         return employerName;
     }
