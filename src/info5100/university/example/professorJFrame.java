@@ -22,6 +22,10 @@ import info5100.university.example.Persona.StudentDirectory;
 import info5100.university.example.Persona.StudentProfile;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.DefaultTableModel;
+import static sun.jvm.hotspot.HelloWorld.e;
 
 /**
  *
@@ -34,10 +38,16 @@ public class professorJFrame extends javax.swing.JFrame {
      */
     
     static ArrayList<String> al2 = new ArrayList();
+    static ArrayList<StudentProfile> al3 = new ArrayList();
      static StudentDirectory sd;
+     static ArrayList<String> mainList = new ArrayList<>();
+      static  ArrayList<String> mainList1 = new ArrayList<>();
+      static String grade ;
 
     public professorJFrame() {
         initComponents();
+        prepareData();
+        PrfLgnPnl1.setVisible(false);
     }
 
     /**
@@ -49,49 +59,317 @@ public class professorJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        PrfLgnPnl = new javax.swing.JPanel();
+        jStdLoginlbl = new javax.swing.JLabel();
+        jUnamelbl = new javax.swing.JLabel();
+        jUserTxtfld = new javax.swing.JTextField();
+        jPasswordlbl = new javax.swing.JLabel();
+        jPwdTxtfld = new javax.swing.JPasswordField();
+        Stdlgnbtn = new javax.swing.JButton();
+        PrfLgnPnl1 = new javax.swing.JPanel();
+        jSplitPane1 = new javax.swing.JSplitPane();
+        jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("jButton1");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+        jStdLoginlbl.setText("Professor Login");
+
+        jUnamelbl.setText("Username:");
+
+        jUserTxtfld.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jUserTxtfldActionPerformed(evt);
             }
         });
+
+        jPasswordlbl.setText("Password:");
+
+        jPwdTxtfld.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPwdTxtfldActionPerformed(evt);
+            }
+        });
+
+        Stdlgnbtn.setText("Login");
+        Stdlgnbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                StdlgnbtnMouseClicked(evt);
+            }
+        });
+        Stdlgnbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StdlgnbtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PrfLgnPnlLayout = new javax.swing.GroupLayout(PrfLgnPnl);
+        PrfLgnPnl.setLayout(PrfLgnPnlLayout);
+        PrfLgnPnlLayout.setHorizontalGroup(
+            PrfLgnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PrfLgnPnlLayout.createSequentialGroup()
+                .addGroup(PrfLgnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PrfLgnPnlLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(PrfLgnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PrfLgnPnlLayout.createSequentialGroup()
+                                .addComponent(jPasswordlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jPwdTxtfld, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PrfLgnPnlLayout.createSequentialGroup()
+                                .addComponent(jUnamelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jUserTxtfld, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(PrfLgnPnlLayout.createSequentialGroup()
+                        .addGap(111, 111, 111)
+                        .addComponent(jStdLoginlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PrfLgnPnlLayout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addComponent(Stdlgnbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(112, Short.MAX_VALUE))
+        );
+        PrfLgnPnlLayout.setVerticalGroup(
+            PrfLgnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PrfLgnPnlLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jStdLoginlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PrfLgnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jUnamelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jUserTxtfld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PrfLgnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jPasswordlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPwdTxtfld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(Stdlgnbtn)
+                .addContainerGap(138, Short.MAX_VALUE))
+        );
+
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 116, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 284, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(35, 35, 35)
+                    .addComponent(jButton1)
+                    .addContainerGap(220, Short.MAX_VALUE)))
+        );
+
+        jSplitPane1.setLeftComponent(jPanel1);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Student Name", "Grade"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        jButton2.setText("Update");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addComponent(jButton2)
+                .addContainerGap(92, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(3, 3, 3)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(164, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(16, 16, 16))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(23, 23, 23)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(61, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+
+        jSplitPane1.setRightComponent(jPanel2);
+
+        javax.swing.GroupLayout PrfLgnPnl1Layout = new javax.swing.GroupLayout(PrfLgnPnl1);
+        PrfLgnPnl1.setLayout(PrfLgnPnl1Layout);
+        PrfLgnPnl1Layout.setHorizontalGroup(
+            PrfLgnPnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PrfLgnPnl1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        PrfLgnPnl1Layout.setVerticalGroup(
+            PrfLgnPnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PrfLgnPnl1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(145, 145, 145)
-                .addComponent(jButton1)
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(PrfLgnPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(16, 16, 16)
+                    .addComponent(PrfLgnPnl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(jButton1)
-                .addContainerGap(209, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(PrfLgnPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(16, 16, 16)
+                    .addComponent(PrfLgnPnl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void jUserTxtfldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUserTxtfldActionPerformed
         // TODO add your handling code here:
-        System.out.println("Mouse Clicked");
-        getProfessorList("");
-        for(String s : al2)
-        {
-            System.out.println(s);
+    }//GEN-LAST:event_jUserTxtfldActionPerformed
+
+    private void jPwdTxtfldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPwdTxtfldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPwdTxtfldActionPerformed
+
+    private void StdlgnbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StdlgnbtnMouseClicked
+        // TODO add your handling code here:
+
+        //        StudentProfile student = sd.findStudent("1");
+        //        System.out.println(student.studentPerformanceMetric());
+
+    }//GEN-LAST:event_StdlgnbtnMouseClicked
+
+    private void StdlgnbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StdlgnbtnActionPerformed
+        String id = jUserTxtfld.getText();
+        ArrayList<String> sl=  getProfessorList("Fall2020",id);
+        jButton1.setText(sl.get(0));
+        ArrayList<StudentProfile> sl1 = getStudentTakenByProf("info 5100",sd);
+       
+        for(int i=0;i<sl1.size();i++){
+            mainList.add(sl1.get(i).getPerson().getPersonId());
+            mainList1.add(sl1.get(i).getCourseLoadBySemester("Fall2020").getSeatassignments().get(i).getGrade());
         }
-        getStudentTakenByProf(al2.get(0), sd);
-        //setGrade("info 5100", sd, "A","");
-        //getGrade("info 5100", sd, "A","");
-    }//GEN-LAST:event_jButton1MouseClicked
+       // System.out.println("*** "+sl1.get(0).getPerson().getPersonId());
+         //       System.out.println("++++ "+sl1.get(0).getCourseLoadBySemester("Fall2020").getSeatassignments().get(0).getGrade());
+//System.out.println(mainList);
+//System.out.println(mainList1);
+        PrfLgnPnl.setVisible(false);
+        PrfLgnPnl1.setVisible(true);
+        jPanel3.setVisible(false);
+         
+    }//GEN-LAST:event_StdlgnbtnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+         model.setRowCount(0);
+        // TableCellListener tcl = (TableCellListener)evt.getSource();
+        
+         jPanel3.setVisible(true);
+         Object[] row = new Object[2];
+         for(int i=0;i<mainList.size();i++)
+         {
+             
+             row[0]=mainList.get(i);
+             row[1]=mainList1.get(i);
+             model.addRow(row);
+         }
+          model.addTableModelListener(
+            new TableModelListener() 
+            {
+                public void tableChanged(TableModelEvent evt) 
+                {
+                  
+                     grade = model.getValueAt(0,1).toString();
+                }
+            });
+        // System.out.println(model.getValueAt(jTable1.getSelectedRow(),jTable1.getSelectedColumn()).toString());
+         
+         
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        System.out.println(grade);
+        setGrade("dmdd ",sd,grade,mainList.get(0));
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -101,7 +379,7 @@ public class professorJFrame extends javax.swing.JFrame {
     {
         Department department = new Department("Information Systems");
         PersonDirectory pd = department.getPersonDirectory();
-         FacultyDirectory fd = department.getFacultyDirectory();
+        FacultyDirectory fd = department.getFacultyDirectory();
         Person person1 = pd.newPerson("123456");
         FacultyProfile fp = fd.newStudentProfile(person1);
         
@@ -133,8 +411,8 @@ public class professorJFrame extends javax.swing.JFrame {
       //  courseoffer1.generatSeats(20);
         
        
-        Person person = pd.newPerson("0112303");
-         sd = department.getStudentDirectory();
+        Person person = pd.newPerson("100");
+        sd = department.getStudentDirectory();
         StudentProfile student = sd.newStudentProfile(person);
         ArrayList<StudentProfile> studentlist = new ArrayList<>();
         studentlist.add(student);
@@ -151,7 +429,7 @@ public class professorJFrame extends javax.swing.JFrame {
 //             System.out.println("Total: " + val.getGrade());
 //        }
       //  System.out.println("Total: " +fp.getCourseOffer("info 5100"));
-        System.out.println("Total: " + cc.getCourseByNumber("info 5100"));
+       // System.out.println("Total: " + cc.getCourseByNumber("info 5100"));
        // CourseSchedule courseschedule1 = new CourseSchedule();
         
         
@@ -163,7 +441,7 @@ public class professorJFrame extends javax.swing.JFrame {
     }
     
     
-    public static void getStudentTakenByProf(String courseID, StudentDirectory sd){
+    public static ArrayList<StudentProfile> getStudentTakenByProf(String courseID, StudentDirectory sd){
         
         ArrayList<StudentProfile> as = new ArrayList();
         List<StudentProfile> list = sd.getStudentlist();
@@ -172,13 +450,14 @@ public class professorJFrame extends javax.swing.JFrame {
             List<SeatAssignment> list1 = sp.getCourseLoadBySemester("Fall2020").getSeatassignments();
             for(SeatAssignment seatAssignment : list1)
             {
-                if(seatAssignment.getSeat().getCourseoffer().getCourse().getCOurseNumber().equals(courseID))
+                if(seatAssignment.getSeat().getCourseoffer().getCourse().getCOurseNumber().equals("info 5100"))
                 {
-                    System.out.println(sp.getPerson().getPersonId());
+                    //System.out.println(sp.getPerson().getPersonId());
+                    al3.add(sp);
                 }
             }
         }
-     
+     return al3;
         
     }
     
@@ -222,18 +501,19 @@ public class professorJFrame extends javax.swing.JFrame {
         
     }
     
-    public void getProfessorList(String semester)
+    public ArrayList<String> getProfessorList(String semester, String pid)
     {
         Department department = sd.getDepartment();
         CourseSchedule courseSchedule = department.getCourseSchedule("Fall2020");
        ArrayList<CourseOffer> al1 = courseSchedule.getSchedule();
-        System.out.println(al1.size());
+        //System.out.println(al1.size());
                  for(int i=0 ; i < al1.size(); i++){
             //System.out.println(al1.get(i).getFacultyProfile());
-            if(al1.get(i).getFacultyProfile().getPerson().getPersonId().equals("123456")){
+            if(al1.get(i).getFacultyProfile().getPerson().getPersonId().equals(pid)){
                 al2.add(al1.get(i).getCourse().getCOurseNumber());
             }
         }
+                 return al2;
     }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -269,6 +549,21 @@ public class professorJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PrfLgnPnl;
+    private javax.swing.JPanel PrfLgnPnl1;
+    private javax.swing.JButton Stdlgnbtn;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel jPasswordlbl;
+    private javax.swing.JPasswordField jPwdTxtfld;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JLabel jStdLoginlbl;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel jUnamelbl;
+    private javax.swing.JTextField jUserTxtfld;
     // End of variables declaration//GEN-END:variables
 }

@@ -47,9 +47,9 @@ public class TestData {
     }
     
     ArrayList<Employers> emp = new ArrayList<>();
-    static AlumniDirectory ad  = new AlumniDirectory();
-    static EmployeeDirectory ed = new EmployeeDirectory();
-    static DepartmentDirectory dd = new DepartmentDirectory();
+     AlumniDirectory ad  = new AlumniDirectory();
+     EmployeeDirectory ed = new EmployeeDirectory();
+     DepartmentDirectory dd = new DepartmentDirectory();
     
 
     public  DepartmentDirectory getDd() {
@@ -64,86 +64,17 @@ public class TestData {
         return ed;
     }
 
+    public StudentDirectory getSd() {
+        return sd;
+    }
+
     /**
      * @param args the command line arguments
      */
     static StudentDirectory sd ;
     public static void main(String[] args) {
         // TODO code application logic here
-        Department department = new Department("Information Systems");
-         PersonDirectory pd = department.getPersonDirectory();
-         FacultyDirectory fd = department.getFacultyDirectory();
-        Person person1 = pd.newPerson("123456");
-        FacultyProfile fp = fd.newStudentProfile(person1);
-        
-        
-        Course course = department.newCourse("app eng", "info 5100", 4);
-        Course course1 = department.newCourse("dmdd", "info 6100", 5);
-         
-        CourseCatalog cc = new CourseCatalog(department);
-        ArrayList<Course> ac = new ArrayList();
-        ac.add(course);
-        ac.add(course1);
-        cc.setCourselist(ac);
-        
-        
-        CourseSchedule courseschedule = department.newCourseSchedule("Fall2020");
-
-        CourseOffer courseoffer = courseschedule.newCourseOffer("info 5100");
-        
-        courseoffer.AssignAsTeacher(fp);
-        courseoffer.generatSeats(10);
-        
-        
-        Person person = pd.newPerson("0112303");
-         sd = department.getStudentDirectory();
-        StudentProfile student = sd.newStudentProfile(person);
-        CourseLoad courseload = student.newCourseLoad("Fall2020"); 
-//        
-        courseload.newSeatAssignment(courseoffer); //register student in class
-        SeatAssignment sa = new SeatAssignment();
-        sa.assignGradeToStudent("A");
-        
-        int total = department.calculateRevenuesBySemester("Fall2020");
-        System.out.println("Total: " + total);
-        ArrayList<CourseOffer> al1 = courseschedule.getSchedule();
-        System.out.println(al1.size());
-         ArrayList<String> al2 = new ArrayList();
-        for(int i=0 ; i < al1.size(); i++){
-            //System.out.println(al1.get(i).getFacultyProfile());
-            if(al1.get(i).getFacultyProfile().getPerson().getPersonId().equals("123456")){
-                al2.add(al1.get(i).getCourse().getCOurseNumber());
-            }
-        }
-       // new Info5001UniversityExample().getStudentTakenByProf(al2.get(0), sd);
-        System.out.println("Total: 1" + courseoffer.getFacultyProfile().getPerson().getPersonId());
-        
-        
-        //
-        System.out.println("Test 1");
-        System.out.println(sd.findStudent("0112303").getCourseLoadBySemester("Fall2020"));
-        
-        CourseLoad cd = sd.findStudent("0112303").getCourseLoadBySemester("Fall2020");
-        //cd.newSeatAssignment(courseoffer)
-
-       
-        ArrayList<Employers> emp = new ArrayList<>();
-        Employers em = new Employers();
-        em.setEmployerName("Amazon");
-        emp.add(em);
-        ed.setEmployers(emp);
-        
-        StudentProfile sp = sd.findStudent("0112303");
-       // System.out.println("");
-        Alumni al = new Alumni();
-        al.setStudentProfile(sp);
-        al.setGradutationYear(2020);
-        al.setEmp(em);
-        al.setPosition("SDE");
-        
-        
-        System.out.println("SS "+ al.getStudentProfile().getPerson().getPersonId());
-        
+                
         
         
         
@@ -255,7 +186,7 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         Person person2 = pd.newPerson("cs1");
         Person person3 = pd.newPerson("cs2");
         
-        StudentDirectory sd = department.getStudentDirectory();
+        sd = department.getStudentDirectory();
         StudentDirectory sd1 = department1.getStudentDirectory();
 
         StudentProfile student = sd.newStudentProfile(person);
@@ -267,7 +198,11 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         CourseLoad courseload = student.newCourseLoad("Fall2020"); 
         CourseLoad courseload1 = student1.newCourseLoad("Fall2020"); 
         CourseLoad courseload2 = student2.newCourseLoad("Fall2020"); 
-        CourseLoad courseload3 = student3.newCourseLoad("Fall2020"); 
+        CourseLoad courseload3 = student3.newCourseLoad("Fall2020");
+        FacultyDirectory fd = department.getFacultyDirectory();
+         person1 = pd.newPerson("1234567");
+        FacultyProfile fp = fd.newStudentProfile(person1);
+        courseoffer.AssignAsTeacher(fp);
 
         courseload.newSeatAssignment(courseoffer); //register student in class
         courseload1.newSeatAssignment(courseoffer);

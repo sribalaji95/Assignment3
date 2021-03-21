@@ -7,12 +7,14 @@ package UI;
  */
 
 
+import TestData.TestData;
 import info5100.university.example.CourseCatalog.Course;
 import info5100.university.example.CourseSchedule.CourseLoad;
 import info5100.university.example.CourseSchedule.CourseOffer;
 import info5100.university.example.CourseSchedule.CourseSchedule;
 import info5100.university.example.CourseSchedule.SeatAssignment;
 import info5100.university.example.Department.Department;
+import info5100.university.example.Department.DepartmentDirectory;
 import info5100.university.example.Persona.Faculty.FacultyDirectory;
 import info5100.university.example.Persona.Faculty.FacultyProfile;
 import info5100.university.example.Persona.Person;
@@ -21,6 +23,7 @@ import info5100.university.example.Persona.StudentDirectory;
 import info5100.university.example.Persona.StudentProfile;
 import info5100.university.example.Persona.Transcript;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -36,6 +39,9 @@ public class StdJFrame extends javax.swing.JFrame {
     public StdJFrame() {
         initComponents();
         StdDspPnl.setVisible(false);
+        StdLgnPnl.setVisible(false);
+        //jPanel1.setVisible(false);
+        
     }
 
     /**
@@ -57,6 +63,7 @@ public class StdJFrame extends javax.swing.JFrame {
         StdIDlbl = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         CGPAtxt = new javax.swing.JTextField();
+        btback = new javax.swing.JButton();
         StdLgnPnl = new javax.swing.JPanel();
         jStdLoginlbl = new javax.swing.JLabel();
         jUnamelbl = new javax.swing.JLabel();
@@ -110,6 +117,13 @@ public class StdJFrame extends javax.swing.JFrame {
             }
         });
 
+        btback.setText("Back");
+        btback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btbackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout StdDspPnlLayout = new javax.swing.GroupLayout(StdDspPnl);
         StdDspPnl.setLayout(StdDspPnlLayout);
         StdDspPnlLayout.setHorizontalGroup(
@@ -124,15 +138,16 @@ public class StdJFrame extends javax.swing.JFrame {
                                     .addComponent(jUnamelbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(StdIDlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(StdDtlScrlPn, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(StdDtlScrlPn, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btback)))
                         .addGroup(StdDspPnlLayout.createSequentialGroup()
                             .addGap(155, 155, 155)
                             .addComponent(jStdDtlLb, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(StdDspPnlLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(GpaLbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(GpaLbl)
+                            .addComponent(jLabel2))
                         .addGap(18, 18, 18)
                         .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(GpaTxtfld, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
@@ -153,12 +168,13 @@ public class StdJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GpaLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GpaTxtfld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(GpaTxtfld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btback))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(StdDspPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(CGPAtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         jStdLoginlbl.setText("Student Login");
@@ -187,7 +203,7 @@ public class StdJFrame extends javax.swing.JFrame {
         });
         Stdlgnbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                StdlgnbtnActionPerformed(evt);
+                Login(evt);
             }
         });
 
@@ -262,55 +278,62 @@ public class StdJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void StdlgnbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StdlgnbtnActionPerformed
+    private void Login(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login
       // TODO add your handling code here:
+      System.out.println("Mouse Clicked");
         String uname = "";
         String pwd = "admin";
         String usertxt = jUserTxtfld.getText();
-        
- 
-          StudentProfile student = sd.findStudent(usertxt);
-//            System.out.println(student);
-        
-            StdIDlbl.setText(usertxt);
-             //if((student!=null) && (jPwdTxtfld.getPassword().equals(pwd)))
-           if(student!=null)
-           {
-              StdLgnPnl.setVisible(false);
-              StdDspPnl.setVisible(true);
-              //ListOfCoursesPnl.setVisible(true);
+        DepartmentDirectory dd = TestData.getInstance().getDd();
+        List<Department> list = dd.getDd();
+        for(Department d : list)
+        {
+            StudentDirectory sd = d.getStudentDirectory();
+            StudentProfile sp = sd.findStudent(usertxt);
+            if(sp!=null)
+            {
 
-              ArrayList<CourseLoad> cl1 = student.getCurrentCourseLoad().getCourseInformation();
-//            System.out.println(student.studentPerformanceMetric());
-//            System.out.println(cl1);
-            
-              DefaultTableModel model = (DefaultTableModel) StdDtlTbl.getModel();
-              model.setRowCount(0);
-           
-             
-               for(int i=0;i<cl1.size();i++)
+                //            System.out.println(student);
+
+                StdIDlbl.setText(usertxt);
+                //if((student!=null) && (jPwdTxtfld.getPassword().equals(pwd)))
+
+                StdLgnPnl.setVisible(false);
+                StdDspPnl.setVisible(true);
+                //jPanel1.setVisible(false);
+                //ListOfCoursesPnl.setVisible(true);
+
+                ArrayList<CourseLoad> cl1 = sp.getCurrentCourseLoad().getCourseInformation();
+                //            System.out.println(student.studentPerformanceMetric());
+                //            System.out.println(cl1);
+
+                DefaultTableModel model = (DefaultTableModel) StdDtlTbl.getModel();
+                model.setRowCount(0);
+
+                for(int i=0;i<cl1.size();i++)
                 {
-               
+
                     Object[] row= new Object[2];
                     if(i%2==0)
                     {
                         row[0]=cl1.get(i);
                         row[1]=cl1.get(i+1);
                         model.addRow(row);
-                    } 
+                    }
                 }
-              Double val1 = student.studentPerformanceMetric();
+                Double val1 = sp.studentPerformanceMetric();
 
-              GpaTxtfld.setText(val1.toString());
-              Double val2 = student.getCurrentCourseLoad().iterateSeatAssignments();
-              // System.out.println(val2);
-              CGPAtxt.setText(val2.toString());
+                GpaTxtfld.setText(val1.toString());
+                Double val2 = sp.getCurrentCourseLoad().iterateSeatAssignments();
+                // System.out.println(val2);
+                CGPAtxt.setText(val2.toString());
             }
             else {
                 JOptionPane.showMessageDialog(this,"No Student found");
-                        
+
             }
-    }//GEN-LAST:event_StdlgnbtnActionPerformed
+        }
+    }//GEN-LAST:event_Login
 
     private void StdlgnbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StdlgnbtnMouseClicked
         // TODO add your handling code here:
@@ -340,42 +363,18 @@ public class StdJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPwdTxtfldActionPerformed
 
+    private void btbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbackActionPerformed
+       StdLgnPnl.setVisible(true);
+       StdDspPnl.setVisible(false);
+    }//GEN-LAST:event_btbackActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    static Department department;
-    static PersonDirectory pd;
-         
-         static FacultyDirectory facultyDirectory ;
-         static Person person1;
+    
         
        
-        
-        static Course course ;
-        static Course course1;
-        static Course course2;
-        
-        static Transcript transcript;
 
-        static CourseSchedule courseschedule ;
-
-        static CourseOffer courseoffer ;
-        
-        
-        static FacultyProfile facultyProfile ;
-        
-        static CourseOffer courseoffer1 ;
-        static CourseLoad courseload;
-        
-        
-        
-        static CourseOffer courseoffer2 ;//added by myself
-        
-       
-       
-        static Person person ;
-        static StudentDirectory sd ;
-        static StudentProfile student;
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -404,45 +403,7 @@ public class StdJFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new StdJFrame().setVisible(true);
-                 department = new Department("Information Systems");
-          pd = department.getPersonDirectory();
-         
-         facultyDirectory = new FacultyDirectory(department);
-         person1 = pd.newPerson("TeacherName");
-        
-       
-        
-         course = department.newCourse("app eng", "info 5100", 4);
-         course1 = department.newCourse("dmdd", "info 6100", 4);
-         course2 = department.newCourse("PSA", "info 6205", 4);//added by myself
-        
-        //SeatAssignment sa = new SeatAssignment();
-        //sa.setGrade("B+");
-
-         courseschedule = department.newCourseSchedule("Fall 2020");
-
-         courseoffer = courseschedule.newCourseOffer("info 5100");
-        
-        courseoffer.generatSeats(10);
-         facultyProfile = new FacultyProfile(person1);
-        facultyProfile.AssignAsTeacher(courseoffer);
-        facultyProfile.getCourseOffer("info 5100");
-         courseoffer1 = courseschedule.newCourseOffer("info 6100");
-        
-        courseoffer1.generatSeats(20);
-        
-         courseoffer2 = courseschedule.newCourseOffer("info 6205");//added by myself
-        
-        courseoffer2.generatSeats(30);//added by myself
-       
-         person = pd.newPerson("100");
-         sd = department.getStudentDirectory();
-        StudentProfile student = sd.newStudentProfile(person);
-        CourseLoad courseload = student.newCourseLoad("Fall 2020"); 
-//        
-        courseload.newSeatAssignment(courseoffer);
-        courseload.newSeatAssignment(courseoffer1);
-        courseload.newSeatAssignment(courseoffer2);
+                 
             }
         });
     }
@@ -457,6 +418,7 @@ public class StdJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel StdIDlbl;
     private javax.swing.JPanel StdLgnPnl;
     private javax.swing.JButton Stdlgnbtn;
+    private javax.swing.JButton btback;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jPasswordlbl;
     private javax.swing.JPasswordField jPwdTxtfld;

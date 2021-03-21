@@ -140,6 +140,11 @@ public class Helper {
         }
         return list;
      }
+    
+    public List<FacultyProfile> getProfessors(StudentProfile sp)
+    {
+        
+    }
 
     
 }

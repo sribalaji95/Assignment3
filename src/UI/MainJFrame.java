@@ -4,24 +4,22 @@
  * and open the template in the editor.
  */
 package UI;
-import info5100.university.example.Info5001UniversityExample;
-import info5100.university.example.Persona.Faculty.Alumni.Alumni;
-import info5100.university.example.Persona.Faculty.Alumni.CompanyEmployers.Employers;
-import java.util.HashMap;
-import javax.swing.JPanel;
+
+import TestData.TestData;
+
 /**
  *
- * @author shreyascr
+ * @author Apoorva
  */
 public class MainJFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form MainJFrame
      */
-    
     public MainJFrame() {
+        
         initComponents();
-       
+        TestData.getInstance().test2();
     }
 
     /**
@@ -33,57 +31,182 @@ public class MainJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        UniversityPerformancePanel = new javax.swing.JPanel();
+        UniversityPerformaceLabel = new javax.swing.JLabel();
+        splitPane = new javax.swing.JSplitPane();
+        controlPanel = new javax.swing.JPanel();
+        StudentLoginButton = new javax.swing.JButton();
+        AdminLoginButton = new javax.swing.JButton();
+        FacultyLoginButton = new javax.swing.JButton();
+        EmployeeLoginButton = new javax.swing.JButton();
+        AluminiLoginButton = new javax.swing.JButton();
+        workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 0));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        UniversityPerformancePanel.setBackground(new java.awt.Color(23, 35, 51));
+
+        UniversityPerformaceLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        UniversityPerformaceLabel.setForeground(new java.awt.Color(153, 153, 153));
+        UniversityPerformaceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        UniversityPerformaceLabel.setText("UNIVERSITY PERFORMANCE MEASURE");
+        UniversityPerformaceLabel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        javax.swing.GroupLayout UniversityPerformancePanelLayout = new javax.swing.GroupLayout(UniversityPerformancePanel);
+        UniversityPerformancePanel.setLayout(UniversityPerformancePanelLayout);
+        UniversityPerformancePanelLayout.setHorizontalGroup(
+            UniversityPerformancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(UniversityPerformaceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        UniversityPerformancePanelLayout.setVerticalGroup(
+            UniversityPerformancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(UniversityPerformaceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+        );
+
+        controlPanel.setBackground(new java.awt.Color(29, 44, 64));
+
+        StudentLoginButton.setBackground(new java.awt.Color(44, 63, 87));
+        StudentLoginButton.setForeground(new java.awt.Color(153, 153, 153));
+        StudentLoginButton.setText("STUDENT");
+        StudentLoginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                StudentLoginButtonActionPerformed(evt);
             }
         });
+
+        AdminLoginButton.setBackground(new java.awt.Color(44, 63, 87));
+        AdminLoginButton.setForeground(new java.awt.Color(153, 153, 153));
+        AdminLoginButton.setText("ADMIN");
+        AdminLoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdminLoginButtonActionPerformed(evt);
+            }
+        });
+
+        FacultyLoginButton.setBackground(new java.awt.Color(44, 63, 87));
+        FacultyLoginButton.setForeground(new java.awt.Color(153, 153, 153));
+        FacultyLoginButton.setText("FACULTY");
+        FacultyLoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FacultyLoginButtonActionPerformed(evt);
+            }
+        });
+
+        EmployeeLoginButton.setBackground(new java.awt.Color(44, 63, 87));
+        EmployeeLoginButton.setForeground(new java.awt.Color(153, 153, 153));
+        EmployeeLoginButton.setText("EMPLOYER");
+        EmployeeLoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmployeeLoginButtonActionPerformed(evt);
+            }
+        });
+
+        AluminiLoginButton.setBackground(new java.awt.Color(44, 63, 87));
+        AluminiLoginButton.setForeground(new java.awt.Color(153, 153, 153));
+        AluminiLoginButton.setText("ALUMINI");
+        AluminiLoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AluminiLoginButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
+        controlPanel.setLayout(controlPanelLayout);
+        controlPanelLayout.setHorizontalGroup(
+            controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
+                .addContainerGap(13, Short.MAX_VALUE)
+                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(EmployeeLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(FacultyLoginButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(StudentLoginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AdminLoginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AluminiLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        controlPanelLayout.setVerticalGroup(
+            controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(controlPanelLayout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(StudentLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(AdminLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(FacultyLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(EmployeeLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(AluminiLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(113, Short.MAX_VALUE))
+        );
+
+        splitPane.setLeftComponent(controlPanel);
+
+        workArea.setBackground(new java.awt.Color(29, 44, 64));
+
+        javax.swing.GroupLayout workAreaLayout = new javax.swing.GroupLayout(workArea);
+        workArea.setLayout(workAreaLayout);
+        workAreaLayout.setHorizontalGroup(
+            workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 383, Short.MAX_VALUE)
+        );
+        workAreaLayout.setVerticalGroup(
+            workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 438, Short.MAX_VALUE)
+        );
+
+        splitPane.setRightComponent(workArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addComponent(jButton1)
-                .addContainerGap(372, Short.MAX_VALUE))
+            .addComponent(UniversityPerformancePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(splitPane)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addComponent(jButton1)
-                .addContainerGap(468, Short.MAX_VALUE))
+                .addGap(5, 5, 5)
+                .addComponent(UniversityPerformancePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(splitPane))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void AdminLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminLoginButtonActionPerformed
         // TODO add your handling code here:
-//        Alumni_Frame alumini = new Alumni_Frame();
-        
-       Alumni_Frame alumini = new Alumni_Frame();
-        alumini.setVisible(true);
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+        univAdmin adminLogin = new univAdmin();
+        splitPane.setRightComponent(adminLogin);
+    }//GEN-LAST:event_AdminLoginButtonActionPerformed
+
+    private void FacultyLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FacultyLoginButtonActionPerformed
+        // TODO add your handling code here:
+        prof facultyLogin = new prof();
+        splitPane.setRightComponent(facultyLogin);
+    }//GEN-LAST:event_FacultyLoginButtonActionPerformed
+
+    private void EmployeeLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeLoginButtonActionPerformed
+        // TODO add your handling code here:
+        EmployerLoginPanel employerLogin = new EmployerLoginPanel();
+        splitPane.setRightComponent(employerLogin);
+    }//GEN-LAST:event_EmployeeLoginButtonActionPerformed
+
+    private void StudentLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudentLoginButtonActionPerformed
+        // TODO add your handling code here:
+        //StudentLoginPanel studentLogin = new StudentLoginPanel();
+        std stdPanel = new std();
+        splitPane.setRightComponent(stdPanel);
+    }//GEN-LAST:event_StudentLoginButtonActionPerformed
+
+    private void AluminiLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AluminiLoginButtonActionPerformed
+        // TODO add your handling code here:
+        AlumPanel alum = new AlumPanel();
+        splitPane.setRightComponent(alum);
+    }//GEN-LAST:event_AluminiLoginButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -121,7 +244,15 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton AdminLoginButton;
+    private javax.swing.JButton AluminiLoginButton;
+    private javax.swing.JButton EmployeeLoginButton;
+    private javax.swing.JButton FacultyLoginButton;
+    private javax.swing.JButton StudentLoginButton;
+    private javax.swing.JLabel UniversityPerformaceLabel;
+    private javax.swing.JPanel UniversityPerformancePanel;
+    private javax.swing.JPanel controlPanel;
+    private javax.swing.JSplitPane splitPane;
+    private javax.swing.JPanel workArea;
     // End of variables declaration//GEN-END:variables
 }
