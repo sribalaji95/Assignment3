@@ -405,7 +405,7 @@ List<Course> list1;
            while (it.hasNext()) {
                Map.Entry pair = (Map.Entry)it.next();
             if(d.getCourseCatalog().getCourseList().get(i).getName().equals(pair.getKey())){
-                d.getCourseCatalog().getCourseList().get(i).setRating((int)pair.getValue());
+                d.getCourseCatalog().getCourseList().get(i).setRating(Integer.parseInt(pair.getValue().toString()));
                 System.out.println("TT jkk");
 
                 it.remove();
