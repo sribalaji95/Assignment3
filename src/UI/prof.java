@@ -183,9 +183,9 @@ public class prof extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(116, 116, 116)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(PasswordLowerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                    .addComponent(PasswordLowerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1160, Short.MAX_VALUE)
                     .addComponent(PasswordField)
-                    .addComponent(UsernameLowerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                    .addComponent(UsernameLowerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1160, Short.MAX_VALUE)
                     .addComponent(UsernameTextField)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
@@ -193,10 +193,10 @@ public class prof extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addComponent(UsernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 963, Short.MAX_VALUE)))
+                .addContainerGap(144, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(218, 218, 218)
+                .addGap(683, 683, 683)
                 .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -216,9 +216,9 @@ public class prof extends javax.swing.JPanel {
                 .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(PasswordLowerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(625, Short.MAX_VALUE))
         );
 
         PrfLgnPnl1.setBackground(new java.awt.Color(29, 44, 64));
@@ -308,25 +308,19 @@ public class prof extends javax.swing.JPanel {
             PrfLgnPnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PrfLgnPnl1Layout.createSequentialGroup()
                 .addGap(135, 135, 135)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(149, Short.MAX_VALUE))
-            .addGroup(PrfLgnPnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PrfLgnPnl1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(PrfLgnPnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(977, Short.MAX_VALUE))
         );
         PrfLgnPnl1Layout.setVerticalGroup(
             PrfLgnPnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PrfLgnPnl1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jButton1)
-                .addContainerGap(354, Short.MAX_VALUE))
-            .addGroup(PrfLgnPnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PrfLgnPnl1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(632, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -340,7 +334,7 @@ public class prof extends javax.swing.JPanel {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1420, Short.MAX_VALUE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -372,11 +366,49 @@ public class prof extends javax.swing.JPanel {
             mainList.add(sl1.get(i).getPerson().getPersonId());
             mainList1.add(sl1.get(i).getCourseLoadBySemester("Fall2020").getSeatassignments().get(0).getGrade());
         }
+//        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+//        model.setRowCount(0);
+//        // TableCellListener tcl = (TableCellListener)evt.getSource();
+//
+//       // jPanel3.setVisible(true);
+//        Object[] row = new Object[2];
+//        
+//        for(int i=0;i<mainList.size();i++)
+//        {
+//            
+//            row[0]=mainList.get(i);
+//            row[1]=mainList1.get(i);
+//            model.addRow(row);
+//        }
+//        
+//        model.addTableModelListener(
+//            new TableModelListener()
+//            {
+//                public void tableChanged(TableModelEvent evt)
+//                {
+//                    
+//                    int col = evt.getColumn();
+//                    int row = evt.getFirstRow();
+//                    //System.out.println(row+"as");
+//                    grade = model.getValueAt(row, col).toString();
+//                    studentName = model.getValueAt(row, 0).toString();
+//                    
+//                    
+//                   
+//                }
+//            });
+//      
+        jPanel1.setVisible(false);
+        PrfLgnPnl1.setVisible(true);
+        jPanel3.setVisible(false);
+    }//GEN-LAST:event_LoginButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
-        // TableCellListener tcl = (TableCellListener)evt.getSource();
+         //TableCellListener tcl = (TableCellListener)evt.getSource();
 
-       // jPanel3.setVisible(true);
+        jPanel3.setVisible(true);
         Object[] row = new Object[2];
         
         for(int i=0;i<mainList.size();i++)
@@ -406,36 +438,6 @@ public class prof extends javax.swing.JPanel {
       
         jPanel1.setVisible(false);
         PrfLgnPnl1.setVisible(true);
-    }//GEN-LAST:event_LoginButtonActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-//        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-//        model.setRowCount(0);
-//        // TableCellListener tcl = (TableCellListener)evt.getSource();
-//
-//       // jPanel3.setVisible(true);
-//        Object[] row = new Object[2];
-//        
-//        for(int i=0;i<mainList.size();i++)
-//        {
-//            row[0]=mainList.get(i);
-//            row[1]=mainList1.get(i);
-//            model.addRow(row);
-//        }
-//        
-//        model.addTableModelListener(
-//            new TableModelListener()
-//            {
-//                public void tableChanged(TableModelEvent evt)
-//                {
-//                    
-//                    grade = model.getValueAt(0,1).toString();
-//                    mainList.clear();
-//        mainList1.clear();
-//                }
-//            });
-            // System.out.println(model.getValueAt(jTable1.getSelectedRow(),jTable1.getSelectedColumn()).toString());
 
     }//GEN-LAST:event_jButton1ActionPerformed
 public  ArrayList<StudentProfile> getStudentTakenByProf(String courseID, DepartmentDirectory d){

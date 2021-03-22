@@ -184,17 +184,23 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         dd.setDd(ad);
         
         Course courseinfo1 = department.newCourse("app eng", "info 5100", 4); 
+        courseinfo1.setRating(10);
         Course courseinfo2 = department.newCourse("DSC", "info 5101", 4);
+        courseinfo2.setRating(2);
         Course courseinfo3 = department.newCourse("Web Design", "info 6203", 4);
+        courseinfo3.setRating(5);
         Course courseinfo4 = department.newCourse("DWBI", "info 7546", 4);
         Course courseinfo5 = department.newCourse("Web Tools", "info 6100", 4); 
         Course courseinfo6 = department.newCourse("Cloud", "info 7101", 4);
         Course courseinfo7 = department.newCourse("DMDB", "info 6353", 4);
         Course courseinfo8 = department.newCourse("ADSC", "info 7106", 4);
         Course coursecsc1 = department1.newCourse("PDP", "cs 5010", 4);
+        coursecsc1.setRating(4);
         Course coursecsc2 = department1.newCourse("NLP", "cs 5204", 4);
+        coursecsc2.setRating(3);
         Course coursecsc3 = department1.newCourse("AI", "cs 7010", 4);
         Course coursecsc4 = department1.newCourse("Network", "cs 6284", 4);
+        coursecsc4.setRating(9);
         
         
         
