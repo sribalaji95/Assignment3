@@ -25,13 +25,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.data.general.DefaultPieDataset;
-import org.jfree.data.general.PieDataset;
 
 /**
  *
@@ -45,7 +40,6 @@ public class univAdmin extends javax.swing.JPanel {
             HashMap<String, CourseOffer> coursemap = new HashMap();
             String depName;
             String depNameProf;
-            ArrayList<Course> rco;
 
     /** Creates new form univAdmin */
     public univAdmin() {
@@ -129,8 +123,6 @@ public class univAdmin extends javax.swing.JPanel {
         CrScMtrxLbl = new javax.swing.JLabel();
         CsMScrPnl = new javax.swing.JScrollPane();
         CsMTxtArea = new javax.swing.JTextArea();
-        CrScMtrxValLbl = new javax.swing.JLabel();
-        PieChartButton = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(29, 44, 64));
         jPanel1.setPreferredSize(new java.awt.Dimension(0, 0));
@@ -735,7 +727,7 @@ public class univAdmin extends javax.swing.JPanel {
 
         InUnvTabPane.addTab("Alumini Details", ShAlmn);
 
-        ShAyPnl.setBackground(new java.awt.Color(29, 44, 64));
+        ShAyPnl.setBackground(new java.awt.Color(204, 204, 204));
         ShAyPnl.setForeground(new java.awt.Color(153, 153, 153));
 
         AyLstDeptLbl.setForeground(new java.awt.Color(153, 153, 153));
@@ -825,15 +817,12 @@ public class univAdmin extends javax.swing.JPanel {
         );
 
         FcRkLbl.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        FcRkLbl.setForeground(new java.awt.Color(153, 153, 153));
         FcRkLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FcRkLbl.setText("Faculty Ranking");
 
         CrRkLbl.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        CrRkLbl.setForeground(new java.awt.Color(153, 153, 153));
         CrRkLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CrRkLbl.setText("Course Ranking");
-
 
         CrScMtrxLbl.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         CrScMtrxLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -842,21 +831,6 @@ public class univAdmin extends javax.swing.JPanel {
         CsMTxtArea.setColumns(20);
         CsMTxtArea.setRows(5);
         CsMScrPnl.setViewportView(CsMTxtArea);
-
-        CrScMtrxLbl.setForeground(new java.awt.Color(153, 153, 153));
-        CrScMtrxLbl.setText("Carrer Success Metrics");
-
-        CrScMtrxValLbl.setForeground(new java.awt.Color(153, 153, 153));
-        CrScMtrxValLbl.setText("Value");
-
-        PieChartButton.setBackground(new java.awt.Color(44, 63, 87));
-        PieChartButton.setForeground(new java.awt.Color(153, 153, 153));
-        PieChartButton.setText("Faculty Ranking Pie Chart");
-        PieChartButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PieChartButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout ShAyPnlLayout = new javax.swing.GroupLayout(ShAyPnl);
         ShAyPnl.setLayout(ShAyPnlLayout);
@@ -879,18 +853,9 @@ public class univAdmin extends javax.swing.JPanel {
                             .addComponent(AyCrRkPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(CrRkLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(ShAyPnlLayout.createSequentialGroup()
-
                         .addGap(274, 274, 274)
                         .addComponent(CsMScrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(616, Short.MAX_VALUE))
-
-                        .addGap(294, 294, 294)
-                        .addComponent(CrScMtrxValLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(ShAyPnlLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(PieChartButton)))
-                .addContainerGap(746, Short.MAX_VALUE))
-
             .addGroup(ShAyPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(ShAyPnlLayout.createSequentialGroup()
                     .addGap(47, 47, 47)
@@ -916,17 +881,9 @@ public class univAdmin extends javax.swing.JPanel {
                 .addGroup(ShAyPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(AyFcRkPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AyCrRkPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-
                 .addGap(48, 48, 48)
                 .addComponent(CsMScrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(530, Short.MAX_VALUE))
-
-                .addGap(18, 18, 18)
-                .addComponent(PieChartButton)
-                .addGap(21, 21, 21)
-                .addComponent(CrScMtrxValLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(595, Short.MAX_VALUE))
-
             .addGroup(ShAyPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(ShAyPnlLayout.createSequentialGroup()
                     .addGap(349, 349, 349)
@@ -1003,23 +960,60 @@ public class univAdmin extends javax.swing.JPanel {
             CrScMtrxLbl.setVisible(false);
             ArrayList<Department> departmentlist = department.getDd();
             
-            for(Department d : departmentlist){
+            String admin ="admin";
+            String adStd= UsernameTextField.getText();
+            
+            if(adStd.equalsIgnoreCase(admin))
+            {
+                //JOptionPane.showMessageDialog(this, "password ok");
+                UnvTbPane.setVisible(true);
+            
+                for(Department d : departmentlist){
                
                 map.put(d.getName(), d);
-            }
+                }
 
-            for (String name : map.keySet())  
-                   CrDptComboBox.addItem(name);
-            for (String name : map.keySet()) 
-                StdDptComboBox.addItem(name);
-            for (String name : map.keySet())  
-                   AddStuDeptcb.addItem(name);
-            for (String name : map.keySet())  
+                for (String name : map.keySet())  
+                    CrDptComboBox.addItem(name);
+                for (String name : map.keySet()) 
+                    StdDptComboBox.addItem(name);
+                for (String name : map.keySet())  
+                    AddStuDeptcb.addItem(name);
+                for (String name : map.keySet())  
                    AddProfDeptcb1.addItem(name);
-            for (String name : map.keySet())  
+                for (String name : map.keySet())  
                    AlmnDptComboBox.addItem(name);
-            for (String name : map.keySet())  
+                for (String name : map.keySet())  
                    AyDptComboBox.addItem(name);
+            }
+            else
+            {
+               JOptionPane.showMessageDialog(this, "Enter Correct password"); 
+               UnvTbPane.setVisible(false);
+               jPanel1.setVisible(true);
+            }
+            
+            
+            
+//            
+//            
+//            for(Department d : departmentlist){
+//               
+//                map.put(d.getName(), d);
+//            }
+//
+//            for (String name : map.keySet())  
+//                   CrDptComboBox.addItem(name);
+//            for (String name : map.keySet()) 
+//                StdDptComboBox.addItem(name);
+//            for (String name : map.keySet())  
+//                   AddStuDeptcb.addItem(name);
+//            for (String name : map.keySet())  
+//                   AddProfDeptcb1.addItem(name);
+//            for (String name : map.keySet())  
+//                   AlmnDptComboBox.addItem(name);
+//            for (String name : map.keySet())  
+//                   AyDptComboBox.addItem(name);
         
     }//GEN-LAST:event_LoginButtonActionPerformed
 
@@ -1468,7 +1462,7 @@ public class univAdmin extends javax.swing.JPanel {
             DefaultTableModel model1 = (DefaultTableModel) AyCrRkTable.getModel();
             model1.setRowCount(0);
             
-            rco= rankCourseByDepartment(map.get("Information Systems"));
+            ArrayList<Course> rco= rankCourseByDepartment(map.get("Information Systems"));
 
             for(int i=0;i<rco.size();i++)
 
@@ -1514,23 +1508,16 @@ public class univAdmin extends javax.swing.JPanel {
             CrRkLbl.setVisible(true);
             CsMScrPnl.setVisible(true);
             CrScMtrxLbl.setVisible(true);
-
             
             //For Faculty Ranking of Computer Science
-
-            PieChartButton.setVisible(true);
-            //For Faculty Ranking
-
             
             DefaultTableModel model = (DefaultTableModel) AyFkRkTable.getModel();
             model.setRowCount(0);
             
             ArrayList<FacultyProfile> frk= rankProfessorByDepartment(map.get("Computer Science"));
-            
             for(int i=0;i<frk.size();i++)
 
             {
-                System.out.println("I AM FINALLY HERE" +frk.get(i).getPerson().getPersonId());
                 Object[] row= new Object[2];
                 row[0]=frk.get(i).getFacultyRatings();
                 row[1]=frk.get(i).getPerson().getPersonId();
@@ -1543,7 +1530,7 @@ public class univAdmin extends javax.swing.JPanel {
             model1.setRowCount(0);
             
             ArrayList<Course> rco= rankCourseByDepartment(map.get("Computer Science"));
-            
+
             for(int i=0;i<rco.size();i++)
 
             {
@@ -1551,10 +1538,8 @@ public class univAdmin extends javax.swing.JPanel {
                 row[0]=rco.get(i).getRating();
                 row[1]=rco.get(i).getName();
                 model1.addRow(row);
-                
-                
-            }
 
+            }
             ///Carrer SuccesMetric ranking for Information Systems
             ArrayList<Double> values = careerSuccesMetricRank(map.get("Computer Science"));
             Double gpa = values.get(0);
@@ -1570,28 +1555,9 @@ public class univAdmin extends javax.swing.JPanel {
                    sb.append("Having a very good CGPA "+gpa +"doesnt guarantee Industry Success "+CGM+" !!");
         }
             CsMTxtArea.setText(sb.toString());
-
         }
     }//GEN-LAST:event_AyDptComboBoxActionPerformed
-
-    private void PieChartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PieChartButtonActionPerformed
-        // TODO add your handling code here:
-        PieChart PC = new PieChart("Report", "Faculty ranking"); 
-        PC.pack();
-        PC.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        PC.setVisible(true);
-        
-    }//GEN-LAST:event_PieChartButtonActionPerformed
     
-        public PieDataset createDataset(){
-        rco= rankCourseByDepartment(map.get("Computer Science"));
-        DefaultPieDataset result = new DefaultPieDataset();
-        for(int i=0;i<rco.size();i++){
-            result.setValue(rco.get(i).getName(),rco.get(i).getRating());
-        }
-        
-        return result;
-    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1643,7 +1609,6 @@ public class univAdmin extends javax.swing.JPanel {
     private javax.swing.JPasswordField PasswordField;
     private javax.swing.JLabel PasswordLabel;
     private javax.swing.JPanel PasswordLowerPanel;
-    private javax.swing.JButton PieChartButton;
     private javax.swing.JPanel ShAlmn;
     private javax.swing.JPanel ShAyPnl;
     private javax.swing.JPanel ShStdPnl;
