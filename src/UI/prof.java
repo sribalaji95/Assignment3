@@ -359,6 +359,7 @@ public class prof extends javax.swing.JPanel {
         // TODO add your handling code here:
         String id = UsernameTextField.getText();
         sl=  getProfessorList("Fall2020",id);
+        if(sl.size()!=0){
         jButton1.setText(sl.get(0));
         sl1 = getStudentTakenByProf(sl.get(0),TestData.getInstance().getDd());
         
@@ -400,7 +401,10 @@ public class prof extends javax.swing.JPanel {
 //      
         jPanel1.setVisible(false);
         PrfLgnPnl1.setVisible(true);
-        jPanel3.setVisible(false);
+        jPanel3.setVisible(false);}
+        else{
+            JOptionPane.showMessageDialog(this, "Username or password entered is incorrect!");
+        }
     }//GEN-LAST:event_LoginButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

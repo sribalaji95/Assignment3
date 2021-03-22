@@ -479,6 +479,7 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         sp1.setAl(al1);
         
         all.add(al1);
+        //3rd Alumni
         StudentProfile sp2 = sd1.findStudent("cs1");
         sp2.setIsAlumni(true);
        // System.out.println("");
@@ -498,6 +499,7 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         sp2.setAl(al2);
         all.add(al2);
         
+        //4th Alumni
         StudentProfile sp3 = sd1.findStudent("cs2");
         sp3.setIsAlumni(true);
        // System.out.println("");
@@ -516,7 +518,62 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         sp3.setAl(al3);
         all.add(al3);
         
+        //5th Alumni
+        StudentProfile sp4 = sd1.findStudent("cs3");
+        sp4.setIsAlumni(true);
+       // System.out.println("");
+        //Alumni al = new Alumni();
+        Alumni al4 = new Alumni();
+        al4.setStudentProfile(sp4);
+        al4.setGradutationYear(2021);
+        al4.setEmp(em);
+        al4.setPosition("SDE2");
+        al4.setSalaryRange(105000);
+        al4.setPromotions(5);
+        al4.calculateAMG();
+        al4.careerSuccessMetric();
+        map.put("cs3", al4);
+        al4.setAlumniDir(map);
+        sp4.setAl(al4);
+        all.add(al4);
+        
+        //6th Alumni
+        StudentProfile sp5 = sd.findStudent("info3");
+        sp5.setIsAlumni(true);
+       // System.out.println("");
+        //Alumni al = new Alumni();
+        Alumni al5 = new Alumni();
+        al5.setStudentProfile(sp5);
+        al5.setGradutationYear(2021);
+        al5.setEmp(em);
+        al5.setPosition("SDE3");
+        al5.setSalaryRange(95000);
+        al5.setPromotions(5);
+        al5.calculateAMG();
+        al5.careerSuccessMetric();
+        map.put("info3", al5);
+        al5.setAlumniDir(map);
+        sp5.setAl(al5);
+        all.add(al5);
+        
+        
         ad1.setAd(all);
+        
+        ArrayList<StudentProfile> asp = sd.getStudentlist();
+        for(StudentProfile spp : asp){
+            ArrayList<SeatAssignment> as11 = spp.getTranscript().getCourseLoad("Fall2020").getSeatassignments();
+            for(int i=0 ; i < as11.size(); i++){
+                as11.get(i).assignGradeToStudent("A-");
+            }
+        }
+        
+         ArrayList<StudentProfile> asp1 = sd1.getStudentlist();
+        for(StudentProfile spp1 : asp){
+            ArrayList<SeatAssignment> as111 = spp1.getTranscript().getCourseLoad("Fall2020").getSeatassignments();
+            for(int i=0 ; i < as111.size(); i++){
+                as111.get(i).assignGradeToStudent("B-");
+            }
+        }
              
          System.out.println("A LL "+ al.careerSuccessMetric());
     }

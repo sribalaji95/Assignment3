@@ -18,6 +18,7 @@ import info5100.university.example.Persona.Faculty.FacultyProfile;
 import info5100.university.example.Persona.Faculty.Alumni.Alumni;
 
 import info5100.university.example.Persona.StudentProfile;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -231,12 +232,9 @@ public class univAdmin extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addComponent(UsernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 551, Short.MAX_VALUE)))
+                        .addGap(0, 551, Short.MAX_VALUE))
+                    .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(556, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(653, 653, 653)
-                .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -254,9 +252,9 @@ public class univAdmin extends javax.swing.JPanel {
                 .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(PasswordLowerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(625, Short.MAX_VALUE))
+                .addContainerGap(615, Short.MAX_VALUE))
         );
 
         InUnvTabPane.setBackground(new java.awt.Color(29, 44, 64));
@@ -335,7 +333,7 @@ public class univAdmin extends javax.swing.JPanel {
                     .addComponent(CrDptComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(CrLstPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(679, Short.MAX_VALUE))
+                .addContainerGap(678, Short.MAX_VALUE))
         );
 
         InUnvTabPane.addTab("Course List", ShwCrPnl);
@@ -411,7 +409,7 @@ public class univAdmin extends javax.swing.JPanel {
                     .addComponent(StdDptComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addComponent(StdLstPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(683, Short.MAX_VALUE))
+                .addContainerGap(682, Short.MAX_VALUE))
         );
 
         InUnvTabPane.addTab("Student List", ShStdPnl);
@@ -526,7 +524,7 @@ public class univAdmin extends javax.swing.JPanel {
                     .addComponent(Addstucoucom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(AddStudent)
-                .addContainerGap(667, Short.MAX_VALUE))
+                .addContainerGap(699, Short.MAX_VALUE))
         );
 
         InUnvTabPane.addTab("Add Student", Addstupanel);
@@ -643,7 +641,7 @@ public class univAdmin extends javax.swing.JPanel {
                     .addComponent(AddProfcoucom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(AddProf)
-                .addContainerGap(677, Short.MAX_VALUE))
+                .addContainerGap(703, Short.MAX_VALUE))
         );
 
         InUnvTabPane.addTab("Add Professor", AddProfPanel);
@@ -718,7 +716,7 @@ public class univAdmin extends javax.swing.JPanel {
                     .addComponent(AlmnDptComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addComponent(AlmnLstPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(695, Short.MAX_VALUE))
+                .addContainerGap(694, Short.MAX_VALUE))
         );
 
         InUnvTabPane.addTab("Alumini Details", ShAlmn);
@@ -848,18 +846,16 @@ public class univAdmin extends javax.swing.JPanel {
                             .addComponent(FcRkLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AyFcRkPnl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(55, 55, 55)
-                        .addGroup(ShAyPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(ShAyPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(AyCrRkPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CrRkLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(CrRkLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(ShAyPnlLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(CsMScrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(734, Short.MAX_VALUE))
-            .addGroup(ShAyPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(ShAyPnlLayout.createSequentialGroup()
-                    .addGap(47, 47, 47)
-                    .addComponent(CrScMtrxLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(1162, Short.MAX_VALUE)))
+                        .addComponent(CsMScrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ShAyPnlLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(CrScMtrxLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(746, Short.MAX_VALUE))
         );
         ShAyPnlLayout.setVerticalGroup(
             ShAyPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -880,14 +876,11 @@ public class univAdmin extends javax.swing.JPanel {
                 .addGroup(ShAyPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(AyFcRkPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AyCrRkPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(130, 130, 130)
+                .addGap(41, 41, 41)
+                .addComponent(CrScMtrxLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CsMScrPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(458, Short.MAX_VALUE))
-            .addGroup(ShAyPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(ShAyPnlLayout.createSequentialGroup()
-                    .addGap(349, 349, 349)
-                    .addComponent(CrScMtrxLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(535, Short.MAX_VALUE)))
+                .addContainerGap(457, Short.MAX_VALUE))
         );
 
         InUnvTabPane.addTab("Analysis", ShAyPnl);
@@ -945,8 +938,8 @@ public class univAdmin extends javax.swing.JPanel {
 
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
         // TODO add your handling code here:
-        jPanel1.setVisible(false);
-        UnvTbPane.setVisible(true);
+//        jPanel1.setVisible(false);
+//        UnvTbPane.setVisible(true);
            
             CrLstPnl.setVisible(false);
             StdLstPnl.setVisible(false);
@@ -962,8 +955,8 @@ public class univAdmin extends javax.swing.JPanel {
             String admin ="admin";
             String adStd= UsernameTextField.getText();
             
-            if(adStd.equalsIgnoreCase(admin))
-            {
+            //if(adStd.equalsIgnoreCase(admin))
+            //{
                 //JOptionPane.showMessageDialog(this, "password ok");
                 UnvTbPane.setVisible(true);
             
@@ -984,13 +977,13 @@ public class univAdmin extends javax.swing.JPanel {
                    AlmnDptComboBox.addItem(name);
                 for (String name : map.keySet())  
                    AyDptComboBox.addItem(name);
-            }
-            else
-            {
-               JOptionPane.showMessageDialog(this, "Enter Correct password"); 
-               UnvTbPane.setVisible(false);
-               jPanel1.setVisible(true);
-            }
+            //}
+            //else
+            //{
+               //JOptionPane.showMessageDialog(this, "Enter Correct password"); 
+               UnvTbPane.setVisible(true);
+               jPanel1.setVisible(false);
+            //}
             
             
             
@@ -1484,15 +1477,17 @@ public class univAdmin extends javax.swing.JPanel {
            ArrayList<Double> values = careerSuccesMetricRank(map.get("Information Systems"));
             Double gpa = values.get(0);
             Double CGM = values.get(1);
+            //Double f =  CGM.floatValue();
             System.out.println(gpa + " "+ CGM);
             StringBuilder sb = new StringBuilder();
+            DecimalFormat df = new DecimalFormat("###.##");
              if(gpa < 8.4 && CGM > 5.0 ){
-                  sb.append("Having a below average CGPA "+gpa + "doesnt affect the student's Industry Performance score "+CGM+"!!");
+                  sb.append("Having a below average CGPA "+gpa + "doesnt affect the student's Industry Performance score "+df.format(CGM)+"!!");
             System.out.println("Having a below average CGPA doesnt affect the student's Industry Performance!!");
         } 
              //else if(gpa > 8.4 && CGM < 5.0){
              else{
-                   sb.append("Having a very good CGPA "+gpa +"doesnt guarantee Industry Success "+CGM+" !!");
+                   sb.append("Having a very good CGPA "+gpa +"doesnt guarantee Industry Success "+df.format(CGM)+" !!");
         }
             CsMTxtArea.setText(sb.toString());
 

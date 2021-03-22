@@ -38,7 +38,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="316" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="322" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -161,19 +161,19 @@
                       <Component id="AlumEmplbl" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="AlumPromlbl" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="AlumSallbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="AlumIdlbl" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="AlumSalTxt" linkSize="3" pref="124" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="Alumpromtxt" linkSize="3" pref="124" max="32767" attributes="0"/>
                           <Component id="AlumEmptxt" linkSize="3" max="32767" attributes="0"/>
                           <Component id="AlumIdtxt" linkSize="3" max="32767" attributes="0"/>
-                          <Component id="AlumNametxt" linkSize="3" max="32767" attributes="0"/>
                           <Component id="AlumgradyearTxt" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="0" pref="75" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="85" max="32767" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -189,14 +189,6 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="AlumNamelbl" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="AlumIdlbl" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="AlumgradLbl" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -209,15 +201,10 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="AlumNamelbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="AlumNametxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="AlumIdlbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="AlumIdtxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="AlumIdtxt" min="-2" max="-2" attributes="0"/>
+                      <Component id="AlumIdlbl" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -244,7 +231,7 @@
                       <Component id="AlumupdBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Alumbackbtn" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="14" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -258,14 +245,9 @@
             <Property name="text" type="java.lang.String" value="Alumni Details"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="AlumNamelbl">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Student Name:"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="AlumIdlbl">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Student ID:"/>
+            <Property name="text" type="java.lang.String" value="Student Name:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="AlumEmplbl">
@@ -282,8 +264,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Salary:"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="AlumNametxt">
         </Component>
         <Component class="javax.swing.JTextField" name="AlumIdtxt">
           <Properties>

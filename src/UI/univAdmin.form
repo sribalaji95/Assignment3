@@ -85,13 +85,9 @@
                           </Group>
                           <EmptySpace min="0" pref="551" max="32767" attributes="0"/>
                       </Group>
+                      <Component id="LoginButton" alignment="2" min="-2" pref="54" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="556" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="653" max="-2" attributes="0"/>
-                  <Component id="LoginButton" min="-2" pref="54" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -111,9 +107,9 @@
                   <Component id="PasswordField" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Component id="PasswordLowerPanel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Component id="LoginButton" min="-2" pref="31" max="-2" attributes="0"/>
-                  <EmptySpace pref="625" max="32767" attributes="0"/>
+                  <EmptySpace pref="615" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -358,7 +354,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="CrLstPnl" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="679" max="32767" attributes="0"/>
+                          <EmptySpace pref="687" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -474,7 +470,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                           <Component id="StdLstPnl" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="683" max="32767" attributes="0"/>
+                          <EmptySpace pref="691" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -625,7 +621,7 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="AddStudent" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="667" max="32767" attributes="0"/>
+                          <EmptySpace pref="708" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -825,7 +821,7 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="AddProf" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="677" max="32767" attributes="0"/>
+                          <EmptySpace pref="712" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -975,7 +971,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="AlmnLstPnl" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="695" max="32767" attributes="0"/>
+                          <EmptySpace pref="703" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1092,24 +1088,21 @@
                                       <Component id="AyFcRkPnl" alignment="0" min="-2" pref="310" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="AyCrRkPnl" min="-2" pref="310" max="-2" attributes="0"/>
-                                      <Component id="CrRkLbl" min="-2" pref="299" max="-2" attributes="0"/>
+                                      <Component id="CrRkLbl" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="CsMScrPnl" min="-2" pref="541" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="CrScMtrxLbl" min="-2" pref="204" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace pref="734" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                              <Component id="CrScMtrxLbl" min="-2" pref="222" max="-2" attributes="0"/>
-                              <EmptySpace pref="1162" max="32767" attributes="0"/>
-                          </Group>
+                          <EmptySpace pref="746" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1137,16 +1130,11 @@
                               <Component id="AyFcRkPnl" min="-2" pref="162" max="-2" attributes="0"/>
                               <Component id="AyCrRkPnl" min="-2" pref="162" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                          <Component id="CrScMtrxLbl" min="-2" pref="91" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="CsMScrPnl" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="458" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="349" max="-2" attributes="0"/>
-                              <Component id="CrScMtrxLbl" min="-2" pref="91" max="-2" attributes="0"/>
-                              <EmptySpace pref="535" max="32767" attributes="0"/>
-                          </Group>
+                          <EmptySpace pref="466" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>

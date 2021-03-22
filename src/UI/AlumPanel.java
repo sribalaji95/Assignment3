@@ -9,6 +9,7 @@ import info5100.university.example.Info5001UniversityExample;
 import info5100.university.example.Persona.Faculty.Alumni.Alumni;
 import info5100.university.example.Persona.Faculty.Alumni.CompanyEmployers.Employers;
 import java.util.HashMap;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -48,12 +49,10 @@ public class AlumPanel extends javax.swing.JPanel {
         LoginButton = new javax.swing.JButton();
         AlumDetail = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        AlumNamelbl = new javax.swing.JLabel();
         AlumIdlbl = new javax.swing.JLabel();
         AlumEmplbl = new javax.swing.JLabel();
         AlumPromlbl = new javax.swing.JLabel();
         AlumSallbl = new javax.swing.JLabel();
-        AlumNametxt = new javax.swing.JTextField();
         AlumIdtxt = new javax.swing.JTextField();
         AlumEmptxt = new javax.swing.JTextField();
         Alumpromtxt = new javax.swing.JTextField();
@@ -71,7 +70,7 @@ public class AlumPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 153, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ALUMINI LOG IN");
+        jLabel1.setText("ALUMNI LOG IN");
         jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -170,12 +169,9 @@ public class AlumPanel extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addComponent(UsernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 823, Short.MAX_VALUE)))
+                        .addGap(0, 823, Short.MAX_VALUE))
+                    .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(284, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(674, 674, 674))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,9 +189,9 @@ public class AlumPanel extends javax.swing.JPanel {
                 .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(PasswordLowerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(625, Short.MAX_VALUE))
+                .addContainerGap(616, Short.MAX_VALUE))
         );
 
         AlumDetail.setBackground(new java.awt.Color(29, 44, 64));
@@ -205,11 +201,8 @@ public class AlumPanel extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
         jLabel2.setText("ALUMNI DETAILS");
 
-        AlumNamelbl.setForeground(new java.awt.Color(153, 153, 153));
-        AlumNamelbl.setText("Student Name:");
-
         AlumIdlbl.setForeground(new java.awt.Color(153, 153, 153));
-        AlumIdlbl.setText("Student ID:");
+        AlumIdlbl.setText("Student Name:");
 
         AlumEmplbl.setForeground(new java.awt.Color(153, 153, 153));
         AlumEmplbl.setText("Employer:");
@@ -263,7 +256,6 @@ public class AlumPanel extends javax.swing.JPanel {
                     .addGroup(AlumDetailLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AlumNamelbl)
                             .addComponent(AlumIdlbl)
                             .addComponent(AlumgradLbl)
                             .addComponent(AlumEmplbl)
@@ -271,7 +263,6 @@ public class AlumPanel extends javax.swing.JPanel {
                             .addComponent(AlumSallbl))
                         .addGap(56, 56, 56)
                         .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AlumNametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AlumIdtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AlumgradyearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AlumEmptxt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -285,20 +276,14 @@ public class AlumPanel extends javax.swing.JPanel {
                     .addGroup(AlumDetailLayout.createSequentialGroup()
                         .addGap(141, 141, 141)
                         .addComponent(jLabel2)))
-                .addContainerGap(1122, Short.MAX_VALUE))
+                .addContainerGap(1117, Short.MAX_VALUE))
         );
         AlumDetailLayout.setVerticalGroup(
             AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AlumDetailLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jLabel2)
-                .addGap(21, 21, 21)
-                .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AlumDetailLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(AlumNamelbl))
-                    .addComponent(AlumNametxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(59, 59, 59)
                 .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AlumDetailLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
@@ -330,7 +315,7 @@ public class AlumPanel extends javax.swing.JPanel {
                 .addGroup(AlumDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(AlumupdBtn)
                     .addComponent(Alumbackbtn))
-                .addContainerGap(652, Short.MAX_VALUE))
+                .addContainerGap(688, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -357,8 +342,8 @@ public class AlumPanel extends javax.swing.JPanel {
 
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
         // TODO add your handling code here:
-        jPanel1.setVisible(false);
-        AlumDetail.setVisible(true);
+//        jPanel1.setVisible(false);
+//        AlumDetail.setVisible(true);
               //  new Info5001UniversityExample().test1();
         
         //System.out.println("Map "+ m.size());
@@ -373,11 +358,19 @@ public class AlumPanel extends javax.swing.JPanel {
         System.out.println("IDD "+ id);
                 
         Alumni al1 = m.get(id);
+        if(al1!=null){
         AlumIdtxt.setText(al1.getStudentProfile().getPerson().getPersonId());
         AlumgradyearTxt.setText(String.valueOf(al1.getGradutationYear()));
         AlumSalTxt.setText(String.valueOf(al1.getSalaryRange()));
         AlumEmptxt.setText(al1.getEmp().getEmployerName());
         Alumpromtxt.setText(String.valueOf(al1.getPromotions()));
+        jPanel1.setVisible(false);
+                AlumDetail.setVisible(true);}
+        else{
+            JOptionPane.showMessageDialog(this, "Username or Passowrd entered is incorrect!");
+            jPanel1.setVisible(true);
+                AlumDetail.setVisible(false);
+        }
 //        al.setId(Alumniusertext.getText());
 //        Alumni_Details Alumdet = new Alumni_Details();
  //       Alumdet.setVisible(true);
@@ -402,6 +395,9 @@ public class AlumPanel extends javax.swing.JPanel {
         Employers emp = al1.getEmp();
         emp.setEmployerName(AlumEmptxt.getText());
         al1.setPromotions(Integer.parseInt(Alumpromtxt.getText()));
+        JOptionPane.showMessageDialog(this ,"Your changes has been saved!");
+        
+        
 
     }//GEN-LAST:event_AlumupdBtnActionPerformed
 
@@ -419,8 +415,6 @@ public class AlumPanel extends javax.swing.JPanel {
     private javax.swing.JTextField AlumEmptxt;
     private javax.swing.JLabel AlumIdlbl;
     private javax.swing.JTextField AlumIdtxt;
-    private javax.swing.JLabel AlumNamelbl;
-    private javax.swing.JTextField AlumNametxt;
     private javax.swing.JLabel AlumPromlbl;
     private javax.swing.JTextField AlumSalTxt;
     private javax.swing.JLabel AlumSallbl;
