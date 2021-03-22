@@ -287,7 +287,15 @@ public class empPanel extends javax.swing.JPanel {
 List<Course> list1;
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
         // TODO add your handling code here:
-        JComboBox myComboBox = new JComboBox();
+        jPanel2.setVisible(false);
+        
+        String admin ="emp";
+        String adStd= UsernameTextField.getText();
+        
+        if(adStd.equalsIgnoreCase(admin))
+        {
+            //JOptionPane.showMessageDialog(this, "password ok");
+            JComboBox myComboBox = new JComboBox();
         for(int i=1;i<=10;i++){
             myComboBox.addItem(i);
         }
@@ -325,6 +333,64 @@ List<Course> list1;
             });
         jPanel2.setVisible(true);
         jPanel1.setVisible(false);
+
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Enter Correct password");
+            jPanel2.setVisible(false);
+            jPanel1.setVisible(true);
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+//        
+//        
+//        JComboBox myComboBox = new JComboBox();
+//        for(int i=1;i<=10;i++){
+//            myComboBox.addItem(i);
+//        }
+//         list1= getReleventCourses();
+//         System.out.println(list1.size());
+//         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+//        model.setRowCount(0);
+//        // TableCellListener tcl = (TableCellListener)evt.getSource();
+// jTable1.getColumnModel().getColumn(1).setCellEditor(new DefaultCellEditor(myComboBox));
+//       // jPanel3.setVisible(true);
+//        Object[] row = new Object[list1.size()];
+//        jTable1.getColumnModel().getColumn(1).setCellEditor(new DefaultCellEditor(myComboBox));
+//        
+//        for(int i=0;i<list1.size();i++)
+//        {
+//             
+//            row[0]=list1.get(i).getName();
+//            model.addRow(row);
+//        }
+//         model.addTableModelListener(
+//            new TableModelListener()
+//            {
+//                public void tableChanged(TableModelEvent evt)
+//                {
+//                    
+//                    int col = evt.getColumn();
+//                    int row = evt.getFirstRow();
+//                   // System.out.println(row+"as");
+//                   // System.out.println(col+"as1");
+//                    rating = model.getValueAt(row, 1).toString();
+//                    course =model.getValueAt(row,0).toString();
+//                    map1.put(course, rating);
+//                   
+//                }
+//            });
+//        jPanel2.setVisible(true);
+//        jPanel1.setVisible(false);
     }//GEN-LAST:event_LoginButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

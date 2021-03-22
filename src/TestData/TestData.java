@@ -146,6 +146,7 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         
         StudentProfile sp = sd.findStudent("01");
        // System.out.println("");
+       
         Alumni al = new Alumni();
         al.setStudentProfile(sp);
         al.setGradutationYear(2020);
@@ -432,6 +433,11 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         
         StudentProfile sp = sd.findStudent("info1");
         sp.setIsAlumni(true);
+        
+        //AlumniDirectory ad = new AlumniDirectory();
+        ArrayList<Alumni> all = new ArrayList<>();
+        AlumniDirectory ad1 = new AlumniDirectory();
+        
         Alumni al = new Alumni();
         al.setStudentProfile(sp);
         al.setGradutationYear(2020);
@@ -439,10 +445,15 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         al.setPosition("SDE");
         al.setSalaryRange(25000);
         al.setPromotions(2);
+        al.calculateAMG();
+        al.careerSuccessMetric();
         sp.setAl(al);
+        
         HashMap<String, Alumni> map = new HashMap<>();
         map.put("info1", al);
         al.setAlumniDir(map);
+        all.add(al);
+        
         
         StudentProfile sp1 = sd.findStudent("info2");
         sp1.setIsAlumni(true);
@@ -455,10 +466,13 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         al1.setPosition("SDE2");
         al1.setSalaryRange(15000);
         al1.setPromotions(5);
+        al1.calculateAMG();
+        al1.careerSuccessMetric();
         map.put("info2", al1);
         al1.setAlumniDir(map);
         sp1.setAl(al1);
         
+        all.add(al1);
         StudentProfile sp2 = sd1.findStudent("cs1");
         sp2.setIsAlumni(true);
        // System.out.println("");
@@ -470,9 +484,13 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         al2.setPosition("SDE1");
         al2.setSalaryRange(20000);
         al2.setPromotions(5);
-        map.put("info3", al2);
+        al2.calculateAMG();
+        al2.careerSuccessMetric();
+        
+        map.put("cs1", al2);
         al2.setAlumniDir(map);
         sp2.setAl(al2);
+        all.add(al2);
         
         StudentProfile sp3 = sd1.findStudent("cs2");
         sp3.setIsAlumni(true);
@@ -485,11 +503,16 @@ public void getStudentTakenByProf(String courseID, StudentDirectory sd){
         al3.setPosition("SDE2");
         al3.setSalaryRange(25000);
         al3.setPromotions(5);
+        al3.calculateAMG();
+        al3.careerSuccessMetric();
         map.put("cs2", al3);
         al3.setAlumniDir(map);
         sp3.setAl(al3);
+        all.add(al3);
         
+        ad1.setAd(all);
              
+         System.out.println("A LL "+ al.careerSuccessMetric());
     }
      
      
